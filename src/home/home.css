@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #212529;
+    height: 100vh;
+    line-height: 1.7;
+}
+
+
+/* css thanh tab dọc */
+
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    background-color: #222;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #cfe5d6;
+    overflow: hidden;
+    transition: width .75s ease;
+    border-radius: 7px;
+    background: #1a1818;
+    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
+}
+
+
+/* Ẩn chữ và biểu tượng mặc định */
+
+.sidebar a,
+.mode-toggle {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* Thêm hiệu ứng transition */
+}
+
+
+/* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
+
+.sidebar:hover a,
+.sidebar:hover .mode-toggle {
+    opacity: 1;
+}
+
+
+/* CSS cho chế độ tối */
+
+.dark-mode {
+    background-color: #1c1919;
+    color: white;
+}
+
+.sidebar:hover {
+    width: 200px;
+}
+
+
+/* css link bấm vào */
+
+.nav-link {
+    text-decoration: none;
+    color: #adb0b3;
+    font-weight: 600;
+}
+
+.nav-list {
+    padding: 30px 0;
+    /* Điều chỉnh padding top và bottom để căn giữa */
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    /* Hiển thị các liên kết theo chiều dọc */
+    align-items: center;
+    gap: 20px;
+    /* Khoảng cách giữa các liên kết */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #868e96;
+    font-weight: 600;
+    line-height: 1.5;
+    /* Điều chỉnh line-height để căn giữa và hiển thị đủ thông tin */
+}
+
+.nav-link.nav-link-brand {
+    margin-bottom: auto;
+    /* Để logo căn dưới */
+}
+
+
+/*css biểu tượng dark-mode*/
+
+.mode-toggle {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+
+/* CSS cho chế độ tối */
+
+.dark-mode {
+    background-color: #1c1919;
+    /* Màu nền chế độ tối */
+    color: white;
+    /* Màu chữ chế độ tối */
+}
