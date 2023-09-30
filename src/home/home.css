@@ -26,7 +26,7 @@ body {
     /* Ẩn thanh cuộn cho Firefox */
     width: 60px;
     height: 100vh;
-    background-color: #222;
+    background-color: #000000;
     padding: 20px;
     box-sizing: border-box;
     color: #cfe5d6;
@@ -97,14 +97,6 @@ body {
     opacity: 1;
 }
 
-
-/* CSS cho chế độ tối */
-
-.dark-mode {
-    background-color: #1c1919;
-    color: white;
-}
-
 .sidebar:hover {
     width: 200px;
 }
@@ -151,8 +143,26 @@ body.dark-theme {
     background: #121212;
 }
 
-body.dark-theme a {
-    color: #809fff;
+body.light-theme {
+    color: #121212;
+    background: #eee;
+}
+
+
+/* CSS cho nút chuyển màu khi di chuột vào */
+
+.btcolor:hover {
+    color: #29f183;
+    /* Màu chữ khi di chuột vào */
+    border-color: #1fe944;
+    /* Màu viền khi di chuột vào */
+}
+
+.btn-toggle:hover {
+    color: #29f183;
+    /* Màu chữ khi di chuột vào */
+    border-color: #1fe944;
+    /* Màu viền khi di chuột vào */
 }
 
 .btn2 {

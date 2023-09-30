@@ -24,6 +24,41 @@ btn.addEventListener('click', function() {
     const isDarkMode = document.body.classList.toggle('dark-theme');
     saveDarkModeState(isDarkMode);
 });
+
+// Hàm lấy trạng thái chế độ (theme) từ localStorage hoặc theo chế độ mặc định
+function getTheme() {
+    return localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+}
+
+// Hàm thiết lập chế độ (theme) và cập nhật nút chuyển đổi trạng thái
+function setTheme(theme) {
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+
+    // Lấy phần tử nút chuyển đổi theme
+    const themeToggle = document.querySelector("[data-theme-toggle]");
+
+    // Cập nhật nội dung của nút chuyển đổi theme
+    if (theme === "dark") {
+        themeToggle.textContent = "LIGHT";
+    } else {
+        themeToggle.textContent = "DARK";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.querySelector("[data-theme-toggle]");
+
+    themeToggle.addEventListener("click", () => {
+        const currentTheme = getTheme();
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+    });
+
+    setTheme(getTheme());
+});
+
+
 // Lấy element thanh sidebar
 const sidebar = document.querySelector('.sidebar');
 
@@ -35,7 +70,3 @@ window.addEventListener('scroll', function() {
     // Đặt top của thanh sidebar để di chuyển theo vị trí cuộn trang
     sidebar.style.top = scrollY + 'px';
 });
-
-
-//js cx vậy mn không sửa j hết nhá, viết tiếp vào thôi
-// mn tạo folder như food và home nhé, xog ms tạo file như food vs home
