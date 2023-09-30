@@ -35,3 +35,7 @@ window.addEventListener('scroll', function() {
     // Đặt top của thanh sidebar để di chuyển theo vị trí cuộn trang
     sidebar.style.top = scrollY + 'px';
 });
+
+
+//js cx vậy mn không sửa j hết nhá, viết tiếp vào thôi
+// mn tạo folder như food và home nhé, xog ms tạo file như food vs home
