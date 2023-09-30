@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 body {
     font-family: "Inter", sans-serif;
     color: #212529;
+    background: #121212;
     height: 100vh;
     line-height: 1.7;
 }
@@ -14,7 +16,14 @@ body {
 
 /* css thanh tab dọc */
 
+
+/* CSS cho thanh sidebar */
+
 .sidebar {
+    transition: top 0.3s ease;
+    /* Thêm hiệu ứng di chuyển mượt mà */
+    scrollbar-width: none;
+    /* Ẩn thanh cuộn cho Firefox */
     width: 60px;
     height: 100vh;
     background-color: #222;
@@ -22,17 +31,35 @@ body {
     box-sizing: border-box;
     color: #cfe5d6;
     overflow: hidden;
+    overflow-y: auto;
     transition: width .75s ease;
     border-radius: 7px;
     background: #1a1818;
     box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
+    float: left;
+    /* Thêm thuộc tính float để nội dung trang nằm cạnh thanh sidebar */
+}
+
+
+/* Ẩn thanh cuộn dọc của sidebar */
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
+    /* Ẩn thanh cuộn trình duyệt Safari và Chrome */
+}
+
+
+/* Thay đổi màu của thanh cuộn nếu bạn muốn */
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 
 
 /* Ẩn chữ và biểu tượng mặc định */
 
 .sidebar a,
-.mode-toggle {
+.sidebar .btn2.bt3 {
     opacity: 0;
     transition: opacity 0.5s ease;
     /* Thêm hiệu ứng transition */
@@ -42,7 +69,7 @@ body {
 /* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
 
 .sidebar:hover a,
-.sidebar:hover .mode-toggle {
+.sidebar:hover .btn2.bt3 {
     opacity: 1;
 }
 
@@ -93,20 +120,76 @@ body {
 }
 
 
-/*css biểu tượng dark-mode*/
+/* Dark Mode styles */
 
-.mode-toggle {
-    cursor: pointer;
-    margin-left: 20px;
-    font-size: 24px;
+body.dark-theme {
+    color: #eee;
+    background: #121212;
 }
 
+body.dark-theme a {
+    color: #809fff;
+}
 
-/* CSS cho chế độ tối */
+.btn2 {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #fefefe;
+    text-transform: uppercase;
+    color: #fefefe;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.3s;
+}
 
-.dark-mode {
+.btn2::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
     background-color: #1c1919;
-    /* Màu nền chế độ tối */
-    color: white;
-    /* Màu chữ chế độ tối */
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - 50px);
+    background-color: #1c1919;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+}
+
+.btn2:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+}
+
+.btn2:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+}
+
+.btn2:hover {
+    border: 2px solid #fefefe;
+}
+
+.btn2 span {
+    position: relative;
+    z-index: 3;
+}
+
+.bt3 {
+    text-decoration: none;
+    border: none;
+    border-radius: 100px;
+    background-color: #1c1919;
 }

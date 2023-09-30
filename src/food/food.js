@@ -1,17 +1,37 @@
-        // Hàm chuyển đổi chế độ sáng/tối
-        function toggleMode() {
-            const modeIcon = document.getElementById('mode-icon');
-            if (modeIcon.classList.contains('bi-moon')) {
-                // Chuyển sang chế độ tối
-                modeIcon.classList.remove('bi-moon');
-                modeIcon.classList.add('bi-sun');
-                // Thêm lớp dark cho body hoặc container chứa nội dung
-                document.body.classList.add('dark-mode');
-            } else {
-                // Chuyển sang chế độ sáng
-                modeIcon.classList.remove('bi-sun');
-                modeIcon.classList.add('bi-moon');
-                // Loại bỏ lớp dark
-                document.body.classList.remove('dark-mode');
-            }
-        }
+// Hàm lưu trạng thái chế độ tối vào localStorage
+function saveDarkModeState(isDarkMode) {
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Hàm kiểm tra và áp dụng trạng thái chế độ tối từ localStorage khi trang được load
+function loadDarkModeState() {
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'true') {
+        document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
+    }
+}
+
+// Lắng nghe sự kiện load trang và gọi hàm loadDarkModeState()
+window.addEventListener('load', loadDarkModeState);
+
+// Lấy button toggle chế độ tối
+const btn = document.querySelector('.btn-toggle');
+
+// Lắng nghe sự kiện click vào button để thay đổi trạng thái và lưu vào localStorage
+btn.addEventListener('click', function() {
+    const isDarkMode = document.body.classList.toggle('dark-theme');
+    saveDarkModeState(isDarkMode);
+});
+// Lấy element thanh sidebar
+const sidebar = document.querySelector('.sidebar');
+
+// Lắng nghe sự kiện cuộn trang
+window.addEventListener('scroll', function() {
+    // Lấy vị trí cuộn trang
+    const scrollY = window.scrollY;
+
+    // Đặt top của thanh sidebar để di chuyển theo vị trí cuộn trang
+    sidebar.style.top = scrollY + 'px';
+});
