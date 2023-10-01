@@ -26,7 +26,7 @@ body {
     /* Ẩn thanh cuộn cho Firefox */
     width: 60px;
     height: 100vh;
-    background-color: #222;
+    background-color: #000000;
     padding: 20px;
     box-sizing: border-box;
     color: #cfe5d6;
@@ -38,6 +38,30 @@ body {
     box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
     float: left;
     /* Thêm thuộc tính float để nội dung trang nằm cạnh thanh sidebar */
+}
+
+
+/* CSS cho văn bản căn đều 2 bên */
+
+.container {
+    text-align: justify;
+    /* Đặt kiểu căn đều */
+}
+
+
+/* CSS cho nội dung trang */
+
+.content {
+    margin-left: 10px;
+    /* Khoảng cách từ nội dung trang đến thanh sidebar */
+    padding: 20px;
+    /* Thêm padding để tạo khoảng cách */
+    flex-grow: 1;
+    overflow-y: auto;
+    text-align: left;
+    /* Đặt kiểu căn trái để tránh việc căn đều các phần tử nhỏ hơn trong văn bản */
+    max-width: 100%;
+    /* Đảm bảo văn bản không vượt quá chiều rộng tối đa */
 }
 
 
@@ -71,14 +95,6 @@ body {
 .sidebar:hover a,
 .sidebar:hover .btn2.bt3 {
     opacity: 1;
-}
-
-
-/* CSS cho chế độ tối */
-
-.dark-mode {
-    background-color: #1c1919;
-    color: white;
 }
 
 .sidebar:hover {
@@ -127,8 +143,26 @@ body.dark-theme {
     background: #121212;
 }
 
-body.dark-theme a {
-    color: #809fff;
+body.light-theme {
+    color: #121212;
+    background: #eee;
+}
+
+
+/* CSS cho nút chuyển màu khi di chuột vào */
+
+.btcolor:hover {
+    color: #29f183;
+    /* Màu chữ khi di chuột vào */
+    border-color: #1fe944;
+    /* Màu viền khi di chuột vào */
+}
+
+.btn-toggle:hover {
+    color: #29f183;
+    /* Màu chữ khi di chuột vào */
+    border-color: #1fe944;
+    /* Màu viền khi di chuột vào */
 }
 
 .btn2 {
@@ -193,3 +227,6 @@ body.dark-theme a {
     border-radius: 100px;
     background-color: #1c1919;
 }
+
+
+/* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */

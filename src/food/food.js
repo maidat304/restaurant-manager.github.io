@@ -5,12 +5,12 @@ function saveDarkModeState(isDarkMode) {
 
 // Hàm kiểm tra và áp dụng trạng thái chế độ tối từ localStorage khi trang được load
 function loadDarkModeState() {
-    const darkMode = localStorage.getItem('darkMode');
-    if (darkMode === 'true') {
-        document.body.classList.add('dark-theme');
-    } else {
-        document.body.classList.remove('dark-theme');
-    }
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    document.body.classList.toggle('dark-theme', darkMode);
+
+    // Cập nhật nội dung của nút chuyển đổi theme
+    const themeText = darkMode ? 'LIGHT' : 'DARK';
+    btn.querySelector('.spn2').textContent = themeText;
 }
 
 // Lắng nghe sự kiện load trang và gọi hàm loadDarkModeState()
@@ -20,18 +20,37 @@ window.addEventListener('load', loadDarkModeState);
 const btn = document.querySelector('.btn-toggle');
 
 // Lắng nghe sự kiện click vào button để thay đổi trạng thái và lưu vào localStorage
-btn.addEventListener('click', function() {
+btn.addEventListener('click', () => {
     const isDarkMode = document.body.classList.toggle('dark-theme');
     saveDarkModeState(isDarkMode);
+
+    // Cập nhật nội dung của nút chuyển đổi theme
+    const themeText = isDarkMode ? 'LIGHT' : 'DARK';
+    btn.querySelector('.spn2').textContent = themeText;
 });
-// Lấy element thanh sidebar
+
+// Hàm thiết lập chế độ (theme) và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+// Thiết lập chế độ tối/sáng mặc định và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
+function initializeTheme() {
+    const darkMode = localStorage.getItem('darkMode') === 'true';
+    const currentTheme = darkMode ? 'dark' : 'light';
+    setTheme(currentTheme);
+
+    // Cập nhật nội dung của nút chuyển đổi theme
+    const themeText = darkMode ? 'LIGHT' : 'DARK';
+    btn.querySelector('.spn2').textContent = themeText;
+}
+
+// Gọi hàm initializeTheme để thiết lập chế độ tối/sáng khi trang được tải lên
+initializeTheme();
+
+// Lấy element thanh sidebar và lắng nghe sự kiện cuộn trang (đoạn code này giữ nguyên)
 const sidebar = document.querySelector('.sidebar');
-
-// Lắng nghe sự kiện cuộn trang
 window.addEventListener('scroll', function() {
-    // Lấy vị trí cuộn trang
     const scrollY = window.scrollY;
-
-    // Đặt top của thanh sidebar để di chuyển theo vị trí cuộn trang
     sidebar.style.top = scrollY + 'px';
 });
