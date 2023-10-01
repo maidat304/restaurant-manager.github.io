@@ -54,3 +54,27 @@ window.addEventListener('scroll', function() {
     const scrollY = window.scrollY;
     sidebar.style.top = scrollY + 'px';
 });
+// food
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+}
+
+function prev() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function next() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+prevBtn.addEventListener('click', prev);
+nextBtn.addEventListener('click', next);
+
+showSlide(currentSlide);
