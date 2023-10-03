@@ -83,7 +83,7 @@ body {
 /* Ẩn chữ và biểu tượng mặc định */
 
 .sidebar a,
-.sidebar .btn2.bt3 {
+.sidebar .card {
     opacity: 0;
     transition: opacity 0.5s ease;
     /* Thêm hiệu ứng transition */
@@ -93,7 +93,7 @@ body {
 /* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
 
 .sidebar:hover a,
-.sidebar:hover .btn2.bt3 {
+.sidebar:hover .card {
     opacity: 1;
 }
 
@@ -106,33 +106,21 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: #adb0b3;
+    color: #868e96;
     font-weight: 600;
 }
 
 .nav-list {
     padding: 30px 0;
-    /* Điều chỉnh padding top và bottom để căn giữa */
     list-style: none;
     display: flex;
     flex-direction: column;
-    /* Hiển thị các liên kết theo chiều dọc */
     align-items: center;
     gap: 20px;
-    /* Khoảng cách giữa các liên kết */
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #868e96;
-    font-weight: 600;
-    line-height: 1.5;
-    /* Điều chỉnh line-height để căn giữa và hiển thị đủ thông tin */
 }
 
 .nav-link.nav-link-brand {
     margin-bottom: auto;
-    /* Để logo căn dưới */
 }
 
 
@@ -148,84 +136,17 @@ body.light-theme {
     background: #eee;
 }
 
-
-/* CSS cho nút chuyển màu khi di chuột vào */
-
-.btcolor:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
+.card {
+    width: 150px;
+    left: 25px;
 }
 
-.btn-toggle:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
+.card:hover {
+    transform: scale(1.05);
 }
 
-.btn2 {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid #fefefe;
-    text-transform: uppercase;
-    color: #fefefe;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn2::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - -2px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - 50px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2:hover::before {
-    transform: translateY(-25px);
-    height: 0;
-}
-
-.btn2:hover::after {
-    transform: scaleX(0);
-    transition-delay: 0.15s;
-}
-
-.btn2:hover {
-    border: 2px solid #fefefe;
-}
-
-.btn2 span {
-    position: relative;
-    z-index: 3;
-}
-
-.bt3 {
-    text-decoration: none;
-    border: none;
-    border-radius: 100px;
-    background-color: #1c1919;
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
 
 
