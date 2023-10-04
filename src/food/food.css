@@ -14,6 +14,14 @@ body {
 }
 
 
+/* icon food */
+
+.icon-food {
+    width: 30px;
+    height: 25px;
+}
+
+
 /* CSS cho văn bản căn đều 2 bên */
 
 .container {
@@ -50,6 +58,14 @@ body {
     border-radius: 7px;
     box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
     float: left;
+}
+
+
+/* Ẩn thanh sidebar khi có lớp sidebar-hidden */
+
+.sidebar.sidebar-hidden {
+    width: 0;
+    overflow: hidden;
 }
 
 
@@ -135,5 +151,143 @@ body.dark-theme {
     transform: scale(0.95) rotateZ(1.7deg);
 }
 
+.card2 {
+    width: 50px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card2:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
 
 /* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
+
+
+/* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
+
+.dark-theme input {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+
+/* căn khoảng cách so với h1 */
+
+.distance {
+    padding-top: 40px;
+    margin-left: 50px;
+}
+
+
+/* căn thêm so với thẻ div search */
+
+.distance-margin {
+    padding-top: 20px;
+}
+
+
+/* search */
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input1 {
+    min-height: 50px;
+    max-width: 150px;
+    padding: 0 1rem;
+    font-size: 15px;
+    border: 2px solid;
+    border-radius: 47px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.button--submit {
+    min-height: 50px;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 47px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.button--submit:hover {
+    background-color: #4bdf58;
+}
+
+.button--submit:hover {
+    transform: scale(1.05);
+}
+
+.button--submit:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.input1:focus,
+.input1:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
+
+
+/*search and button */
+
+.search-and-button {
+    display: flex;
+    align-items: center;
+    /* Căn giữa các phần tử theo chiều dọc */
+}
+
+
+/* căn lề và bỏ li */
+
+
+/* Loại bỏ dấu chấm li và thay đổi lề phải */
+
+.list {
+    list-style: none;
+    /* Loại bỏ dấu chấm li */
+    padding: 0;
+    /* Loại bỏ lề bên trái mặc định */
+    margin-left: 100%;
+    /* Điều chỉnh lề phải theo ý muốn */
+}
+
+
+/* button */
+
+.button1 {
+    align-items: center;
+}
+
+
+/* search and select */
+
+.search-and-select {
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    margin-right: 20px;
+    /* Cách lề bên phải 20px */
+}
+
+.list2 {
+    padding: 0;
+    /* Loại bỏ lề bên trái mặc định */
+    margin-left: 200px;
+    /* Điều chỉnh lề phải theo ý muốn */
+}

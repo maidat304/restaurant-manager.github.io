@@ -14,6 +14,14 @@ body {
 }
 
 
+/* icon food */
+
+.icon-food {
+    width: 30px;
+    height: 25px;
+}
+
+
 /* CSS cho văn bản căn đều 2 bên */
 
 .container {
@@ -50,6 +58,14 @@ body {
     border-radius: 7px;
     box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
     float: left;
+}
+
+
+/* Ẩn thanh sidebar khi có lớp sidebar-hidden */
+
+.sidebar.sidebar-hidden {
+    width: 0;
+    overflow: hidden;
 }
 
 
@@ -132,6 +148,22 @@ body.dark-theme {
 }
 
 .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.card2 {
+    width: 50px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card2:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
 

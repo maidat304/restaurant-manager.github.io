@@ -8,12 +8,15 @@
     <link rel="stylesheet " type="text/css " href="food.css ">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
     <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
+
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
+
     <title>Quản lý nhà hàng</title>
 </head>
 
 <body>
+    <!-- &nbsp;      cái này là tạo khoảng cách chữ với nhau  -->
     <!-- Navbar -->
     <nav class="navbar sidebar ">
         <!-- nav items -->
@@ -21,37 +24,95 @@
             <li class="nav-item nav-brand ">
                 <!-- brand -->
                 <button class="btn card" type="button">
-                <a class="nav-link nav-link-brand " href="../home/home.html " id="First "><span class="spn2" >FOODIES</span></a>
+                <a class="nav-link nav-link-brand " href="../home/home.html " id="First "><span >FOODIES</span></a>
                 </button>
             </li>
             <li class="nav-item ">
                 <button class="btn card" type="button">
-                <a class="nav-link nav-link-home " href="../home/home.html "><span  class="spn2">HOME</span></a>
+                <a class="nav-link nav-link-home " href="../home/home.html "><span  class="bi bi-house-door">&nbsp;&nbsp;HOME</span></a>
                 </button>
             </li>
             <li class="nav-item ">
                 <button class="btn card" type="button">
-                <a class="nav-link " href="../food/food.html "><span  class="spn2">FOOD</span></a>
+                <a class="nav-link " href="../food/food.html "><span><img class="icon-food" src="../image/icon-food.png">&nbsp;&nbsp;FOOD</span></a>
                 </button>
             </li>
             <!-- mọi người chỉ cần copy đoạn đó r sửa mục food food.html thành trang của mn thôi là được -->
             <li class="nav-item ">
                 <button class="btn card" type="button">
-                <a class="nav-link " href="../login/login.html "><span class="spn2">LOGIN</span></a>
+                <a class="nav-link " href="../login/login.html "><span class="bi bi-person-circle">&nbsp;&nbsp;LOGIN</span></a>
                 </button>
             </li>
             <li>
                 <button class="btn btn-toggle card" type="button">
-                    <span  class="spn2">LIGHT</span>
+                    <span  class="spn2 bi"></span>
                 </button>
-
             </li>
         </ul>
     </nav>
+    <button class="btn-toggle-sidebar btn card2">
+        <i class="bi bi-list"></i>
+    </button>
     <!-- toàn bộ nav là giữ nguyên, khi mọi người tạo liên kết với trang html mn làm thì làm như sau -->
     <!-- từ đoạn div class container thì là giao diện mn tự chỉnh sửa theo nhiệm vụ đã được phân công -->
     <div class="container ">
+        <div class="content">
+            <div>
+                <h1>MANAGE FOOD</h1>
+                <p>TPg ty TNHH Viet Glory vẫn chưa trở lại làm việc. Lãnh đạo Liên đoàn lao động tỉnh Nghệ An và Sở Lao động - Thương binh và Xã hội đã tới gặp, trực tiếp đối thoại với công nhân. Vụ ngừng việc của hơn 5.000 công nhân Công ty TNHH Viet Glory
+                    (Nghệ An) đã bước sang ngày thứ 3. Sáng 4/10, công nhân có mặt trước cổng nhà máy nhưng vẫn không vào làm việc. Trong sáng nay, đoàn công tác liên ngành tỉnh Nghệ An gồm đại diện Liên đoàn lao động tỉnh, Sở Lao động - Thương binh và
+                    Xã hộiự buổi đối thoại với đoàn liên ngành và lãnh đạo công ty. Một số kiến nghị liên quan đến thái độ làm việc của cán bộ quản lý, máy chấm công, chế độ họp... đã được công ty tiếp thu và điều chỉnh. Công ty cũng quyết định tăng mức
+                    thưởng sản lượng cho toàn bộ cán bộ, công nhân viên nhà máy để đảm bảo thu nhập cho người lao động và phù hợp với tình hình hiện tại. Có 2 kiến nghị liên quan đến việc tăng số lượng người được tính độc hại, tăng phụ cấp độc hại và
+                    thưởng tháng 13 được lãnh đạo công ty hứa sẽ xem xét, giải quyết trong thời gian tới. Công ty TNHH Viet Glory chuyên sản xuất giày da xuất khẩu, hiện có khoảng 6.000 công nhân lao động. Hiện tại, mức lương cơ bản của công ty là 4.130.000
+                    đồng, được khẳng định cao hơn mức lương tối thiểu vùng được áp dụng tại huyện Diễn Châu (3.640.000 đồng). Đọc bài gốc tại đây.
+                </p>
+                <p>TPg ty TNHH Viet Glory vẫn chưa trở lại làm việc. Lãnh đạo Liên đoàn lao động tỉnh Nghệ An và Sở Lao động - Thương binh và Xã hội đã tới gặp, trực tiếp đối thoại với công nhân. Vụ ngừng việc của hơn 5.000 công nhân Công ty TNHH Viet Glory
+                    (Nghệ An) đã bước sang ngày thứ 3. Sáng 4/10, công nhân có mặt trước cổng nhà máy nhưng vẫn không vào làm việc. Trong sáng nay, đoàn công tác liên ngành tỉnh Nghệ An gồm đại diện Liên đoàn lao động tỉnh, Sở Lao động - Thương binh và
+                    Xã hộiự buổi đối thoại với đoàn liên ngành và lãnh đạo công ty. Một số kiến nghị liên quan đến thái độ làm việc của cán bộ quản lý, máy chấm công, chế độ họp... đã được công ty tiếp thu và điều chỉnh. Công ty cũng quyết định tăng mức
+                    thưởng sản lượng cho toàn bộ cán bộ, công nhân viên nhà máy để đảm bảo thu nhập cho người lao động và phù hợp với tình hình hiện tại. Có 2 kiến nghị liên quan đến việc tăng số lượng người được tính độc hại, tăng phụ cấp độc hại và
+                    thưởng tháng 13 được lãnh đạo công ty hứa sẽ xem xét, giải quyết trong thời gian tới. Công ty TNHH Viet Glory chuyên sản xuất giày da xuất khẩu, hiện có khoảng 6.000 công nhân lao động. Hiện tại, mức lương cơ bản của công ty là 4.130.000
+                    đồng, được khẳng định cao hơn mức lương tối thiểu vùng được áp dụng tại huyện Diễn Châu (3.640.000 đồng). Đọc bài gốc tại đây.
+                </p>
+                <p>TPg ty TNHH Viet Glory vẫn chưa trở lại làm việc. Lãnh đạo Liên đoàn lao động tỉnh Nghệ An và Sở Lao động - Thương binh và Xã hội đã tới gặp, trực tiếp đối thoại với công nhân. Vụ ngừng việc của hơn 5.000 công nhân Công ty TNHH Viet Glory
+                    (Nghệ An) đã bước sang ngày thứ 3. Sáng 4/10, công nhân có mặt trước cổng nhà máy nhưng vẫn không vào làm việc. Trong sáng nay, đoàn công tác liên ngành tỉnh Nghệ An gồm đại diện Liên đoàn lao động tỉnh, Sở Lao động - Thương binh và
+                    Xã hộiự buổi đối thoại với đoàn liên ngành và lãnh đạo công ty. Một số kiến nghị liên quan đến thái độ làm việc của cán bộ quản lý, máy chấm công, chế độ họp... đã được công ty tiếp thu và điều chỉnh. Công ty cũng quyết định tăng mức
+                    thưởng sản lượng cho toàn bộ cán bộ, công nhân viên nhà máy để đảm bảo thu nhập cho người lao động và phù hợp với tình hình hiện tại. Có 2 kiến nghị liên quan đến việc tăng số lượng người được tính độc hại, tăng phụ cấp độc hại và
+                    thưởng tháng 13 được lãnh đạo công ty hứa sẽ xem xét, giải quyết trong thời gian tới. Công ty TNHH Viet Glory chuyên sản xuất giày da xuất khẩu, hiện có khoảng 6.000 công nhân lao động. Hiện tại, mức lương cơ bản của công ty là 4.130.000
+                    đồng, được khẳng định cao hơn mức lương tối thiểu vùng được áp dụng tại huyện Diễn Châu (3.640.000 đồng). Đọc bài gốc tại đây.
+                </p>
+                <p>TPg ty TNHH Viet Glory vẫn chưa trở lại làm việc. Lãnh đạo Liên đoàn lao động tỉnh Nghệ An và Sở Lao động - Thương binh và Xã hội đã tới gặp, trực tiếp đối thoại với công nhân. Vụ ngừng việc của hơn 5.000 công nhân Công ty TNHH Viet Glory
+                    (Nghệ An) đã bước sang ngày thứ 3. Sáng 4/10, công nhân có mặt trước cổng nhà máy nhưng vẫn không vào làm việc. Trong sáng nay, đoàn công tác liên ngành tỉnh Nghệ An gồm đại diện Liên đoàn lao động tỉnh, Sở Lao động - Thương binh và
+                    Xã hộiự buổi đối thoại với đoàn liên ngành và lãnh đạo công ty. Một số kiến nghị liên quan đến thái độ làm việc của cán bộ quản lý, máy chấm công, chế độ họp... đã được công ty tiếp thu và điều chỉnh. Công ty cũng quyết định tăng mức
+                    thưởng sản lượng cho toàn bộ cán bộ, công nhân viên nhà máy để đảm bảo thu nhập cho người lao động và phù hợp với tình hình hiện tại. Có 2 kiến nghị liên quan đến việc tăng số lượng người được tính độc hại, tăng phụ cấp độc hại và
+                    thưởng tháng 13 được lãnh đạo công ty hứa sẽ xem xét, giải quyết trong thời gian tới. Công ty TNHH Viet Glory chuyên sản xuất giày da xuất khẩu, hiện có khoảng 6.000 công nhân lao động. Hiện tại, mức lương cơ bản của công ty là 4.130.000
+                    đồng, được khẳng định cao hơn mức lương tối thiểu vùng được áp dụng tại huyện Diễn Châu (3.640.000 đồng). Đọc bài gốc tại đây.
+                </p>
+            </div>
+            <!-- search -->
+            <div class="distance">
+                <table>
+                    <tr class="search-and-button ">
+                        <th class="input-group">
+                            <input type="name" class="input1" id="name" name="name" placeholder="Search food">
+                            <input class="button--submit" value="Search" type="submit">
+                        </th>
+                        <th>
+                            <button class="list button1 btn card" type="button"><span>ADD FOOD</span></button>
+                        </th>
+                        <th class="search-and-select list2">
+                            <select class="btn card">
+                                <option  value="option1">COLD FOOD</option>
+                                <option value="option2">HOT FOOD</option>
+                                <option value="option3">DRINKS</option>
+                        </select>
+                        </th>
+                    </tr>
+                    <tr class="">
 
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     <!-- script này thì js của mn để là gì thì sửa thành đó -->
     <script src="food.js ">
