@@ -185,15 +185,6 @@ body.dark-theme .card2 {
 
 /* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
 
-.dark-theme input {
-    border: 2px solid #fff;
-    /* Đường viền màu trắng và đậm */
-    background-color: #000;
-    /* Màu nền đen */
-    color: #fff;
-    /* Màu chữ trắng */
-}
-
 
 /* căn khoảng cách so với h1 */
 
@@ -209,50 +200,67 @@ body.dark-theme .card2 {
     padding-top: 20px;
 }
 
-
-/* search */
-
-.input-group {
+.search {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 35px;
 }
 
 .input1 {
-    min-height: 50px;
-    max-width: 150px;
-    padding: 0 1rem;
-    font-size: 15px;
-    border: 2px solid;
-    border-radius: 47px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+    max-width: 190px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 1px;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 0px #5a5a5a, inset -5px -5px 0px #ffffff;
 }
 
-.button--submit {
-    min-height: 50px;
-    padding: 0.5em 1em;
+.input1:hover {
+    cursor: auto;
+}
+
+.dark-theme .input1 {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+.search__btn {
     border: none;
-    border-radius: 47px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
-    font-size: 15px;
-    transition: 0.3s ease-in-out;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 19px;
+    background: #e0e0e0;
+    box-shadow: 7px 7px 4px #5a5a5a, -7px -7px 4px #ffffff;
 }
 
-.button--submit:hover {
-    background-color: #4bdf58;
-}
-
-.button--submit:hover {
+.search__btn:hover {
+    cursor: pointer;
     transform: scale(1.05);
 }
 
-.button--submit:active {
+.search__btn:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
 
-.input1:focus,
-.input1:focus-visible {
-    border-color: #3898EC;
-    outline: none;
+.dark-theme .search__btn {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
 }
 
 
@@ -302,4 +310,41 @@ body.dark-theme .card2 {
     /* Loại bỏ lề bên trái mặc định */
     margin-left: 200px;
     /* Điều chỉnh lề phải theo ý muốn */
+}
+
+
+/* select  */
+
+.select-option {
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 7px 7px 4px #5a5a5a, inset -7px -7px 4px #ffffff;
+}
+
+.dark-theme .select-option {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+
+/* add */
+
+.card3 {
+    width: 50px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card3:hover {
+    transform: scale(1.05);
+}
+
+.card3:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
