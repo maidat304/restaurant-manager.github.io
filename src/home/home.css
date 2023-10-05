@@ -152,8 +152,12 @@ body.dark-theme {
 }
 
 .card2 {
+    position: fixed;
+    /* Header cố định */
     width: 50px;
-    left: 25px;
+    top: 0;
+    /* Header luôn ở trên cùng */
+    left: 5px;
     border-radius: 67px;
     background: #e0e0e0;
     box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
@@ -165,6 +169,14 @@ body.dark-theme {
 
 .card2:active {
     transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+/* Giao diện tối */
+
+body.dark-theme .card2 {
+    background-color: rgba(0, 0, 0, 0);
+    /* Màu nền có độ trong suốt trong chế độ tối */
 }
 
 
