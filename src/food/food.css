@@ -3,8 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 20px;
-    outline: none;
-    box-sizing: border-box;
 }
 
 body {
@@ -13,38 +11,14 @@ body {
     background: #121212;
     height: 100vh;
     line-height: 1.7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
 }
 
 
-/* css thanh tab dọc */
+/* icon food */
 
-
-/* CSS cho thanh sidebar */
-
-.sidebar {
-    transition: top 0.3s ease;
-    /* Thêm hiệu ứng di chuyển mượt mà */
-    scrollbar-width: none;
-    /* Ẩn thanh cuộn cho Firefox */
-    width: 60px;
-    height: 100vh;
-    background-color: #000000;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #cfe5d6;
-    overflow: hidden;
-    overflow-y: auto;
-    transition: width .75s ease;
-    border-radius: 7px;
-    background: #1a1818;
-    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
-    float: left;
-    /* Thêm thuộc tính float để nội dung trang nằm cạnh thanh sidebar */
+.icon-food {
+    width: 30px;
+    height: 25px;
 }
 
 
@@ -72,25 +46,43 @@ body {
 }
 
 
-/* Ẩn thanh cuộn dọc của sidebar */
+/* CSS cho thanh sidebar */
 
-.sidebar::-webkit-scrollbar {
-    width: 0;
-    /* Ẩn thanh cuộn trình duyệt Safari và Chrome */
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: width 0.75s ease;
+    border-radius: 7px;
+    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
+    float: left;
 }
 
 
-/* Thay đổi màu của thanh cuộn nếu bạn muốn */
+/* Ẩn thanh sidebar khi có lớp sidebar-hidden */
 
-.sidebar::-webkit-scrollbar-thumb {
-    background-color: transparent;
+.sidebar.sidebar-hidden {
+    width: 0;
+    overflow: hidden;
+}
+
+
+/* Ẩn thanh cuộn dọc của sidebar */
+
+
+/* Ẩn thanh cuộn dọc của sidebar */
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 
 /* Ẩn chữ và biểu tượng mặc định */
 
 .sidebar a,
-.sidebar .btn2.bt3 {
+.sidebar .card {
     opacity: 0;
     transition: opacity 0.5s ease;
     /* Thêm hiệu ứng transition */
@@ -100,7 +92,7 @@ body {
 /* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
 
 .sidebar:hover a,
-.sidebar:hover .btn2.bt3 {
+.sidebar:hover .card {
     opacity: 1;
 }
 
@@ -108,38 +100,19 @@ body {
     width: 200px;
 }
 
-
-/* css link bấm vào */
-
-.nav-link {
-    text-decoration: none;
-    color: #adb0b3;
-    font-weight: 600;
-}
-
 .nav-list {
     padding: 30px 0;
-    /* Điều chỉnh padding top và bottom để căn giữa */
     list-style: none;
     display: flex;
     flex-direction: column;
-    /* Hiển thị các liên kết theo chiều dọc */
     align-items: center;
     gap: 20px;
-    /* Khoảng cách giữa các liên kết */
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #868e96;
-    font-weight: 600;
-    line-height: 1.5;
-    /* Điều chỉnh line-height để căn giữa và hiển thị đủ thông tin */
 }
 
 .nav-link.nav-link-brand {
+    text-decoration: none;
+    font-weight: 600;
     margin-bottom: auto;
-    /* Để logo căn dưới */
 }
 
 
@@ -150,150 +123,228 @@ body.dark-theme {
     background: #121212;
 }
 
-body.light-theme {
-    color: #121212;
-    background: #eee;
+
+/* Thay đổi màu viền của nút bấm và màu nền của nút bấm khi giao diện tối */
+
+.dark-theme .btn {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+.card {
+    width: 150px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.card2 {
+    position: fixed;
+    /* Header cố định */
+    width: 50px;
+    top: 0;
+    /* Header luôn ở trên cùng */
+    left: 5px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card2:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
 
 
-/* CSS cho nút chuyển màu khi di chuột vào */
+/* Giao diện tối */
 
-.btcolor:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn-toggle:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn2 {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid #fefefe;
-    text-transform: uppercase;
-    color: #fefefe;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn2::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - -2px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - 50px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2:hover::before {
-    transform: translateY(-25px);
-    height: 0;
-}
-
-.btn2:hover::after {
-    transform: scaleX(0);
-    transition-delay: 0.15s;
-}
-
-.btn2:hover {
-    border: 2px solid #fefefe;
-}
-
-.btn2 span {
-    position: relative;
-    z-index: 3;
-}
-
-.bt3 {
-    text-decoration: none;
-    border: none;
-    border-radius: 100px;
-    background-color: #1c1919;
+body.dark-theme .card2 {
+    background-color: rgba(0, 0, 0, 0);
+    /* Màu nền có độ trong suốt trong chế độ tối */
 }
 
 
 /* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
 
-.slider {
+
+/* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
+
+
+/* căn khoảng cách so với h1 */
+
+.distance {
+    padding-top: 40px;
+    margin-left: 50px;
+}
+
+
+/* căn thêm so với thẻ div search */
+
+.distance-margin {
+    padding-top: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.input1 {
+    max-width: 190px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 1px;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    background: #e0e0e0;
+    box-shadow: inset 5px 5px 0px #5a5a5a, inset -5px -5px 0px #ffffff;
+}
+
+.input1:hover {
+    cursor: auto;
+}
+
+.dark-theme .input1 {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+.search__btn {
+    border: none;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 19px;
+    background: #e0e0e0;
+    box-shadow: 7px 7px 4px #5a5a5a, -7px -7px 4px #ffffff;
+}
+
+.search__btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.search__btn:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.dark-theme .search__btn {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+
+/*search and button */
+
+.search-and-button {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 90%;
-    margin: auto;
-    text-align: center;
+    /* Căn giữa các phần tử theo chiều dọc */
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    /* Các nút chuyển tiếp căn bên trái và bên phải */
-    width: 100%;
-    /* Để căn giữa theo chiều ngang */
-    margin-bottom: 10px;
-    /* Khoảng cách giữa nút và slide */
-}
 
-.button-card {
-    width: 30px;
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 40px;
-    text-align: center;
-    outline: none;
-    opacity: 0.5;
-    transition: opacity 300ms ease-out;
-}
+/* căn lề và bỏ li */
 
-.button-card:hover {
-    opacity: 1;
-}
 
-.slides {
+/* Loại bỏ dấu chấm li và thay đổi lề phải */
+
+.list {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    /* Loại bỏ dấu chấm li */
     padding: 0;
+    /* Loại bỏ lề bên trái mặc định */
+    margin-left: 100%;
+    /* Điều chỉnh lề phải theo ý muốn */
 }
 
-.slide {
-    flex: 0 0 auto;
-    width: 250px;
-    height: 250px;
-    font-size: 25px;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    color: #181717;
-    text-transform: uppercase;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 0 10px;
-    border-radius: 50px;
+
+/* button */
+
+.button1 {
+    align-items: center;
+}
+
+
+/* search and select */
+
+.search-and-select {
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    margin-right: 20px;
+    /* Cách lề bên phải 20px */
+}
+
+.list2 {
+    padding: 0;
+    /* Loại bỏ lề bên trái mặc định */
+    margin-left: 200px;
+    /* Điều chỉnh lề phải theo ý muốn */
+}
+
+
+/* select  */
+
+.select-option {
+    border-radius: 5px;
     background: #e0e0e0;
-    box-shadow: 7px 7px 14px #898989, -7px -7px 14px #ffffff;
+    box-shadow: inset 7px 7px 4px #5a5a5a, inset -7px -7px 4px #ffffff;
+}
+
+.dark-theme .select-option {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+
+/* add */
+
+.card3 {
+    width: 50px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card3:hover {
+    transform: scale(1.05);
+}
+
+.card3:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }

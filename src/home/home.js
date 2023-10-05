@@ -1,56 +1,51 @@
-// Hàm lưu trạng thái chế độ tối vào localStorage
-function saveDarkModeState(isDarkMode) {
+const toggleButton = document.querySelector('.btn-toggle');
+const icon = toggleButton.querySelector('.bi');
+const toggleSidebarButton = document.querySelector('.btn-toggle-sidebar');
+const sidebar = document.querySelector('.sidebar');
+
+// Hàm để thay đổi trạng thái và biểu tượng
+function toggleTheme() {
+    const isDarkMode = document.body.classList.toggle('dark-theme');
+    icon.classList.toggle('bi-brightness-high-fill', isDarkMode);
+    icon.classList.toggle('bi-moon-stars-fill', !isDarkMode);
+    toggleButton.querySelector('.spn2').textContent = isDarkMode ? 'LIGHT' : 'DARK';
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-// Hàm kiểm tra và áp dụng trạng thái chế độ tối từ localStorage khi trang được load
-function loadDarkModeState() {
-    const darkMode = localStorage.getItem('darkMode') === 'true';
-    document.body.classList.toggle('dark-theme', darkMode);
+// Lấy trạng thái từ Local Storage hoặc mặc định là sáng
+const darkMode = localStorage.getItem('darkMode') === 'true';
+toggleButton.querySelector('.spn2').textContent = darkMode ? 'LIGHT' : 'DARK';
+toggleButton.addEventListener('click', toggleTheme);
+icon.classList.toggle('bi-brightness-high-fill', darkMode);
+icon.classList.toggle('bi-moon-stars-fill', !darkMode);
 
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = darkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
+// Hàm để ẩn thanh sidebar
+function hideSidebar() {
+    sidebar.classList.add('sidebar-hidden');
 }
 
-// Lắng nghe sự kiện load trang và gọi hàm loadDarkModeState()
-window.addEventListener('load', loadDarkModeState);
+// Hàm để hiện thanh sidebar
+function showSidebar() {
+    sidebar.classList.remove('sidebar-hidden');
+}
 
-// Lấy button toggle chế độ tối
-const btn = document.querySelector('.btn-toggle');
-
-// Lắng nghe sự kiện click vào button để thay đổi trạng thái và lưu vào localStorage
-btn.addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('dark-theme');
-    saveDarkModeState(isDarkMode);
-
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = isDarkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
+// Bắt sự kiện khi nút được nhấp
+toggleSidebarButton.addEventListener('click', () => {
+    sidebar.classList.toggle('sidebar-hidden');
 });
 
-// Hàm thiết lập chế độ (theme) và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
+// Bắt sự kiện khi kích thước màn hình thay đổi
+function handleResize() {
+    if (window.innerWidth <= 768) {
+        hideSidebar();
+    } else {
+        showSidebar();
+    }
 }
 
-// Thiết lập chế độ tối/sáng mặc định và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
-function initializeTheme() {
-    const darkMode = localStorage.getItem('darkMode') === 'true';
-    const currentTheme = darkMode ? 'dark' : 'light';
-    setTheme(currentTheme);
-
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = darkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
-}
-
-// Gọi hàm initializeTheme để thiết lập chế độ tối/sáng khi trang được tải lên
-initializeTheme();
-
-// Lấy element thanh sidebar và lắng nghe sự kiện cuộn trang (đoạn code này giữ nguyên)
-const sidebar = document.querySelector('.sidebar');
-window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    sidebar.style.top = scrollY + 'px';
+window.addEventListener('scroll', () => {
+    sidebar.style.top = window.scrollY + 'px';
 });
+
+window.addEventListener('resize', handleResize);
+handleResize(); // Gọi nó một lần để cài đặt ban đầu

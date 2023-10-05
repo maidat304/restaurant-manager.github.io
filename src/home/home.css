@@ -14,30 +14,11 @@ body {
 }
 
 
-/* css thanh tab dọc */
+/* icon food */
 
-
-/* CSS cho thanh sidebar */
-
-.sidebar {
-    transition: top 0.3s ease;
-    /* Thêm hiệu ứng di chuyển mượt mà */
-    scrollbar-width: none;
-    /* Ẩn thanh cuộn cho Firefox */
-    width: 60px;
-    height: 100vh;
-    background-color: #000000;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #cfe5d6;
-    overflow: hidden;
-    overflow-y: auto;
-    transition: width .75s ease;
-    border-radius: 7px;
-    background: #1a1818;
-    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
-    float: left;
-    /* Thêm thuộc tính float để nội dung trang nằm cạnh thanh sidebar */
+.icon-food {
+    width: 30px;
+    height: 25px;
 }
 
 
@@ -65,25 +46,43 @@ body {
 }
 
 
-/* Ẩn thanh cuộn dọc của sidebar */
+/* CSS cho thanh sidebar */
 
-.sidebar::-webkit-scrollbar {
-    width: 0;
-    /* Ẩn thanh cuộn trình duyệt Safari và Chrome */
+.sidebar {
+    width: 60px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: width 0.75s ease;
+    border-radius: 7px;
+    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
+    float: left;
 }
 
 
-/* Thay đổi màu của thanh cuộn nếu bạn muốn */
+/* Ẩn thanh sidebar khi có lớp sidebar-hidden */
 
-.sidebar::-webkit-scrollbar-thumb {
-    background-color: transparent;
+.sidebar.sidebar-hidden {
+    width: 0;
+    overflow: hidden;
+}
+
+
+/* Ẩn thanh cuộn dọc của sidebar */
+
+
+/* Ẩn thanh cuộn dọc của sidebar */
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
 
 
 /* Ẩn chữ và biểu tượng mặc định */
 
 .sidebar a,
-.sidebar .btn2.bt3 {
+.sidebar .card {
     opacity: 0;
     transition: opacity 0.5s ease;
     /* Thêm hiệu ứng transition */
@@ -93,7 +92,7 @@ body {
 /* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
 
 .sidebar:hover a,
-.sidebar:hover .btn2.bt3 {
+.sidebar:hover .card {
     opacity: 1;
 }
 
@@ -101,38 +100,19 @@ body {
     width: 200px;
 }
 
-
-/* css link bấm vào */
-
-.nav-link {
-    text-decoration: none;
-    color: #adb0b3;
-    font-weight: 600;
-}
-
 .nav-list {
     padding: 30px 0;
-    /* Điều chỉnh padding top và bottom để căn giữa */
     list-style: none;
     display: flex;
     flex-direction: column;
-    /* Hiển thị các liên kết theo chiều dọc */
     align-items: center;
     gap: 20px;
-    /* Khoảng cách giữa các liên kết */
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #868e96;
-    font-weight: 600;
-    line-height: 1.5;
-    /* Điều chỉnh line-height để căn giữa và hiển thị đủ thông tin */
 }
 
 .nav-link.nav-link-brand {
+    text-decoration: none;
+    font-weight: 600;
     margin-bottom: auto;
-    /* Để logo căn dưới */
 }
 
 
@@ -143,89 +123,60 @@ body.dark-theme {
     background: #121212;
 }
 
-body.light-theme {
-    color: #121212;
-    background: #eee;
+
+/* Thay đổi màu viền của nút bấm và màu nền của nút bấm khi giao diện tối */
+
+.dark-theme .btn {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+.card {
+    width: 150px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.card2 {
+    position: fixed;
+    /* Header cố định */
+    width: 50px;
+    top: 0;
+    /* Header luôn ở trên cùng */
+    left: 5px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card2:hover {
+    transform: scale(1.05);
+}
+
+.card2:active {
+    transform: scale(0.95) rotateZ(1.7deg);
 }
 
 
-/* CSS cho nút chuyển màu khi di chuột vào */
+/* Giao diện tối */
 
-.btcolor:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn-toggle:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn2 {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid #fefefe;
-    text-transform: uppercase;
-    color: #fefefe;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn2::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - -2px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - 50px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2:hover::before {
-    transform: translateY(-25px);
-    height: 0;
-}
-
-.btn2:hover::after {
-    transform: scaleX(0);
-    transition-delay: 0.15s;
-}
-
-.btn2:hover {
-    border: 2px solid #fefefe;
-}
-
-.btn2 span {
-    position: relative;
-    z-index: 3;
-}
-
-.bt3 {
-    text-decoration: none;
-    border: none;
-    border-radius: 100px;
-    background-color: #1c1919;
+body.dark-theme .card2 {
+    background-color: rgba(0, 0, 0, 0);
+    /* Màu nền có độ trong suốt trong chế độ tối */
 }
 
 
