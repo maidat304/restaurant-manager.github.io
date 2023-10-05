@@ -3,7 +3,6 @@ const icon = toggleButton.querySelector('.bi');
 const toggleSidebarButton = document.querySelector('.btn-toggle-sidebar');
 const sidebar = document.querySelector('.sidebar');
 
-
 // Hàm để thay đổi trạng thái và biểu tượng
 function toggleTheme() {
     const isDarkMode = document.body.classList.toggle('dark-theme');
@@ -13,11 +12,12 @@ function toggleTheme() {
     localStorage.setItem('darkMode', isDarkMode);
 }
 
-// Lấy trạng thái từ localStorage hoặc mặc định là sáng
+// Lấy trạng thái từ Local Storage hoặc mặc định là sáng
 const darkMode = localStorage.getItem('darkMode') === 'true';
-toggleTheme(darkMode);
-
+toggleButton.querySelector('.spn2').textContent = darkMode ? 'LIGHT' : 'DARK';
 toggleButton.addEventListener('click', toggleTheme);
+icon.classList.toggle('bi-brightness-high-fill', darkMode);
+icon.classList.toggle('bi-moon-stars-fill', !darkMode);
 
 // Hàm để ẩn thanh sidebar
 function hideSidebar() {
@@ -46,7 +46,6 @@ function handleResize() {
 window.addEventListener('scroll', () => {
     sidebar.style.top = window.scrollY + 'px';
 });
-
 
 window.addEventListener('resize', handleResize);
 handleResize(); // Gọi nó một lần để cài đặt ban đầu

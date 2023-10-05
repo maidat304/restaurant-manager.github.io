@@ -1,30 +1,23 @@
 const toggleButton = document.querySelector('.btn-toggle');
-
-toggleButton.addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('dark-theme');
-    localStorage.setItem('darkMode', isDarkMode);
-    toggleButton.querySelector('.spn2').textContent = isDarkMode ? 'LIGHT' : 'DARK';
-    // Thay đổi biểu tượng và văn bản
-    if (!isDarkMode) {
-        toggleButton.querySelector('.bi').classList.remove('bi-brightness-high-fill');
-        toggleButton.querySelector('.bi').classList.add('bi-moon-stars-fill');
-    } else {
-        toggleButton.querySelector('.bi').classList.remove('bi-moon-stars-fill');
-        toggleButton.querySelector('.bi').classList.add('bi-brightness-high-fill');
-    }
-});
-
-const darkMode = localStorage.getItem('darkMode') === 'true';
-document.body.classList.toggle('dark-theme', darkMode);
-
-const sidebar = document.querySelector('.sidebar');
-window.addEventListener('scroll', () => {
-    sidebar.style.top = window.scrollY + 'px';
-});
-
-
-// code mới 
+const icon = toggleButton.querySelector('.bi');
 const toggleSidebarButton = document.querySelector('.btn-toggle-sidebar');
+const sidebar = document.querySelector('.sidebar');
+
+// Hàm để thay đổi trạng thái và biểu tượng
+function toggleTheme() {
+    const isDarkMode = document.body.classList.toggle('dark-theme');
+    icon.classList.toggle('bi-brightness-high-fill', isDarkMode);
+    icon.classList.toggle('bi-moon-stars-fill', !isDarkMode);
+    toggleButton.querySelector('.spn2').textContent = isDarkMode ? 'LIGHT' : 'DARK';
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Lấy trạng thái từ Local Storage hoặc mặc định là sáng
+const darkMode = localStorage.getItem('darkMode') === 'true';
+toggleButton.querySelector('.spn2').textContent = darkMode ? 'LIGHT' : 'DARK';
+toggleButton.addEventListener('click', toggleTheme);
+icon.classList.toggle('bi-brightness-high-fill', darkMode);
+icon.classList.toggle('bi-moon-stars-fill', !darkMode);
 
 // Hàm để ẩn thanh sidebar
 function hideSidebar() {
@@ -42,17 +35,17 @@ toggleSidebarButton.addEventListener('click', () => {
 });
 
 // Bắt sự kiện khi kích thước màn hình thay đổi
-window.addEventListener('resize', () => {
+function handleResize() {
     if (window.innerWidth <= 768) {
         hideSidebar();
     } else {
         showSidebar();
     }
+}
+
+window.addEventListener('scroll', () => {
+    sidebar.style.top = window.scrollY + 'px';
 });
 
-// Đảm bảo rằng ban đầu thanh sidebar được ẩn khi màn hình nhỏ
-if (window.innerWidth <= 768) {
-    hideSidebar();
-} else {
-    showSidebar();
-}
+window.addEventListener('resize', handleResize);
+handleResize(); // Gọi nó một lần để cài đặt ban đầu
