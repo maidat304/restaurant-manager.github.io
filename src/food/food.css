@@ -14,6 +14,51 @@ body {
 }
 
 
+/* mode left */
+
+.mode {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+
+.card3 {
+    width: 50px;
+    left: 25px;
+    border-radius: 67px;
+    background: #e0e0e0;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.card3:hover {
+    transform: scale(1.05);
+}
+
+.card3:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+/* Dark Mode styles */
+
+body.dark-theme {
+    color: #eee;
+    background: #121212;
+}
+
+
+/* Thay đổi màu viền của nút bấm và màu nền của nút bấm khi giao diện tối */
+
+.dark-theme .btn {
+    border: 2px solid #fff;
+    /* Đường viền màu trắng và đậm */
+    background-color: #000;
+    /* Màu nền đen */
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+
 /* icon food */
 
 .icon-food {
@@ -113,26 +158,6 @@ body {
     text-decoration: none;
     font-weight: 600;
     margin-bottom: auto;
-}
-
-
-/* Dark Mode styles */
-
-body.dark-theme {
-    color: #eee;
-    background: #121212;
-}
-
-
-/* Thay đổi màu viền của nút bấm và màu nền của nút bấm khi giao diện tối */
-
-.dark-theme .btn {
-    border: 2px solid #fff;
-    /* Đường viền màu trắng và đậm */
-    background-color: #000;
-    /* Màu nền đen */
-    color: #fff;
-    /* Màu chữ trắng */
 }
 
 .card {
