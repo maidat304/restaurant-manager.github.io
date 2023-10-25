@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+.navbar-collapse {
+    background-color: #044e0b;
+    border-radius: 7px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    /* Căn đều theo chiều ngang */
+    align-items: center;
+    /* Căn đều theo chiều dọc */
+}
+
+.navbar-nav .nav-item .css-a {
+    padding: 1%;
+}
+
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
+}
+
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
+}
+
+.header-top {
+    position: fixed;
+    /* Header cố định */
+    top: 0;
+    /* Header luôn ở trên cùng */
+    width: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    /* Thêm hiệu ứng chuyển động */
+}
+
+.css-tab {
+    width: 100%;
+    background-color: #044e0b;
+    height: 140px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.css-a {
+    text-decoration: none;
+    color: #21af58;
+    font-weight: 600;
+}
+
+.css-a:hover {
+    cursor: pointer;
+    color: #4eefec;
+    transform: scale(1.05);
+}
+
+.css-a:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.css-nav-button {
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
+}
+
+.css-nav-button:hover {
+    border: 1px solid #009087;
+}
+
+
+/* kết thúc phần header */
+
+
+/* sáng tối */
+
+.dark-mode {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .css-tab {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .navbar-collapse {
+    background: #333;
+}
+
+
+/* kết thúc sáng tối */
+
+
+/* phần main */
+
+section {
+    display: inline-block;
+    vertical-align: top;
+}
+
+section article {
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.css-distance {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.card2 {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.card2 p {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust the position as needed */
+    left: 10px;
+    /* Adjust the position as needed */
+    color: white;
+    /* Text color */
+    font-size: 16px;
+    /* Adjust the font size as needed */
+}
+
+.card2:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.card2:hover:before {
+    transform: translateX(-100%);
+}
+
+.card2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.card2:hover:after {
+    transform: translateX(100%);
+}
+
+
+/* kết thúc phần main */
+
+
+/* phần footer */
+
+.footer {
+    padding-top: 5%;
+    background-color: #00121b;
+    width: 100%;
+    padding-bottom: 0.5%;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #868e96;
+    line-height: 2;
+}
+
+.footer-text>* {
+    font-size: 15px;
+}
+
+.ul-contact {
+    list-style: none;
+}
+
+.footer-last {
+    text-align: center;
+    color: white;
+}
+
+.footer-last-st,
+.footer-last-nd {
+    margin-top: 20px;
+}
+
+#icon1,
+#icon2,
+#icon3 {
+    padding-left: 20px;
+}
+
+iframe {
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.logo-footer {
+    margin-left: 3%;
+}
+
+
+/* kết thúc phần footer */
+
+
+/* phần responsive */
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+    .css-main .css-contain-item {
+        flex-direction: column;
+    }
+    .css-main .css-item {
+        flex: auto;
+    }
+    .header-top {
+        height: 90px;
+    }
+    .logo {
+        height: 90px;
+        width: 90px;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0px 5px 10px;
+    }
+    .css-distance {
+        flex-direction: column;
+    }
+}
+
+
+/* kết thúc phần responsive */

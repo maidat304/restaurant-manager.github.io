@@ -1,68 +1,785 @@
 <!DOCTYPE html>
 <html>
+<!-- code chung {-->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../image/icon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="food.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Latest compiled JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Quản lý nhà hàng</title>
+    <!-- tiêu đề trên thanh web -->
+    <link rel="icon" href="../food/image/logo.png" type="image/png">
+    <!-- food css -->
+    <link rel="stylesheet " type="text/css " href="food.css ">
+    <!-- bootstrap icon -->
+    <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
+    <!-- boostrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
+    <!-- boostrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <title>THỰC ĐƠN</title>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar sidebar ">
-        <!-- nav items -->
-        <ul class="nav-list ">
-            <li class="nav-item nav-brand ">
-                <!-- brand -->
-                <button class="btcolor btn2 bt3 " type="button">
-                <a class="nav-link nav-link-brand " href="../home/home.html " id="First "><span class="spn2 ">FOODIES</span></a>
-                </button>
-            </li>
-            <li class="nav-item ">
-                <button class="btcolor btn2 bt3 " type="button">
-                <a class="nav-link nav-link-home " href="../home/home.html "><span class="spn2 ">HOME</span></a>
-                </button>
-            </li>
-            <li class="nav-item ">
-                <button class="btcolor btn2 bt3 " type="button">
-                <a class="nav-link " href="../food/food.html "><span class="spn2 ">FOOD</span></a>
-                </button>
-            </li>
-            <!-- mọi người chỉ cần copy đoạn đó r sửa mục food food.html thành trang của mn thôi là được -->
-            <li class="nav-item ">
-                <button class="btcolor btn2 bt3" type="button">
-                <a class="nav-link " href="../login/login.html "><span class="spn2 ">LOGIN</span></a>
-                </button>
-            </li>
-            <li>
-                <button class="btn-toggle btn2 bt3" type="button" data-theme-toggle>
-                    <span class="spn2" >LIGHT</span>
-                </button>
+    <!-- &nbsp;      cái này là tạo khoảng cách chữ với nhau  -->
+    <!-- thanh hiển thị -->
 
-            </li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h1>FOOD</h1>
-        <div class="slider">
-            <div class="buttons">
-                <button class="button-card" id="prevBtn">&laquo;</button>
-                <button class="button-card" id="nextBtn">&raquo;</button>
+    <header class="header-top">
+        <nav class="css-tab header-top navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="" href="../home/home.html"><img class="logo" src="../home/image/logo.png"></a>
+                <button class="navbar-toggler css-nav-button css-a" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="bi bi-list css-a"></span>
+              </button>
+                <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                    <ul class=" navbar-nav ms-auto">
+
+                        <li class=" nav-item">
+
+                            <a class="css-a" href="../home/home.html "><span  class="bi bi-house-door">&nbsp;&nbsp;TRANG CHỦ</span></a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a class=" css-a" href="../food/food.html "><span class="bi bi-card-list">&nbsp;&nbsp;THỰC ĐƠN</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class=" css-a" href="../datban/datban.html "><span class="bi bi-pencil-square">&nbsp;&nbsp;ĐẶT BÀN</span></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class=" css-a" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text">&nbsp;&nbsp;PHẢN HỒI</span></a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class=" css-a" href="../magiamgia/magiamgia.html "><span class="bi bi-gift">&nbsp;&nbsp;MÃ GIẢM GIÁ</span></a>
+                        </li>
+
+                        <!-- add -->
+                        <li class="nav-item  ">
+                            <a class=" css-a" href="../dangnhap/dangnhap.html "><span class="bi bi-person-circle">&nbsp;&nbsp;ĐĂNG NHẬP</span></a>
+                        </li>
+                        <li class="nav-item  " onclick="toggleMode()">
+                            <i id="mode-icon" class="bi bi-moon css-a "></i>
+
+
+                        </li>
+                        <li class="nav-item  ">
+                            <a class="css-a" href="#">
+                                <span class="bi bi-bag-fill"></span>
+                                <span id="cart-count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <ul class="slides">
-                <li class="slide" style="background-image:url(https://farm6.staticflickr.com/5076/14164379250_71c3a5b32a_b.jpg);">vịt chiến tấu</li>
-                <li class="slide" style="background-image:url(https://farm3.staticflickr.com/2937/14371160993_186df4a083_b.jpg);">gà nhảy cầu</li>
-                <li class="slide" style="background-image:url(https://farm3.staticflickr.com/2914/14185397280_e51c40b1df_b.jpg);">súp vi cá chọi</li>
-            </ul>
+        </nav>
+
+    </header>
+
+    <!-- code chung } -->
+    <main class="css-main ">
+
+        <div class=" css-distance hstack gap-3">
+
+            <!-- <input class="myInput" type="text" placeholder="Search.."> -->
+            <select class="myInput p-2" placeholder="Chọn mức...">
+                <option value="">TẤT CẢ</option>
+                <option value="m1">ĐỒ ĂN KHÔ</option>
+                <option value="m2">ĐỒ ĂN NÓNG</option>
+            </select>
+
         </div>
-    </div>
-    <script src="food.js">
+        <!-- food -->
+        <section class=" navbar ">
+
+            <article class="myTable ">
+                <h2 class="text-food" data-category="m1">ĐỒ ĂN KHÔ</h2>
+                <div class="css-contain-item ">
+
+                    <div class="card2 css-item " data-category="m1" data-price="m3">
+                        <img class="card2-img2 css-contain-poster" src="../food/image/a.jpg" alt="food">
+
+                        <div class="card2-info2">
+                            <p>Masala Dosa </p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$288</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id01').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card2 css-item" data-category="m1" data-price="m4">
+                        <div class="css-span" data-content="SALE 10%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/b.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Cơm thập cẩm Paella</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$410</span>&nbsp;&nbsp;
+                            <span class="my-h3">9.023.895 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id02').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+                    </div>
+                    <div class="card2 css-item" data-category="m1" data-price="m4">
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/c.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Gỏi đu đủ</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$615</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id03').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+                    </div>
+                    <div class="card2 css-item" data-category="m1" data-price="m5">
+                        <div class="css-span" data-content="SALE 30%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/d.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Cơm gà</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$350</span>&nbsp;&nbsp;
+                            <span class="my-h3">5.991.475 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id04').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m1" data-price="m5">
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/e.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Poutine </p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$105</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id05').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="css-contain-item">
+                    <div class="card2 css-item" data-category="m1">
+                        <div class="css-span" data-content="SALE 20%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/f.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Taco</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$200</span>&nbsp;&nbsp;
+                            <span class="my-h3">3.912.800 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id06').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m1">
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/g.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Bánh mì sốt Marmite</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$445</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id07').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m1">
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/h.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Cua sốt ớt</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$125</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id08').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m1" data-price="m5">
+                        <div class="css-span" data-content="SALE 100%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/i.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Ankimo</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$218</span>&nbsp;&nbsp;
+                            <span class="my-h3">0 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id09').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+                    </div>
+                    <div class="card2 css-item" data-category="m1">
+                        <div class="css-span" data-content="SALE 25%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/j.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Gỏi cuốn</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$115</span>&nbsp;&nbsp;
+                            <span class="my-h3">2.109.243 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id010').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <h2 class="text-food" data-category="m2">ĐỒ ĂN NÓNG</h2>
+                <div class="css-contain-item">
+                    <div class="card2 css-item" data-category="m2">
+                        <div class="css-span" data-content="SALE 5%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/k.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Bò bít tết Ohmi-gyu</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$216</span>&nbsp;&nbsp;
+                            <span class="my-h3">5.282.016 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id011').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m2">
+                        <div class="css-span" data-content="SALE 15%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/l.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Phở</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$15</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id012').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m2">
+                        <img class="card2-img2 css-contain-poster" src="../food/image/m.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Thịt xông khói Montreal</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-h3">$244</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id013').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m2">
+                        <div class="css-span" data-content="SALE 44%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/n.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Fajitas</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$120</span>&nbsp;&nbsp;
+                            <span class="my-h3">1.648.416 Đ</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id014').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                    <div class="card2 css-item" data-category="m2">
+                        <div class="css-span" data-content="SALE 99.97%"></div>
+
+                        <img class="card2-img2 css-contain-poster" src="../food/image/o.jpg" alt="food">
+                        <div class="card2-info2">
+                            <p>Nam Tok Moo</p>
+                        </div>
+                        <div class="card2-footer2">
+                            <span class="my-text">$120.000.000</span>&nbsp;&nbsp;
+                            <span class="my-h3">$36.000</span>&nbsp;&nbsp;
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button onclick="document.getElementById('id015').style.display='block'" class="button-inf bi bi-question css-style"></button>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+        <!--  -->
+        <!--  -->
+        <div id="id01" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/a.jpg">
+                        <div>
+                            <p class="name">
+                                Masala Dosa
+                            </p>
+                            <p class="my-h3">
+                                Giá: $288
+                            </p>
+                            <p class="my-buy">Lượt mua: 355</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="id02" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/b.jpg">
+                        <div>
+                            <p class="name">
+                                Cơm thập cẩm Paella
+                            </p>
+                            <p class="my-text">$410</p>
+                            <p class="my-h3">9.023.895 Đ</p>
+                            <p class="my-buy">Lượt mua: 825</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="id03" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id03').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/c.jpg">
+                        <div>
+                            <p class="name">
+                                Gỏi đu đủ
+                            </p>
+                            <p class="my-h3">
+                                Giá: $615
+                            </p>
+                            <p class="my-buy">Lượt mua: 625</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="id04" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id04').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/d.jpg">
+                        <div>
+                            <p class="name">
+                                Cơm gà
+                            </p>
+                            <p class="my-text">$350</p>
+                            <p class="my-h3">5.991.475 Đ</p>
+                            <p class="my-buy">Lượt mua: 745</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="id05" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id05').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/e.jpg">
+                        <div>
+                            <p class="name">
+                                Poutine
+                            </p>
+                            <p class="my-h3">
+                                Giá: $105
+                            </p>
+                            <p class="my-buy">Lượt mua: 35</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="id06" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id06').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                        <img class="image" src="../food/image/f.jpg">
+                        <div>
+                            <p class="name">
+                                Taco
+                            </p>
+                            <p class="my-text">$200</p>
+                            <span class="my-h3">3.912.800 Đ</p>
+
+                            <p class="my-buy">Lượt mua: 755</p>
+                        </div>
+                    </div>
+                    <div class="card2-footer2">
+                        <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                        <button class="button-inf" type="button">Mua</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="id07" class="modal">
+
+            <div class="animate">
+                <div class="card-food-img">
+
+                    <div class="infos">
+                        <span onclick="document.getElementById('id07').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                            <img class="image" src="../food/image/g.jpg">
+                            <div>
+                                <p class="name">
+                                    Bánh mì sốt Marmite
+                                </p>
+                                <p class="my-h3">
+                                    Giá: $445
+                                </p>
+                                <p class="my-buy">Lượt mua: 4455</p>
+                            </div>
+                        </div>
+                        <div class="card2-footer2">
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button class="button-inf" type="button">Mua</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="id08" class="modal">
+
+                <div class="animate">
+                    <div class="card-food-img">
+
+                        <div class="infos">
+                            <span onclick="document.getElementById('id08').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                            <img class="image" src="../food/image/h.jpg">
+                            <div>
+                                <p class="name">
+                                    Cua sốt ớt
+                                </p>
+                                <p class="my-h3">
+                                    Giá: $125
+                                </p>
+                                <p class="my-buy">Lượt mua: 55</p>
+                            </div>
+                        </div>
+                        <div class="card2-footer2">
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button class="button-inf" type="button">Mua</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="id09" class="modal">
+
+                <div class="animate">
+                    <div class="card-food-img">
+
+                        <div class="infos">
+                            <span onclick="document.getElementById('id09').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                            <img class="image" src="../food/image/i.jpg">
+                            <div>
+                                <p class="name">
+                                    Ankimo
+                                </p>
+                                <p class="my-text">$218</p>
+                                <span class="my-h3">0 Đ</p>
+                                <p class="my-buy">Lượt mua: 355</p>
+                            </div>
+                        </div>
+                        <div class="card2-footer2">
+                            <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                            <button class="button-inf" type="button">Mua</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="id010" class="modal">
+
+                <div class="animate">
+                    <div class="card-food-img">
+
+                        <div class="infos">
+                            <span onclick="document.getElementById('id010').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/j.jpg">
+                                <div>
+                                    <p class="name">
+                                        Gỏi cuốn
+                                    </p>
+                                    <p class="my-text">$115</p>
+                                    <p class="my-h3">2.109.243 Đ</p>
+                                    <p class="my-buy">Lượt mua: 355</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="id011" class="modal">
+
+                    <div class="animate">
+                        <div class="card-food-img">
+
+                            <div class="infos">
+                                <span onclick="document.getElementById('id011').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/k.jpg">
+                                <div>
+                                    <p class="name">
+                                        Bò bít tết Ohmi-gyu
+                                    </p>
+                                    <p class="my-text">$216</p>
+                                    <p class="my-h3">5.282.016 Đ</p>
+                                    <p class="my-buy">Lượt mua: 355</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="id012" class="modal">
+
+                    <div class="animate">
+                        <div class="card-food-img">
+
+                            <div class="infos">
+                                <span onclick="document.getElementById('id012').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/l.jpg">
+                                <div>
+                                    <p class="name">
+                                        Phở
+                                    </p>
+                                    <p class="my-h3">
+                                        Giá: $15
+                                    </p>
+                                    <p class="my-buy">Lượt mua: 455</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="id013" class="modal">
+
+                    <div class="animate">
+                        <div class="card-food-img">
+
+                            <div class="infos">
+                                <span onclick="document.getElementById('id013').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/m.jpg">
+                                <div>
+                                    <p class="name">
+                                        Thịt xông khói Montreal
+                                    </p>
+                                    <p class="my-h3">
+                                        Giá: $244
+                                    </p>
+                                    <p class="my-buy">Lượt mua: 455</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="id014" class="modal">
+
+                    <div class="animate">
+                        <div class="card-food-img">
+
+                            <div class="infos">
+                                <span onclick="document.getElementById('id014').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/n.jpg">
+                                <div>
+                                    <p class="name">
+                                        Fajitas
+                                    </p>
+                                    <p class="my-text">$120</p>
+                                    <p class="my-h3">1.648.416 Đ</p>
+                                    <p class="my-buy">Lượt mua: 3525</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="id015" class="modal">
+
+                    <div class="animate">
+                        <div class="card-food-img">
+
+                            <div class="infos">
+                                <span onclick="document.getElementById('id015').style.display='none'" class="close button-inf" title="Close Modal">&times;</span>
+                                <img class="image" src="../food/image/o.jpg">
+                                <div>
+                                    <p class="name">
+                                        Nam Tok Moo
+                                    </p>
+                                    <p class="my-text">$120.000.000</p>
+                                    <p class="my-h3">$36.000</p>
+                                    <p class="my-buy">Lượt mua: 3554</p>
+                                </div>
+                            </div>
+                            <div class="card2-footer2">
+                                <button type="button" class="custom-button  bi bi-bag-plus-fill"></button>&nbsp;&nbsp;
+                                <button class="button-inf" type="button">Mua</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    </main>
+    <footer class="footer footer-text">
+        <div class=" row align-items-start">
+            <div class="logo-footer col">
+                <a href="../home/home.html">
+                    <img class="logo" src="../image-logo/Team 16 - 2023 (2).png">
+                </a>
+            </div>
+            <div class="col">
+                <ul class="ul-contact ">
+                    <li class="footer-text">
+                        <h4>DANH MỤC CHÍNH</h4>
+                    </li>
+                    <li class="footer-text"><a class="css-a " href="../home/home.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="footer-text"><a class="css-a" href="../food/food.html">THỰC ĐƠN</a>
+                    </li>
+                    <li class="footer-text"><a class="css-a" href="../datban/datban.html">ĐẶT BÀN</a>
+                    </li>
+                    <li class="footer-text"><a class="css-a" href="../datban/phanhoi.html">PHẢN HỒI</a>
+                    </li>
+                    <li class="footer-text"><a class="css-a" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col footer-text">
+                <h4>NHÀ HÀNG SỐ 1 VIỆT NAM</h4>
+                <p>Giải thưởng được trao dựa trên trải nghiệm thực tế và các tiêu chí bình chọn khắt khe của hơn 300 nhà phê bình ẩm thực, đầu bếp, chủ nhà hàng và chuyên gia ẩm thực khắp thế giới.</p>
+            </div>
+            <div class="col ">
+                <ul class="ul-contact footer-text">
+                    <h4>LIÊN HỆ</h4>
+                    <li>Hotline: 03xx.xxx.xxx</li>
+                    <li>Gmail: ...@gmail.com</li>
+                    <li>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội.</li>
+                </ul>
+            </div>
+            <div class="col footer-text">
+                <h4>BẢN ĐỒ</h4>
+                <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1228608575834!2d105.80064111432421!3d21.02776948599887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBHaWFvIHRow7RuZyBW4bqtbiB04bqjaQ!5e0!3m2!1svi!2s!4v1539544397383"></iframe>
+                </iframe>
+            </div>
+        </div>
+
+        <p class="footer-last-st footer-last">
+            <a href="#"><i class="bi bi-facebook" id="icon0"></i></a>
+            <a href="#"><i class="bi bi-messenger" id="icon1"></i></a>
+            <a href="#"><i class="bi bi-instagram" id="icon2"></i></a>
+            <a href="#"><i class="bi bi-twitter" id="icon3"></i></a>
+        </p>
+
+        <p class="footer-last-nd footer-last footer-text">
+            © 2023 1 Từ Thôi - Ngon, Thanks.
+        </p>
+
+    </footer>
+    <!-- script này thì js của mn để là gì thì sửa thành đó -->
+    <script src="food.js ">
     </script>
 </body>
 

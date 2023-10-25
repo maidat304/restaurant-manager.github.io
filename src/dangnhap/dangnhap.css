@@ -1,0 +1,636 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    /* Set a minimum height of 100% of the viewport height */
+}
+
+
+/* css logo */
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+
+/* thanh hiển thị */
+
+.navbar-collapse {
+    background-color: #044e0b;
+    border-radius: 7px;
+}
+
+
+/* .show trong bootstrap nó thường đi kèm .collapse, .d-block, và .d-none. */
+
+
+/* CSS để căn đều khoảng cách giữa các mục <li> trong phần nav */
+
+
+/* CSS để căn đều logo và khoảng cách giữa các mục <li> trong phần nav */
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    /* Căn đều theo chiều ngang */
+    align-items: center;
+    /* Căn đều theo chiều dọc */
+}
+
+
+/* Điều chỉnh khoảng cách giữa các mục <li> */
+
+
+/* Điều chỉnh khoảng cách giữa các mục <li> bằng padding nếu cần */
+
+.navbar-nav .nav-item .css-a {
+    padding: 20px;
+    /* Điều chỉnh khoảng cách giữa các mục bằng padding */
+}
+
+
+/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
+
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
+}
+
+
+/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
+
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
+}
+
+
+/* css thanh cố định */
+
+.header-top {
+    position: fixed;
+    /* Header cố định */
+    top: 0;
+    /* Header luôn ở trên cùng */
+    width: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    /* Thêm hiệu ứng chuyển động */
+}
+
+
+/* css các list của thanh hiển thị */
+
+.css-tab {
+    width: 100%;
+    background-color: #044e0b;
+    height: 140px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+}
+
+.css-a {
+    text-decoration: none;
+    color: #21af58;
+    font-weight: 600;
+}
+
+.css-a:hover {
+    cursor: pointer;
+    color: #4eefec;
+    transform: scale(1.05);
+}
+
+.css-a:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.css-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.css-ul-order {
+    border-radius: 39px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
+}
+
+
+/* CSS cho các mục trong danh sách thả xuống */
+
+.css-ul-order .css-order {
+    margin-bottom: 10px;
+}
+
+
+/* Điều chỉnh độ cao của header khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .header-top {
+        height: 100px;
+        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
+    }
+}
+
+
+/* Điều chỉnh kích thước của logo khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .logo {
+        height: 100px;
+        /* Điều chỉnh kích thước của logo */
+        width: 100px;
+    }
+}
+
+
+/* Điều chỉnh khoảng cách giữa các mục trong menu khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 5px 0px 5px 10px;
+        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
+    }
+}
+
+
+/* add */
+
+
+/* CSS cho chế độ tối */
+
+.dark-mode {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .css-tab {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .css-ul-order {
+    background: #333;
+}
+
+.dark-mode .navbar-collapse {
+    background: #333;
+}
+
+.dark-mode .myInput {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .custom-button {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .button-inf {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .card-food-img {
+    background: #333;
+    color: white;
+}
+
+
+/* css distance */
+
+.css-distance {
+    padding-top: 150px;
+}
+
+
+/* css button nav */
+
+.css-nav-button {
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
+}
+
+.css-nav-button:hover {
+    border: 1px solid #009087;
+}
+
+
+/* main */
+
+.css-main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
+
+@media (max-width: 768px) {
+    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
+    .css-main {
+        flex-direction: column;
+        flex: auto;
+    }
+}
+
+.footer {
+    /* display: flex; */
+    padding-top: 5%;
+    background-color: #00121b;
+    width: 100%;
+    padding-bottom: 0.5%;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #868e96;
+    line-height: 2;
+}
+
+.footer-text>* {
+    font-size: 15px;
+}
+
+.ul-contact {
+    list-style: none;
+}
+
+.footer-last {
+    text-align: center;
+    color: white;
+}
+
+.footer-last-st,
+.footer-last-nd {
+    margin-top: 20px;
+}
+
+#icon1,
+#icon2,
+#icon3 {
+    padding-left: 20px;
+}
+
+iframe {
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.logo-footer {
+    margin-left: 3%;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
+    .css-main .css-contain-item {
+        flex-direction: column;
+    }
+    .css-main .css-item {
+        flex: auto;
+    }
+    .header-top {
+        height: 90px;
+        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
+    }
+    .logo {
+        height: 90px;
+        /* Điều chỉnh kích thước của logo */
+        width: 90px;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0px 5px 10px;
+        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
+    }
+    .form {
+        padding: 1em;
+        /* Điều chỉnh padding cho form khi màn hình nhỏ */
+    }
+    #heading {
+        margin: 1em;
+        /* Điều chỉnh margin cho #heading khi màn hình nhỏ */
+    }
+    .button3 {
+        margin-bottom: 1em;
+        /* Điều chỉnh margin-bottom cho .button3 khi màn hình nhỏ */
+    }
+}
+
+
+/*  */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #055825;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+    margin: 0 auto;
+    /* Thêm dòng này để căn lề giữa */
+    max-width: 400px;
+    /* Điều chỉnh kích thước tối đa của form */
+    text-align: center;
+    /* Đảm bảo văn bản bên trong form nằm ở giữa */
+}
+
+#heading {
+    margin: 2em 0;
+    /* Điều chỉnh margin trên và dưới của heading */
+    text-align: center;
+    margin: 2em;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+}
+
+.dark-mode .field {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .button3 {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .form {
+    background: #333;
+    color: white;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #025112;
+    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+}
+
+.button3 {
+    margin: 2em auto;
+    /* Thêm dòng này để căn lề giữa */
+    border: 3px solid;
+    margin-bottom: 3em;
+    padding: 0.5em;
+    border-radius: 5px;
+    outline: none;
+    transition: all .3s ease-in-out;
+    background-color: #02350f;
+    color: white;
+    border-radius: 5px;
+    max-width: 200px;
+    /* Điều chỉnh kích thước tối đa của button */
+}
+
+.button3:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+.form-container {
+    margin: 0 auto;
+    /* Để căn lề giữa form-container */
+    max-width: 400px;
+    /* Điều chỉnh kích thước tối đa của form-container */
+}
+
+.wrapper {
+    --input-focus: #2d8cf0;
+    --font-color: #fefefe;
+    --font-color-sub: #7e7e7e;
+    --bg-color: #111;
+    --bg-color-alt: #7e7e7e;
+    --main-color: #fefefe;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+
+/* switch card */
+
+.switch {
+    transform: translateY(-200px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 50px;
+    height: 20px;
+}
+
+.card-side::before {
+    position: absolute;
+    content: 'Log in';
+    left: -70px;
+    top: 0;
+    width: 100px;
+    text-decoration: underline;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.card-side::after {
+    position: absolute;
+    content: 'Sign up';
+    left: 70px;
+    top: 0;
+    width: 100px;
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    transition: 0.3s;
+}
+
+.slider:before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    left: -2px;
+    bottom: 2px;
+    background-color: var(--bg-color);
+    box-shadow: 0 3px 0 var(--main-color);
+    transition: 0.3s;
+}
+
+.toggle:checked+.slider {
+    background-color: var(--input-focus);
+}
+
+.toggle:checked+.slider:before {
+    transform: translateX(30px);
+}
+
+.toggle:checked~.card-side:before {
+    text-decoration: none;
+}
+
+.toggle:checked~.card-side:after {
+    text-decoration: underline;
+}
+
+
+/* card */
+
+.flip-card__inner {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    background-color: transparent;
+    perspective: 1000px;
+    /* width: 100%;
+      height: 100%; */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.toggle:checked~.flip-card__inner {
+    transform: rotateY(180deg);
+}
+
+.toggle:checked~.flip-card__front {
+    box-shadow: none;
+}
+
+.flip-card__front,
+.flip-card__back {
+    padding: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: var(--bg-color);
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+}
+
+.flip-card__back {
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.flip-card__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.title {
+    margin: 20px 0 20px 0;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.flip-card__input {
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.flip-card__input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+
+.flip-card__input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+.flip-card__btn:active,
+.button-confirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+}
+
+.flip-card__btn {
+    margin: 20px 0 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}

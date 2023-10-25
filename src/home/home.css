@@ -7,226 +7,656 @@
 
 body {
     font-family: "Inter", sans-serif;
-    color: #212529;
-    background: #121212;
-    height: 100vh;
-    line-height: 1.7;
 }
 
 
-/* css thanh tab dọc */
+/* css logo */
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
 
 
-/* CSS cho thanh sidebar */
+/* thanh hiển thị */
 
-.sidebar {
-    transition: top 0.3s ease;
-    /* Thêm hiệu ứng di chuyển mượt mà */
-    scrollbar-width: none;
-    /* Ẩn thanh cuộn cho Firefox */
-    width: 60px;
-    height: 100vh;
-    background-color: #000000;
-    padding: 20px;
-    box-sizing: border-box;
-    color: #cfe5d6;
-    overflow: hidden;
-    overflow-y: auto;
-    transition: width .75s ease;
+.navbar-collapse {
+    background-color: #044e0b;
     border-radius: 7px;
-    background: #1a1818;
-    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
-    float: left;
-    /* Thêm thuộc tính float để nội dung trang nằm cạnh thanh sidebar */
 }
 
 
-/* CSS cho văn bản căn đều 2 bên */
+/* .show trong bootstrap nó thường đi kèm .collapse, .d-block, và .d-none. */
 
-.container {
-    text-align: justify;
-    /* Đặt kiểu căn đều */
+
+/* CSS để căn đều khoảng cách giữa các mục <li> trong phần nav */
+
+.underline-text {
+    text-decoration: underline;
+    text-underline-offset: 20px;
+}
+
+.underline-text:hover {
+    text-decoration-color: rgb(0, 208, 250);
 }
 
 
-/* CSS cho nội dung trang */
+/* CSS để căn đều logo và khoảng cách giữa các mục <li> trong phần nav */
 
-.content {
-    margin-left: 10px;
-    /* Khoảng cách từ nội dung trang đến thanh sidebar */
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    /* Căn đều theo chiều ngang */
+    align-items: center;
+    /* Căn đều theo chiều dọc */
+}
+
+
+/* Điều chỉnh khoảng cách giữa các mục <li> */
+
+
+/* Điều chỉnh khoảng cách giữa các mục <li> bằng padding nếu cần */
+
+.navbar-nav .nav-item .css-a {
     padding: 20px;
-    /* Thêm padding để tạo khoảng cách */
-    flex-grow: 1;
-    overflow-y: auto;
-    text-align: left;
-    /* Đặt kiểu căn trái để tránh việc căn đều các phần tử nhỏ hơn trong văn bản */
-    max-width: 100%;
-    /* Đảm bảo văn bản không vượt quá chiều rộng tối đa */
+    /* Điều chỉnh khoảng cách giữa các mục bằng padding */
 }
 
 
-/* Ẩn thanh cuộn dọc của sidebar */
+/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
 
-.sidebar::-webkit-scrollbar {
-    width: 0;
-    /* Ẩn thanh cuộn trình duyệt Safari và Chrome */
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
 }
 
 
-/* Thay đổi màu của thanh cuộn nếu bạn muốn */
+/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
 
-.sidebar::-webkit-scrollbar-thumb {
-    background-color: transparent;
+.navbar-nav .nav-item a:hover {
+    color: #4eefec;
+    /* Màu khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
 }
 
 
-/* Ẩn chữ và biểu tượng mặc định */
+/* css thanh cố định */
 
-.sidebar a,
-.sidebar .btn2.bt3 {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    /* Thêm hiệu ứng transition */
+.header-top {
+    position: fixed;
+    /* Header cố định */
+    top: 0;
+    /* Header luôn ở trên cùng */
+    width: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    /* Thêm hiệu ứng chuyển động */
 }
 
 
-/* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
+/* css các list của thanh hiển thị */
 
-.sidebar:hover a,
-.sidebar:hover .btn2.bt3 {
-    opacity: 1;
+.css-tab {
+    width: 100%;
+    background-color: #044e0b;
+    height: 140px;
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
 }
 
-.sidebar:hover {
-    width: 200px;
-}
-
-
-/* css link bấm vào */
-
-.nav-link {
+.css-a {
     text-decoration: none;
-    color: #adb0b3;
+    color: #21af58;
     font-weight: 600;
 }
 
-.nav-list {
-    padding: 30px 0;
-    /* Điều chỉnh padding top và bottom để căn giữa */
-    list-style: none;
+.css-a:hover {
+    cursor: pointer;
+    color: #4eefec;
+    transform: scale(1.05);
+}
+
+.css-a:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+/* CSS cho các mục trong danh sách thả xuống */
+
+.css-ul-order .css-order {
+    margin-bottom: 10px;
+}
+
+
+/* Điều chỉnh độ cao của header khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .header-top {
+        height: 100px;
+        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
+    }
+}
+
+
+/* Điều chỉnh kích thước của logo khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .logo {
+        height: 100px;
+        /* Điều chỉnh kích thước của logo */
+        width: 100px;
+    }
+}
+
+
+/* Điều chỉnh khoảng cách giữa các mục trong menu khi màn hình nhỏ hơn 768px */
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item {
+        margin: 5px 0px 5px 10px;
+        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
+    }
+}
+
+
+/* add */
+
+
+/* CSS cho chế độ tối */
+
+.dark-mode {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .css-tab {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .css-ul-order {
+    background: #333;
+}
+
+.dark-mode .navbar-collapse {
+    background: #333;
+}
+
+.dark-mode .myInput {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .custom-button {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .button-inf {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .card-food-img {
+    background: #333;
+    color: white;
+}
+
+
+/* css distance */
+
+.css-distance {
+    padding-top: 150px;
+}
+
+
+/* css button nav */
+
+.css-nav-button {
+    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
+}
+
+.css-nav-button:hover {
+    border: 1px solid #009087;
+}
+
+
+/*  */
+
+.carousel {
+    z-index: 0;
+}
+
+
+/* section */
+
+section {
+    display: inline-block;
+    vertical-align: top;
+}
+
+section article {
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+
+/* css danh mục food */
+
+.card2 {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.card2 p {
+    position: absolute;
+    bottom: 10px;
+    /* Adjust the position as needed */
+    left: 10px;
+    /* Adjust the position as needed */
+    color: white;
+    /* Text color */
+    font-size: 16px;
+    /* Adjust the font size as needed */
+}
+
+.card2:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.card2:hover:before {
+    transform: translateX(-100%);
+}
+
+.card2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.card2:hover:after {
+    transform: translateX(100%);
+}
+
+
+/*  */
+
+
+/* main  */
+
+
+/* css text giá */
+
+.css-text {
+    text-decoration: none;
+    color: #21af58;
+    font-weight: 600;
+}
+
+.css-main {
+    margin-top: 5%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.css-main .css-contain-item {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 0px;
+}
+
+.css-main .css-item {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    margin: 5px;
+    flex: 1 1 0;
+    width: 0;
+}
+
+
+/* .css-main .css-item:hover {
+    flex: 1 1 10px;
+} */
+
+.css-main .css-item {
+    color: inherit;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    /* Hiển thị các liên kết theo chiều dọc */
     align-items: center;
-    gap: 20px;
-    /* Khoảng cách giữa các liên kết */
+    text-decoration: none;
 }
 
-.nav-link {
-    text-decoration: none;
+.css-main .css-item .css-contain-poster {
+    width: 100%;
+}
+
+.css-main .css-item .css-contain-poster img {
+    width: 100%;
+}
+
+.css-main .css-item {
+    max-width: 100%;
+}
+
+.css-main .css-item {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+
+/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+/*  */
+
+.button-inf {
+    height: 50px;
+    width: 15%;
+    align-items: center;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: #044e0b;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    /* Center text within the button */
+}
+
+.button-inf:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+.button-inf:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* main */
+
+.css-main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+}
+
+
+/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
+
+@media (max-width: 768px) {
+    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
+    .css-main {
+        flex-direction: column;
+        flex: auto;
+    }
+}
+
+.footer {
+    /* display: flex; */
+    padding-top: 5%;
+    background-color: #00121b;
+    width: 100%;
+    padding-bottom: 0.5%;
+    padding-left: 50px;
+    padding-right: 50px;
     color: #868e96;
-    font-weight: 600;
-    line-height: 1.5;
-    /* Điều chỉnh line-height để căn giữa và hiển thị đủ thông tin */
+    line-height: 2;
 }
 
-.nav-link.nav-link-brand {
-    margin-bottom: auto;
-    /* Để logo căn dưới */
+.footer-text>* {
+    font-size: 15px;
+}
+
+.ul-contact {
+    list-style: none;
+}
+
+.footer-last {
+    text-align: center;
+    color: white;
+}
+
+.footer-last-st,
+.footer-last-nd {
+    margin-top: 20px;
+}
+
+#icon1,
+#icon2,
+#icon3 {
+    padding-left: 20px;
+}
+
+iframe {
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.logo-footer {
+    margin-left: 3%;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
+    .css-main .css-contain-item {
+        flex-direction: column;
+    }
+    .css-main .css-item {
+        flex: auto;
+    }
+    .header-top {
+        height: 90px;
+        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
+    }
+    .logo {
+        height: 90px;
+        /* Điều chỉnh kích thước của logo */
+        width: 90px;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0px 5px 10px;
+        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
+    }
 }
 
 
-/* Dark Mode styles */
+/*  */
 
-body.dark-theme {
-    color: #eee;
-    background: #121212;
+
+/* CSS để căn giữa hình chữ nhật */
+
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Đảm bảo hình chữ nhật chiếm toàn bộ chiều cao của trình duyệt */
 }
 
-body.light-theme {
-    color: #121212;
-    background: #eee;
+.rectangle {
+    border-radius: 15px;
+    height: 50vh;
+    width: 100%;
+    margin-left: 5%;
+    /* Cách lề mặt trái 5% */
+    margin-right: 5%;
+    /* Cách lề mặt phải 5% */
+    /* Độ rộng của hình chữ nhật (cách lề mỗi bên 5%) */
+    padding: 2%;
+    /* Khoảng cách 2% từ lề mỗi bên */
+    background-color: green;
+    /* Màu nền là xanh lá cây */
 }
 
 
-/* CSS cho nút chuyển màu khi di chuột vào */
+/*  */
 
-.btcolor:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn-toggle:hover {
-    color: #29f183;
-    /* Màu chữ khi di chuột vào */
-    border-color: #1fe944;
-    /* Màu viền khi di chuột vào */
-}
-
-.btn2 {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    border: 2px solid #fefefe;
-    text-transform: uppercase;
-    color: #fefefe;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.btn2::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - -2px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2::after {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% - 50px);
-    background-color: #1c1919;
-    transition: 0.3s ease-out;
-    transform: scaleY(1);
-}
-
-.btn2:hover::before {
-    transform: translateY(-25px);
-    height: 0;
-}
-
-.btn2:hover::after {
-    transform: scaleX(0);
-    transition-delay: 0.15s;
-}
-
-.btn2:hover {
-    border: 2px solid #fefefe;
-}
-
-.btn2 span {
+#content {
     position: relative;
     z-index: 3;
+    top: 40%;
+    padding: 0px 50px;
+    z-index: 0;
 }
 
-.bt3 {
-    text-decoration: none;
-    border: none;
-    border-radius: 100px;
-    background-color: #1c1919;
+h1 {
+    font-weight: lighter;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    border-bottom: solid 1px #fff;
+    padding-bottom: 30px;
+}
+
+.countdown-container {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgb(66, 220, 66);
 }
 
 
-/* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
+/*  */
+
+.datship-content {
+    position: absolute;
+    top: 900px;
+    left: 900px;
+    background-color: green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.additional-content:hover {
+    background-color: red;
+}
+
+.datship-content:hover {
+    background-color: red;
+}
+
+.ban1 {
+    position: absolute;
+    top: 1000px;
+    left: 515px;
+    font-size: 20px;
+}
+
+.ban2 {
+    position: absolute;
+    top: 1000px;
+    left: 915px;
+    font-size: 20px;
+}
+
+.chao {
+    position: absolute;
+    top: 1030px;
+    left: 620px;
+    color: black;
+}
+
+.gachngang {
+    font-size: 14px;
+    font-family: Roboto;
+    color: #333;
+    font-weight: 300;
+    position: absolute;
+    top: 1120px;
+    left: 420px;
+}
+
+.p2 {
+    position: absolute;
+    font-size: 14px;
+    top: 1080px;
+    left: 350px;
+}
+
+.additional-content {
+    position: absolute;
+    top: 900px;
+    left: 500px;
+    background-color: green;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rectangle {
+    background-image: url('../home/image/3.png');
+    background-size: 100% 100%;
+    /* Tăng kích thước background lên 150% */
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}

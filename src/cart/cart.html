@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body style="background-color: #EEEEEE;font-family: Arial, Helvetica, sans-serif;">
+  <div class="container">
+    <header>
+      <h1>Giỏ hàng</h1>
+    </header>
+    <main>
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="image.jpg" alt="Kỹ năng quản lý thời gian">
+                </div>
+                <div class="col-md-9">
+                  <h4>Kỹ năng quản lý thời gian</h4>
+                  <p>Tác giả: Nguyễn Văn A</p>
+                  <p>Giá: 115.000đ</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-danger btn-sm">Xóa</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-success btn-sm">Cập nhật</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="row">
+                <div class="col-md-3">
+                  <img src="image2.jpg" alt="Lưỡi lược thép lưỡi bướm tập quay">
+                </div>
+                <div class="col-md-9">
+                  <h4>Lưỡi lược thép lưỡi bướm tập quay</h4>
+                  <p>Màu sắc: Đen</p>
+                  <p>Giá: 58.999đ</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-danger btn-sm">Xóa</button>
+                    </div>
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-success btn-sm">Cập nhật</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="row mb-3">
+            <div class="card card-body">
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Họ tên</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên">
+                </div>
+                <div class="mb-3">
+                  <label for="address" class="form-label">Địa chỉ</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Thông tin thanh toán</h4>
+              <p class="card-text">
+                <strong>Tổng tiền:</strong> 174.999đ
+                <br>
+                <strong>Phí vận chuyển:</strong> 15.000đ
+                <br>
+                <strong>Tổng cộng:</strong> 189.999đ
+              </p>
+              <button type="button" class="btn btn-primary">Thanh toán</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <!-- dien footer -->
+    </footer>
+  </div>
+</body>

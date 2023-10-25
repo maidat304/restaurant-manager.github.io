@@ -8,7 +8,7 @@
     <!-- tiêu đề trên thanh web -->
     <link rel="icon" href="../food/image/logo.png" type="image/png">
     <!-- food css -->
-    <link rel="stylesheet " type="text/css " href="home.css ">
+    <link rel="stylesheet " type="text/css " href="datban.css ">
     <!-- bootstrap icon -->
     <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
     <!-- boostrap css-->
@@ -34,25 +34,25 @@
 
                         <li class=" nav-item">
 
-                            <a class="css-a underline-text" href="../home/home.html "><span  class=" bi bi-house-door media">&nbsp;&nbsp;TRANG CHỦ</span></a>
+                            <a class="css-a" href="../home/home.html "><span  class="bi bi-house-door">&nbsp;&nbsp;TRANG CHỦ</span></a>
                         </li>
                         <li class="nav-item  ">
-                            <a class=" css-a" href="../food/food.html "><span class="bi bi-card-list media">&nbsp;&nbsp;THỰC ĐƠN</span></a>
+                            <a class=" css-a" href="../food/food.html "><span class="bi bi-card-list">&nbsp;&nbsp;THỰC ĐƠN</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class=" css-a  underline-text" href="../datban/datban.html "><span class="bi bi-pencil-square media">&nbsp;&nbsp;ĐẶT BÀN</span></a>
+                            <a class=" css-a" href="../food/food.html "><span class="bi bi-pencil-square">&nbsp;&nbsp;ĐẶT BÀN</span></a>
                         </li>
                         <li class="nav-item ">
-                            <a class=" css-a underline-text" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text media">&nbsp;&nbsp;PHẢN HỒI</span></a>
+                            <a class=" css-a" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text">&nbsp;&nbsp;PHẢN HỒI</span></a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class=" css-a" href="../magiamgia/magiamgia.html "><span class="bi bi-gift media">&nbsp;&nbsp;MÃ GIẢM GIÁ</span></a>
+                            <a class=" css-a" href="../magiamgia/magiamgia.html "><span class="bi bi-gift">&nbsp;&nbsp;MÃ GIẢM GIÁ</span></a>
                         </li>
 
                         <!-- add -->
                         <li class="nav-item  ">
-                            <a class=" css-a" href="../dangnhap/dangnhap.html "><span class="bi bi-person-circle media">&nbsp;&nbsp;ĐĂNG NHẬP</span></a>
+                            <a class=" css-a" href="../dangnhap/dangnhap.html "><span class="bi bi-person-circle">&nbsp;&nbsp;ĐĂNG NHẬP</span></a>
                         </li>
                         <li class="nav-item  " onclick="toggleMode()">
                             <i id="mode-icon" class="bi bi-moon css-a "></i>
@@ -61,7 +61,7 @@
                         </li>
                         <li class="nav-item  ">
                             <a class="css-a" href="#">
-                                <span class="bi bi-bag-fill media"></span>
+                                <span class="bi bi-bag-fill"></span>
                                 <span id="cart-count">0</span>
                             </a>
                         </li>
@@ -71,104 +71,70 @@
         </nav>
 
     </header>
-    <!-- Carousel -->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators ">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../home/image/1.png" alt="Los Angeles" class="d-block" style="width:100%">
-            </div>
-            <div class="carousel-item">
-                <img src="../home/image/2.png" alt="Chicago" class="d-block" style="width:100%">
-            </div>
-            <div class="carousel-item">
-                <img src="../home/image/3.png" alt="New York" class="d-block" style="width:100%">
-            </div>
-        </div>
-
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon "></span>
-    </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-    </div>
 
     <main class="css-main ">
-
-
-        <section class=" navbar ">
-
-            <article class="myTable ">
-
-                <div class="css-contain-item ">
-
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/a.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
-
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/b.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/d.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
+        <div class="css-distance ">
+            <div class="rectangle-container">
+                <div class="rectangle">
+                    <h4 id="h1">SƠ ĐỒ NHÀ HÀNG</h4>
+                    <!-- Bất kỳ nội dung nào bạn muốn đặt trong hình chữ nhật này -->
 
                 </div>
-                <div class="css-contain-item">
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/j.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/k.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
-                    <div class="card2 css-item ">
-                        <img class=" css-contain-poster" src="../food/image/e.jpg" alt="food">
-                        <p>Masala Dosa </p>
-                    </div>
-                </div>
-
-
-                </div>
-                <div class="center-button">
-                    <button type="button" class="button-inf"><a class="css-a" href="../food/food.html">XEM THÊM</a></button>
-                </div>
-            </article>
-
-        </section>
-
-    </main>
-    <div class="rectangle-container">
-
-        <div class="rectangle">
-            <!-- Bất kỳ nội dung nào bạn muốn đặt trong hình chữ nhật này -->
-            <h1>SỰ KIỆN GIẢM GIÁ SIÊU HOT NGÀY ...</h1>
-
-            <div class="countdown-container" id="content">
-
-                <div class="countdown-item" id="days">0 ngày</div>
-                <div class="countdown-item" id="hours">0 giờ</div>
-                <div class="countdown-item" id="minutes">0 phút</div>
-                <div class="countdown-item" id="seconds">0 giây</div>
-
             </div>
-            <button type="button" class="button-inf"><a class="css-a" href="../magiamgia/magiamgia.html">XEM THÊM</a></button>
+            <div class="container">
+                <div class="left">
+                    <span id="h1">
+                        <p>Nếu bạn đặt bàn số lượng lớn hoặc nhu cầu thêm vui lòng liên hệ: 03xx.xxx.xxx</p>
+                        <p>Cám ơn bạn rất nhiều! Chúc bạn có trải nghiệm tốt nhất!</p>
+                        </span>
+                </div>
+                <div class="testbox right">
+                    <form class="css-form-mess" action="#" onsubmit="return validate(this);" name="form">
+                        <h1 id="h1">ĐẶT BÀN</h1>
+                        <label>
+                        <p id="h4">Họ và tên:<span>*</span></p>
+                        <input placeholder="Họ và tên" type="text" class="input" id="name" name="name">
+                    </label>
+                        <label style="float: right">
+                        <p id="h4">SĐT:<span>*</span></p>
+                    <input placeholder="Nhập SĐT" type="text" class="input"name="phone" id="phone">
+                    </label>
+                        <label><p id="h4">Kiểu bàn:<span>*</span></p>
+                        <select class="input" name="type" id="type">
+                            <option>Bàn 2 người</option>
+                            <option>Bàn 5 người</option>
+                            <option>Bàn 6 người</option>
+                        </select>
+                    </label>
+                        <label style="float: right;"><p id="h4">Số lượng bàn:<span>*</span></p>
+                        <select class="input" name="type-number" id="type-number">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+
+                        </select>
+                    </label>
+                        <label>
+                        <p id="h4">Lịch đặt:<span>*</span></p>
+                    <input placeholder="Nhập email" type="date" class="input" id="date" name="date">
+                    </label>
+                        <label style="float: right">
+                        <p id="h4">Khung giờ:<span>*</span></p>
+                    <input placeholder="Enter your email" type="time" class="input"name="time" id="time">
+                    </label><br><br>
+                        <button class="button-form " type="submit" name="submit" id="submit">GỬI</button>
+
+                    </form>
+
+                </div>
+                <!--  -->
+            </div>
         </div>
-    </div>
+    </main>
     <footer class="footer footer-text">
         <div class=" row align-items-start ">
             <div class="logo-footer col">
@@ -181,7 +147,6 @@
                     <li class="footer-text">
                         <h4>DANH MỤC CHÍNH</h4>
                     </li>
-
                     <li class="footer-text"><a class="css-a " href="../home/home.html">TRANG CHỦ</a>
                     </li>
                     <li class="footer-text"><a class="css-a" href="../food/food.html">THỰC ĐƠN</a>
@@ -192,7 +157,6 @@
                     </li>
                     <li class="footer-text"><a class="css-a" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
                     </li>
-
                 </ul>
 
             </div>
@@ -228,7 +192,7 @@
 
     </footer>
     <!-- add -->
-    <script src="home.js ">
+    <script src="datban.js ">
     </script>
     <!-- /add -->
 </body>

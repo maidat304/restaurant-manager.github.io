@@ -1,80 +1,86 @@
-// Hàm lưu trạng thái chế độ tối vào localStorage
-function saveDarkModeState(isDarkMode) {
-    localStorage.setItem('darkMode', isDarkMode);
+// Hàm chuyển đổi chế độ sáng/tối
+function toggleMode() {
+    const modeIcon = document.getElementById('mode-icon');
+    if (modeIcon.classList.contains('bi-moon')) {
+        // Chuyển sang chế độ tối
+        modeIcon.classList.remove('bi-moon');
+        modeIcon.classList.add('bi-sun');
+        // Thêm lớp dark cho body hoặc container chứa nội dung
+        document.body.classList.add('dark-mode');
+        // Lưu trạng thái chế độ tối vào localStorage
+        localStorage.setItem('darkMode', 'true');
+    } else {
+        // Chuyển sang chế độ sáng
+        modeIcon.classList.remove('bi-sun');
+        modeIcon.classList.add('bi-moon');
+        // Loại bỏ lớp dark
+        document.body.classList.remove('dark-mode');
+        // Lưu trạng thái chế độ sáng vào localStorage
+        localStorage.setItem('darkMode', 'false');
+    }
 }
 
-// Hàm kiểm tra và áp dụng trạng thái chế độ tối từ localStorage khi trang được load
-function loadDarkModeState() {
-    const darkMode = localStorage.getItem('darkMode') === 'true';
-    document.body.classList.toggle('dark-theme', darkMode);
+// Kiểm tra và thiết lập trạng thái chế độ tối khi trang được tải
+document.addEventListener('DOMContentLoaded', function() {
+    const modeIcon = document.getElementById('mode-icon');
+    const storedDarkMode = localStorage.getItem('darkMode');
 
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = darkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
-}
-
-// Lắng nghe sự kiện load trang và gọi hàm loadDarkModeState()
-window.addEventListener('load', loadDarkModeState);
-
-// Lấy button toggle chế độ tối
-const btn = document.querySelector('.btn-toggle');
-
-// Lắng nghe sự kiện click vào button để thay đổi trạng thái và lưu vào localStorage
-btn.addEventListener('click', () => {
-    const isDarkMode = document.body.classList.toggle('dark-theme');
-    saveDarkModeState(isDarkMode);
-
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = isDarkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
+    if (storedDarkMode === 'true') {
+        modeIcon.classList.remove('bi-moon');
+        modeIcon.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+    }
 });
 
-// Hàm thiết lập chế độ (theme) và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-}
 
-// Thiết lập chế độ tối/sáng mặc định và cập nhật nút chuyển đổi trạng thái (giữ nguyên)
-function initializeTheme() {
-    const darkMode = localStorage.getItem('darkMode') === 'true';
-    const currentTheme = darkMode ? 'dark' : 'light';
-    setTheme(currentTheme);
+//
 
-    // Cập nhật nội dung của nút chuyển đổi theme
-    const themeText = darkMode ? 'LIGHT' : 'DARK';
-    btn.querySelector('.spn2').textContent = themeText;
-}
+const buttons = document.querySelectorAll(".custom-button");
+const cartCountElement = document.querySelector("#cart-count"); // Đảm bảo rằng bạn đang chọn đúng phần tử có ID là "cart-count"
+let itemCount = 0;
 
-// Gọi hàm initializeTheme để thiết lập chế độ tối/sáng khi trang được tải lên
-initializeTheme();
-
-// Lấy element thanh sidebar và lắng nghe sự kiện cuộn trang (đoạn code này giữ nguyên)
-const sidebar = document.querySelector('.sidebar');
-window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    sidebar.style.top = scrollY + 'px';
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        itemCount++;
+        cartCountElement.textContent = itemCount;
+    });
 });
-// food
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => slide.style.display = i === index ? 'block' : 'none');
+
+
+
+
+// jquery search https://www.w3schools.com/jquery/jquery_filters.asp
+
+$(document).ready(function() {
+    // Bắt sự kiện thay đổi ở cả hai dropdown
+    $(".myInput, .myInput2").on("change", function() {
+        var selectedCategory = $(".myInput").val().toLowerCase();
+        if (selectedCategory == "") {
+            // Hiển thị tất cả sản phẩm và text-food elements
+            $(".myTable .css-item").show();
+            $(".myTable .text-food").show();
+        }
+        // Lọc sản phẩm dựa trên lựa chọn danh mục
+        else {
+            $(".myTable .css-item").hide();
+            $(".myTable .text-food").hide();
+            $(".myTable .css-item[data-category='" + selectedCategory + "']").show();
+            $(".myTable .text-food[data-category='" + selectedCategory + "']").show();
+        }
+
+    });
+});
+
+
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
+// Get the modal
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
-
-function prev() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
-
-function next() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
-
-prevBtn.addEventListener('click', prev);
-nextBtn.addEventListener('click', next);
-
-showSlide(currentSlide);
