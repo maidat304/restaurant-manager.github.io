@@ -1,70 +1,96 @@
-  // Hàm chuyển đổi chế độ sáng/tối
-  function toggleMode() {
-      const modeIcon = document.getElementById('mode-icon');
-      if (modeIcon.classList.contains('bi-moon')) {
-          // Chuyển sang chế độ tối
-          modeIcon.classList.remove('bi-moon');
-          modeIcon.classList.add('bi-sun');
-          // Thêm lớp dark cho body hoặc container chứa nội dung
-          document.body.classList.add('dark-mode');
-          // Lưu trạng thái chế độ tối vào localStorage
-          localStorage.setItem('darkMode', 'true');
-      } else {
-          // Chuyển sang chế độ sáng
-          modeIcon.classList.remove('bi-sun');
-          modeIcon.classList.add('bi-moon');
-          // Loại bỏ lớp dark
-          document.body.classList.remove('dark-mode');
-          // Lưu trạng thái chế độ sáng vào localStorage
-          localStorage.setItem('darkMode', 'false');
-      }
-  }
+function darkmode_function() {
+    const darkmode = document.getElementById('mode-icon');
+    if (darkmode.classList.contains('bi-moon')) {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', '0');
+    } else {
+        darkmode.classList.remove('bi-sun');
+        darkmode.classList.add('bi-moon');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', '1');
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    const darkmode = document.getElementById('mode-icon');
+    const save = localStorage.getItem('darkMode');
 
-  // Kiểm tra và thiết lập trạng thái chế độ tối khi trang được tải
-  document.addEventListener('DOMContentLoaded', function() {
-      const modeIcon = document.getElementById('mode-icon');
-      const storedDarkMode = localStorage.getItem('darkMode');
+    if (save === '0') {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+    }
+});
+var check_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+var check_phone = /^[0-9]+$/;
+var check_name = /^[\p{L}\s]+$/u;
 
-      if (storedDarkMode === 'true') {
-          toggleMode(); // Call the toggleMode function to set the dark mode.
-      }
-  });
+function validate(form) {
+    var email = form.email.value;
+    var phone = form.phone.value;
+    var name = form.name.value;
+    var errors = [];
+    if (!check_name.test(name)) {
+        errors[errors.length] = "Bạn phải nhập họ tên hợp lệ!";
+    }
+    if (!check_email.test(email)) {
+        errors[errors.length] = "Bạn phải nhập email hợp lệ!";
+    }
+    if (!check_phone.test(phone)) {
+        errors[errors.length] = "Bạn phải nhập sđt hợp lệ!";
+    }
+    if (errors.length > 0) {
+        reportErrors(errors);
+        return false;
+    } else {
+        alert("Thank you for leaving a review!\nCảm ơn quý khách đã để lại đánh giá!");
+        return true;
+    }
+}
+
+function reportErrors(errors) {
+    var information = "Vui lòng nhập đẩy đủ thông tin!\n";
+    for (var i = 0; i < errors.length; i++) {
+        var numError = i + 1;
+        information += "\n" + numError + ". " + errors[i];
+    }
+    alert(information);
+}
+const ratingInputs = document.querySelectorAll('.rating input');
+const feedbackText = document.getElementById('feedbackText');
+ratingInputs.forEach(input => {
+    input.addEventListener('change', updateFeedbackText);
+});
+
+function updateFeedbackText() {
+    const checkedInput = document.querySelector('.rating input:checked');
+    const ratingValue = checkedInput ? checkedInput.value : 0;
+    const feedback = getFeedback(ratingValue);
+    feedbackText.textContent = ` ${feedback}`;
+}
+
+function getFeedback(value) {
+    switch (value) {
+        case '5':
+            return 'Rất hài lòng';
+        case '4':
+            return 'Hài lòng';
+        case '3':
+            return 'Trung bình';
+        case '2':
+            return 'Không hài lòng';
+        case '1':
+            return 'Rất không hài lòng';
+        default:
+            return '';
+    }
+}
 
 
 
-  // Biểu thức chính quy kiểm tra email và số điện thoại
-  var check_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  var check_phone = /^[0-9]+$/; // Cho phép nhập dãy số
-  var check_name = /^[A-Za-z\s]+$/; // Biểu thức chính quy kiểm tra họ và tên không được chứa số và không được để trống
-
-  function validate(form) {
-      var email = form.email.value;
-      var phone = form.phone.value;
-      var name = form.name.value;
-      var errors = [];
-      if (!check_name.test(name)) {
-          errors[errors.length] = "Bạn phải nhập họ tên hợp lệ!";
-      }
-      if (!check_email.test(email)) {
-          errors[errors.length] = "Bạn phải nhập email hợp lệ!";
-      }
-
-      if (!check_phone.test(phone)) {
-          errors[errors.length] = "Bạn phải nhập sđt hợp lệ!";
-      }
-
-      if (errors.length > 0) {
-          reportErrors(errors);
-          return false;
-      }
-      return true;
-  }
-
-  function reportErrors(errors) {
-      var information = "Vui lòng nhập đẩy đủ thông tin!\n";
-      for (var i = 0; i < errors.length; i++) {
-          var numError = i + 1;
-          information += "\n" + numError + ". " + errors[i];
-      }
-      alert(information);
-  }
+//
+function showAlert() {
+    alert('Cảm ơn bạn đã đến với nhà hàng.');
+    window.location.href = '../home/home.html';
+}

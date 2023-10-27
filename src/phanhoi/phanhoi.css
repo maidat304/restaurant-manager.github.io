@@ -2,273 +2,377 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
 }
 
 body {
     font-family: "Inter", sans-serif;
+    background: #fab0052f !important;
 }
 
-
-/* css logo */
-
-.logo {
-    height: 150px;
-    width: 150px;
+.anhlogo {
+    width: 80px;
+    height: 80px;
 }
 
-
-/* thanh hiển thị */
-
-.navbar-collapse {
-    background-color: #044e0b;
-    border-radius: 7px;
-}
-
-
-/* .show trong bootstrap nó thường đi kèm .collapse, .d-block, và .d-none. */
-
-
-/* CSS để căn đều khoảng cách giữa các mục <li> trong phần nav */
-
-
-/* CSS để căn đều logo và khoảng cách giữa các mục <li> trong phần nav */
-
-.navbar-nav {
-    display: flex;
-    justify-content: space-around;
-    /* Căn đều theo chiều ngang */
-    align-items: center;
-    /* Căn đều theo chiều dọc */
-}
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> */
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> bằng padding nếu cần */
-
-.navbar-nav .nav-item .css-a {
-    padding: 20px;
-    /* Điều chỉnh khoảng cách giữa các mục bằng padding */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* css thanh cố định */
-
-.header-top {
-    position: fixed;
-    /* Header cố định */
+.navbar {
+    position: fixed!important;
     top: 0;
-    /* Header luôn ở trên cùng */
+    z-index: 10;
     width: 100%;
-    z-index: 1;
-    transition: all 0.3s;
-    /* Thêm hiệu ứng chuyển động */
 }
 
-
-/* css các list của thanh hiển thị */
-
-.css-tab {
-    width: 100%;
-    background-color: #044e0b;
-    height: 140px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+.span-hover {
+    cursor: pointer;
 }
 
-.css-a {
-    text-decoration: none;
-    color: #21af58;
+.container {
+    text-align: center;
+}
+
+.present {
+    color: rgb(102, 189, 239)!important;
     font-weight: 600;
 }
 
-.css-a:hover {
-    cursor: pointer;
-    color: #4eefec;
-    transform: scale(1.05);
-}
-
-.css-a:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
-
-.css-order {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.css-ul-order {
-    border-radius: 39px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
-}
-
-
-/* CSS cho các mục trong danh sách thả xuống */
-
-.css-ul-order .css-order {
-    margin-bottom: 10px;
-}
-
-
-/* Điều chỉnh độ cao của header khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .header-top {
-        height: 100px;
-        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
-    }
-}
-
-
-/* Điều chỉnh kích thước của logo khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .logo {
-        height: 100px;
-        /* Điều chỉnh kích thước của logo */
-        width: 100px;
-    }
-}
-
-
-/* Điều chỉnh khoảng cách giữa các mục trong menu khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 5px 0px 5px 10px;
-        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
-    }
-}
-
-
-/* add */
-
-
-/* CSS cho chế độ tối */
-
 .dark-mode {
-    background: #333;
-    color: white;
+    background: black !important;
+    color: white !important;
 }
 
-.dark-mode .button-check {
-    background: #333;
-    color: white;
+.dark-mode .nav-link {
+    color: white !important;
 }
 
-.dark-mode #h4-form {
-    background: #333;
-    color: white;
+.dark-mode .about-container {
+    background-image: linear-gradient( to right bottom, rgba(31, 29, 29, 0.6), rgba(20, 20, 20, 0.6)), url("../img-head/a4.png");
 }
 
-.dark-mode .cookie-card {
-    background: #333;
-    color: white;
+.dark-mode .present {
+    color: rgb(141, 232, 255)!important;
+    font-weight: 600;
 }
 
-.dark-mode textarea {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .input {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .css-form-mess {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .css-tab {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .css-ul-order {
-    background: #333;
-}
-
-.dark-mode .navbar-collapse {
-    background: #333;
-}
-
+.dark-mode #h4-form,
+.dark-mode textarea,
+.dark-mode .input,
+.dark-mode .css-form-mess,
 .dark-mode .button-form {
     background: #333;
     color: white;
 }
 
-.dark-mode .custom-button {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .button-inf {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .card-food-img {
-    background: #333;
-    color: white;
-}
-
-.dark-mode i {
-    color: white;
-}
-
-i {
-    color: #00121b;
-}
-
-
-/* css distance */
-
-.css-distance {
-    padding-top: 150px;
-}
-
-
-/* css button nav */
-
-.css-nav-button {
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
-}
-
-.css-nav-button:hover {
-    border: 1px solid #009087;
-}
-
 
 /* main */
+
+
+/* selector */
+
+.about-container {
+    font-family: "raleway";
+    margin-top: 105px;
+    background-image: linear-gradient( to right bottom, rgba(68, 68, 68, 0.6), rgba(48, 48, 48, 0.6)), url("../img-head/a4.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container h1 {
+    font-family: "raleway";
+}
+
+.about-title {
+    font-family: "raleway";
+    font-size: 4em;
+    font-weight: 700;
+    color: #149ddd;
+}
+
+#selector {
+    margin-bottom: 250px;
+    margin-top: 180px;
+    font-weight: bold;
+    text-align: center;
+    color: #149ddd;
+    height: 268px;
+}
+
+.menu-box {
+    display: inline-block;
+    border: 4px solid #149ddd;
+    border-radius: 100px;
+}
+
+.type {
+    color: #149ddd;
+    margin: 10px;
+    padding: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.type:hover {
+    text-decoration: none;
+    color: #0ca678;
+}
+
+.css-main {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .css-main {
+        flex-direction: column;
+        flex: auto;
+    }
+}
+
+.css-distance {
+    padding-top: 30px;
+}
+
+.css-distance h3 {
+    margin-left: 7%;
+    padding-bottom: 40px;
+}
+
+.css-distance .left h3 {
+    padding-top: 0px;
+    padding-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: -20px;
+}
+
+.css-distance .left h3::after {
+    margin-top: 10px;
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #149ddd;
+    bottom: 0px;
+    left: 0;
+}
+
+.css-distance2 {
+    margin-top: 5%;
+}
+
+.css-distance h3,
+.css-distance2 h3 {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.css-distance h3::after,
+.css-distance2 h3::after {
+    content: "";
+    margin-top: 10px;
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #149ddd;
+    bottom: 0;
+    left: 0;
+}
+
+
+/*giay chung nhan*/
+
+.distance {
+    gap: 50px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.frame {
+    background-color: #f2b67b;
+    border-radius: 10px;
+}
+
+.frame img {
+    height: 450px;
+    width: 360px;
+}
+
+.frame .svg {
+    border: 2px solid black;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 3px;
+    scale: 0.87;
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 1.55, 0.74, 0.55);
+}
+
+.frame:hover .svg {
+    transform: scale(1.11);
+}
+
+
+/* slide */
+
+.carousel {
+    z-index: 0;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card3 {
+    padding: 10px;
+    width: 330px;
+    min-height: 370px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    transition: 0.4s;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.css-item p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cards {
+    margin-top: 50px;
+    width: 100%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.cards .red,
+.cards .red1 {
+    background-color: #f6536e;
+}
+
+.cards .white,
+.cards .white1 {
+    background-color: #bdbdbd;
+    color: black;
+}
+
+.cards .blue,
+.cards .blue1 {
+    background-color: #5d49ce;
+}
+
+.cards .card3 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    color: rgb(1, 1, 1);
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.cards .card3 p.tip {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.cards .card3 p.second-text {
+    font-size: .7em;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cards .card3:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover>.card3:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
+
+.card3 img {
+    border-radius: 10px;
+    height: 200px;
+}
+
+.yellow-star {
+    color: #FFD700;
+}
+
+.bi-chevron-double-right,
+.bi-chevron-double-left {
+    color: rgb(102, 129, 199);
+    margin-top: 110px;
+    font-size: 25px;
+}
+
+
+/*thong tin lien he*/
+
+.container1 {
+    margin-left: 5%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.left {
+    width: 90%;
+    padding-left: 30px;
+    margin-right: 5%;
+    margin-top: 70px;
+}
+
+.left p {
+    margin-left: 0px;
+    text-align: justify;
+}
+
+.left i {
+    font-size: 25px;
+}
+
+.left a img {
+    width: 40px;
+    height: 40px;
+}
+
+.left a:hover img {
+    transform: scale(1.2);
+}
+
+
+/*from*/
+
+.right {
+    width: 120%;
+    padding: 20px;
+    padding-right: 0px;
+    margin-right: 30px;
+}
 
 .css-form-mess,
 p {
     line-height: 2;
     border-radius: 15px;
+}
+
+.css-form-mess label span {
+    color: red;
 }
 
 #h1 {
@@ -283,7 +387,8 @@ p {
 .testbox {
     display: flex;
     align-items: center;
-    padding: 80px;
+    padding: 50px;
+    margin-top: 60px;
 }
 
 .css-form-mess {
@@ -298,6 +403,48 @@ p {
     border: 1px solid;
     border-radius: 8px;
     background-color: #F7F7F7;
+}
+
+.rating {
+    color: gray;
+    padding-left: 100px;
+    margin-top: 20px;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rating>.ip {
+    appearance: none;
+}
+
+.rating:not(:checked)>.lab:before {
+    font-size: 40px;
+    content: '★';
+}
+
+.rating>.ip:checked+.lab:hover,
+.rating>.ip:checked+.lab:hover~.lab,
+.rating>.ip:checked~.lab:hover,
+.rating>.ip:checked~.lab:hover~.lab,
+.rating>.lab:hover~.ip:checked~.lab {
+    color: #e58e09;
+}
+
+.rating:not(:checked)>.lab:hover,
+.rating:not(:checked)>.lab:hover~.lab {
+    color: #ff9e0b;
+}
+
+.rating>.ip:checked~.lab {
+    color: #ffa723;
+}
+
+.feedback-text {
+    display: block;
+    font-size: 20px;
+    color: #3a3939;
+    text-align: center;
 }
 
 .input:hover,
@@ -338,27 +485,9 @@ label {
 }
 
 
-/* main */
-
-.css-main {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    display: flex;
-}
-
-
-/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
-
-@media (max-width: 768px) {
-    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
-    .css-main {
-        flex-direction: column;
-        flex: auto;
-    }
-}
+/*phan footer*/
 
 .footer {
-    /* display: flex; */
     padding-top: 5%;
     background-color: #00121b;
     width: 100%;
@@ -369,8 +498,13 @@ label {
     line-height: 2;
 }
 
+.footer-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
 .footer-text>* {
-    font-size: 15px;
+    font-size: 15px!important;
 }
 
 .ul-contact {
@@ -403,521 +537,55 @@ iframe {
     margin-left: 3%;
 }
 
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-    }
-    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
-    .css-main .css-contain-item {
-        flex-direction: column;
-    }
-    .css-main .css-item {
-        flex: auto;
-    }
-    .header-top {
-        height: 90px;
-        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
-    }
-    .logo {
-        height: 90px;
-        /* Điều chỉnh kích thước của logo */
-        width: 90px;
-    }
-    .navbar-nav .nav-item {
-        margin: 5px 0px 5px 10px;
-        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
-    }
-    .container {
-        flex-direction: column;
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+.footer-text a:hover {
+    color: white;
+}
+
+
+/* responsive */
+
+@media (max-width: 1000px) {
+    .css-main h1 {
+        margin-top: 150px;
+        font-size: 50px;
     }
     .distance {
         flex-direction: column;
+        flex: auto;
+        height: 100%;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+    .frame .svg {
+        width: 100%;
+    }
+    .from {
+        flex-direction: column;
+    }
+    .css-form-mess {
+        width: 80%;
+    }
+    #selector {
+        margin-bottom: 350px;
     }
 }
 
-
-/* Set a style for all buttons */
-
-.carousel {
-    z-index: 0;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-
-/* Center the image and position the close button */
-
-
-/* The Modal (background) */
-
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-
-/* Add Zoom Animation */
-
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-
-@keyframes animatezoom {
-    from {
-        transform: scale(0)
+@media (max-width: 800px) {
+    .footer .row {
+        flex-direction: column;
+        position: relative;
     }
-    to {
-        transform: scale(1)
+    .logo {
+        height: 90px;
+        width: 90px;
     }
-}
-
-
-/*  */
-
-.cookie-card {
-    margin: 5% auto 15% auto;
-    /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    border-radius: 15px;
-    width: 50%;
-    height: 200px;
-    background-color: #fff;
-}
-
-#h4-form {
-    padding-top: 3%;
-    text-align: center;
-}
-
-
-/*  */
-
-.css-distance2 {
-    margin-top: 10%;
-}
-
-
-/*  */
-
-.distance {
-    gap: 50px;
-    margin-right: 5%;
-    margin-left: 5%;
-}
-
-
-/*  */
-
-.rating {
-    color: gray;
-    padding-left: 100px;
-    margin-top: 20px;
-    /* Điều chỉnh khoảng cách từ phần đánh giá lên trên */
-    display: flex;
-    flex-direction: row-reverse;
-    /* Đảo ngược thứ tự của các ngôi sao */
-}
-
-.rating>.ip {
-    appearance: none;
-}
-
-.rating:not(:checked)>.lab:before {
-    font-size: 40px;
-    content: '★';
-}
-
-.rating>.ip:checked+.lab:hover,
-.rating>.ip:checked+.lab:hover~.lab,
-.rating>.ip:checked~.lab:hover,
-.rating>.ip:checked~.lab:hover~.lab,
-.rating>.lab:hover~.ip:checked~.lab {
-    color: #e58e09;
-}
-
-.rating:not(:checked)>.lab:hover,
-.rating:not(:checked)>.lab:hover~.lab {
-    color: #ff9e0b;
-}
-
-.rating>.ip:checked~.lab {
-    color: #ffa723;
-}
-
-
-/*  */
-
-.button-check {
-    display: block;
-    /* Để nút trở thành một khối (block) để có thể căn giữa */
-    margin: 0 auto;
-    /* Tự động căn giữa theo chiều ngang */
-    text-align: center;
-    /* Căn nội dung bên trong nút theo chiều ngang */
-    width: 20%;
-    border-radius: 1em;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 0 0 black;
-}
-
-.button-check:hover {
-    transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
-}
-
-.button-check:active {
-    transform: translateY(2px) translateX(1px);
-    box-shadow: 0 0 0 0 black;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.left {
-    width: 80%;
-    /* Adjust the width as needed */
-    padding-left: 120px;
-    margin-right: 5%;
-}
-
-.right {
-    width: 100%;
-    /* Adjust the width as needed */
-    padding: 20px;
-    padding-right: 0px;
-}
-
-
-/* css danh mục food */
-
-
-/*  */
-
-
-/* 
-.card3 {
-    padding: 10px;
-    width: 330px;
-    min-height: 370px;
-    border-radius: 20px;
-    background: #e8e8e8;
-    box-shadow: 5px 5px 6px #dadada, -5px -5px 6px #f6f6f6;
-    transition: 0.4s;
-}
-
-.card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2e54a7;
-    margin: 15px 0 0 10px;
-}
-
-.card-image {
-    height: 150px;
-    width: 100%;
-    background-color: #c9c9c9;
-    border-radius: 15px;
-    box-shadow: inset 8px 8px 10px #c3c3c3, inset -8px -8px 10px #cfcfcf;
-}
-
-.card-body {
-    margin: 13px 0 0 10px;
-    color: rgb(31, 31, 31);
-    font-size: 15px;
-}
-
-.footer3 {
-    float: right;
-    margin: 28px 0 0 18px;
-    font-size: 13px;
-    color: #636363;
-}
-
-.by-name {
-    font-weight: 700;
-}
-
-*/
-
-.card3 {
-    padding: 10px;
-    width: 330px;
-    min-height: 370px;
-    border-radius: 20px;
-    background: #e8e8e8;
-    transition: 0.4s;
-}
-
-
-/* CSS for the carousel items and images */
-
-.carousel-item {
-    display: flex;
-    justify-content: space-between;
-}
-
-.card2 {
-    height: 30%;
-    flex: 0 0 calc(30% - 20px);
-    /* Adjust the width of each card (image container) */
-    margin-right: 20px;
-    /* Add margin for spacing between cards */
-}
-
-.css-contain-poster img {
-    max-width: 100%;
-    /* Make sure images don't exceed the container width */
-    height: auto;
-}
-
-
-/* Optional: To center text under each image */
-
-.css-item p {
-    text-align: center;
-    margin-top: 10px;
-    /* Adjust the spacing between image and text */
-}
-
-
-/*  */
-
-.cards {
-    width: 100%;
-    margin-left: 15%;
-    margin-right: 15%;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-
-.cards .red {
-    background-color: #f43f5e;
-}
-
-.cards .white {
-    background-color: #f8f8f8;
-    color: black;
-}
-
-.cards .blue {
-    background-color: #3b22c5;
-}
-
-.cards .card3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-    color: rgb(1, 1, 1);
-    cursor: pointer;
-    transition: 400ms;
-}
-
-.cards .card3 p.tip {
-    font-size: 1em;
-    font-weight: 700;
-}
-
-.cards .card3 p.second-text {
-    font-size: .7em;
-}
-
-.cards .card3:hover {
-    transform: scale(1.1, 1.1);
-}
-
-.cards:hover>.card3:not(:hover) {
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
-}
-
-
-/*  */
-
-.frame {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 30%;
-    background-color: #f2b67b;
-    border-radius: 5px;
-}
-
-.frame .svg {
-    border: 2px solid black;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 3px;
-    scale: 0.87;
-    transition: transform 0.3s;
-    transition-timing-function: cubic-bezier(0.4, 1.55, 0.74, 0.55);
-}
-
-.frame:hover .svg {
-    transform: scale(1.11);
-}
-
-
-/*  */
-
-
-/* css danh mục food */
-
-.card2 {
-    width: 300px;
-    height: 200px;
-    border-radius: 8px;
-    color: white;
-    overflow: hidden;
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    cursor: pointer;
-}
-
-.card2 p {
-    position: absolute;
-    bottom: 10px;
-    /* Adjust the position as needed */
-    left: 10px;
-    /* Adjust the position as needed */
-    color: white;
-    /* Text color */
-    font-size: 16px;
-    /* Adjust the font size as needed */
-}
-
-.card2:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
-.card2:hover:before {
-    transform: translateX(-100%);
-}
-
-.card2:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
-.card2:hover:after {
-    transform: translateX(100%);
-}
-
-
-/*  */
-
-
-/* main  */
-
-
-/* css text giá */
-
-.css-text {
-    text-decoration: none;
-    color: #21af58;
-    font-weight: 600;
-}
-
-.css-main {
-    margin-top: 5%;
-    width: 90%;
-    margin-left: 5%;
-}
-
-.css-main .css-contain-item {
-    display: flex;
-    align-items: flex-start;
-    flex: 1 1 0px;
-}
-
-.css-main .css-item {
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    margin: 5px;
-    flex: 1 1 0;
-    width: 0;
-}
-
-
-/* .css-main .css-item:hover {
-    flex: 1 1 10px;
-} */
-
-.css-main .css-item {
-    color: inherit;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
-
-.css-main .css-item .css-contain-poster {
-    width: 100%;
-}
-
-.css-main .css-item .css-contain-poster img {
-    width: 100%;
-}
-
-.css-main .css-item {
-    max-width: 100%;
-}
-
-.css-main .css-item {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 18px;
+    #selector {
+        margin-bottom: 450px;
+    }
 }

@@ -2,303 +2,86 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
 }
 
 body {
     font-family: "Inter", sans-serif;
+    background: #fab0052f !important;
 }
 
-
-/* css logo */
-
-.logo {
-    height: 150px;
-    width: 150px;
+.anhlogo {
+    width: 80px;
+    height: 80px;
 }
-
-
-/* thanh hiển thị */
-
-.navbar-collapse {
-    background-color: #044e0b;
-    border-radius: 7px;
-}
-
-.article-left {
-    flex-direction: column;
-    display: flex;
-    /* Cho phép các phần tử xuống dòng nếu không đủ không gian */
-}
-
-.css-contain-item {
-    flex: 1;
-    /* Phần tử con trong article chiếm đủ không gian theo chiều ngang */
-}
-
-.css-distance {
-    padding-top: 150px;
-    display: flex;
-    justify-content: center;
-    /* Căn giữa cả hai article */
-    margin-right: 2%;
-    margin-left: 2%;
-}
-
-.card-2 {
-    z-index: 0;
-    border-radius: 15px;
-    background-image: url("../magiamgia/home-image/1.png");
-    background-size: 100%;
-    position: relative;
-    border-radius: 10px;
-    display: flex;
-    padding: 10px 30px;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.heading {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.para {
-    text-align: center;
-    color: #ffffff;
-    opacity: 0.7;
-    line-height: 1.4;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.card-2:hover .overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.card-2 .card-2-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-weight: 600;
-    padding: 10px 20px;
-    font-size: 16px;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: none;
-    opacity: 0;
-    scale: 0;
-    transform-origin: 0 0;
-    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.15);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.card-2:hover .card-2-btn {
-    opacity: 1;
-    scale: 1;
-}
-
-.card-2 .card-2-btn:hover {
-    box-shadow: 0 0 0px 5px rgba(0, 0, 0, 0.3);
-}
-
-.card-2 .card-2-btn:active {
-    scale: 0.95;
-}
-
-.overlay::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(-45deg, #95fbc080 0%, #37ff9880 100%);
-    transition: transform 0.5s ease;
-}
-
-.card-2:hover .overlay::after {
-    transform: translate(-50%, -50%) scale(2);
-}
-
-
-/* Đặt kích thước và kiểu hiển thị của hình ảnh */
-
-.css-item img {
-    width: 100%;
-    height: auto;
-}
-
-
-/* .show trong bootstrap nó thường đi kèm .collapse, .d-block, và .d-none. */
-
-.center-icon {
-    display: flex;
-    justify-content: center;
-    /* Căn giữa theo trục ngang */
-    align-items: center;
-    /* Căn giữa theo trục dọc */
-    height: 100%;
-    /* Để bi-x ở giữa theo chiều cao */
-}
-
-
-/* CSS để căn đều khoảng cách giữa các mục <li> trong phần nav */
-
-
-/* CSS để căn đều logo và khoảng cách giữa các mục <li> trong phần nav */
-
-.navbar-nav {
-    display: flex;
-    justify-content: space-around;
-    /* Căn đều theo chiều ngang */
-    align-items: center;
-    /* Căn đều theo chiều dọc */
-}
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> */
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> bằng padding nếu cần */
-
-.navbar-nav .nav-item .css-a {
-    padding: 20px;
-    /* Điều chỉnh khoảng cách giữa các mục bằng padding */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* css thanh cố định */
-
-.header-top {
-    position: fixed;
-    /* Header cố định */
-    top: 0;
-    /* Header luôn ở trên cùng */
-    width: 100%;
-    z-index: 1;
-    transition: all 0.3s;
-    /* Thêm hiệu ứng chuyển động */
-}
-
-.css-tab {
-    width: 100%;
-    background-color: #044e0b;
-    height: 140px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
-}
-
-.css-a {
-    text-decoration: none;
-    color: #21af58;
-    font-weight: 600;
-}
-
-.css-a:hover {
-    cursor: pointer;
-    color: #4eefec;
-    transform: scale(1.05);
-}
-
-.css-a:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
-
-
-/* CSS cho chế độ tối */
 
 .dark-mode {
-    background: #333;
-    color: white;
+    background: black !important;
+    color: white !important;
 }
 
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.present {
+    color: rgb(102, 189, 239)!important;
+    font-weight: 600;
+}
+
+.dark-mode .present {
+    color: rgb(141, 232, 255)!important;
+    font-weight: 600;
+}
+
+.dark-mode .about-container {
+    background-image: linear-gradient( to right bottom, rgba(31, 29, 29, 0.6), rgba(20, 20, 20, 0.6)), url("../img-head/a3.png");
+}
+
+.dark-mode .css-form-mess,
+.dark-mode .card-food-img,
+.dark-mode .input,
+.dark-mode .button-close,
 .dark-mode .button-form {
-    background: #333;
-    color: white;
+    background: black !important;
+    color: white !important;
 }
 
-.dark-mode form {
-    background: #333;
-    color: white;
+.dark-mode .css-item {
+    background: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
 }
 
-.dark-mode .get-combo {
-    background: #333;
-    color: white;
+.container {
+    text-align: center;
 }
 
-.dark-mode input {
-    background: #333;
-    color: white;
+.span-hover {
+    cursor: pointer;
 }
 
-.dark-mode .css-tab {
-    background: #333;
-    color: white;
+
+/* ................................................................................... */
+
+
+/* about section */
+
+.about-container {
+    font-family: "raleway";
+    margin-top: 105px;
+    background-image: linear-gradient( to right bottom, rgba(68, 68, 68, 0.6), rgba(48, 48, 48, 0.6)), url("../img-head/a3.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.dark-mode .navbar-collapse {
-    background: #333;
-}
-
-.dark-mode .button-inf {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .card-food-img {
-    background: #333;
-    color: white;
-}
-
-.css-nav-button {
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
-}
-
-.css-nav-button:hover {
-    border: 1px solid #009087;
+.about-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: #149ddd;
 }
 
 .modal {
@@ -307,25 +90,11 @@ body {
     padding-top: 100px;
 }
 
-.close {
-    position: absolute;
-    right: 25px;
-    top: 10px;
-    right: 20%;
-    color: #000;
-    font-size: 35px;
-}
-
-.close:hover {
-    color: red;
-    cursor: pointer;
-}
-
 .card-food-img {
+    background-color: rgb(255, 255, 255);
     margin: 5% auto 15% auto;
     max-width: 320px;
     border-radius: 1rem;
-    background-color: #fff;
     padding: 1rem;
 }
 
@@ -338,7 +107,7 @@ p {
 .css-form-mess {
     height: 50%;
     padding: 50px;
-    background: #EBEBE1;
+    background-color: rgb(198, 198, 198);
     box-shadow: 0 2px 5px #ccc;
 }
 
@@ -348,7 +117,11 @@ p {
     padding: 5px;
     border: 1px solid;
     border-radius: 8px;
-    background-color: #F7F7F7;
+}
+
+form label,
+form input {
+    margin-left: 10%;
 }
 
 label {
@@ -359,8 +132,6 @@ label {
 .button-form {
     margin-top: 5%;
     margin-left: 25%;
-    background-color: white;
-    color: black;
     width: 100px;
     height: 50px;
     border-radius: 1em;
@@ -372,7 +143,7 @@ label {
 
 .button-form:hover {
     transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
+    box-shadow: 2px 5px 0 0 rgb(58, 58, 58);
 }
 
 .button-form:active {
@@ -408,99 +179,96 @@ label {
     }
 }
 
-.css-contain-item {
-    float: left;
-    width: 100vh;
+
+/* ................................................................................... */
+
+.css-main {
+    padding-top: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-.card2 {
-    background-image: url(../food/image/a.jpg);
-    background-size: 100%;
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    color: white;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+h2::after {
+    margin-top: 10px;
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #149ddd;
 }
 
-.card2 p {
-    color: white;
+.css-main .css-item {
+    height: fit-content;
+    transition: 0.5s;
+    position: relative;
+    margin-top: 10px;
+    display: flex;
 }
 
-.card2 .get-combo {
+.css-main .css-item:hover {
+    background-color: #000000;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+.css-item {
+    background-color: whitesmoke;
+}
+
+.css-main .css-item .content {
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
+.css-main .css-item .content .title {
+    margin-top: 10px;
+    margin: 10px;
+    font-size: 27px;
+}
+
+.css-main .css-item .content .info {
+    padding-left: 20px;
+}
+
+.css-main .css-item .get-combo {
+    border: none;
     position: absolute;
     bottom: 10px;
     right: 10px;
+    padding: 5px 10px;
+    transition: 0.5s;
+    border-radius: 5px;
+    height: 45px;
+    width: 120px;
 }
 
-.card2:hover {
-    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.css-main .css-item .get-combo:hover {
+    cursor: pointer;
 }
 
-.card2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
 
-.card2:hover:before {
-    transform: translateX(-100%);
-}
+/* ................................................................................... */
 
-.card2:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
-.card2:hover:after {
-    transform: translateX(100%);
-}
-
-.css-main {
-    margin-top: 5%;
-    width: 90%;
-    margin-left: 5%;
-}
-
-.css-main .css-contain-item {
-    display: flex;
-}
-
-.css-main .css-item {
-    margin: 5px;
-}
-
-.css-main .css-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.center-button {
+.center-icon {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    align-items: center;
+    height: 100%;
 }
 
-.article-left {
-    float: left;
+.center-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.bi-x {
+    font-size: 30px;
 }
 
 .button-close {
@@ -508,14 +276,14 @@ label {
     width: 50px;
     padding: 5px 10px;
     transition: all 0.3s ease-in-out;
-    background-color: #044e0b;
+    background-color: whitesmoke;
     border: none;
     border-radius: 50px;
 }
 
 .button-close:hover {
     transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
+    box-shadow: 2px 5px 0 0 rgb(98, 98, 98);
 }
 
 .button-close:active {
@@ -523,19 +291,27 @@ label {
     box-shadow: 0 0 0 0 black;
 }
 
+
+/* ................................................................................... */
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
 .button-inf {
     height: 50px;
     width: 200px;
     padding: 5px 10px;
     transition: all 0.3s ease-in-out;
-    background-color: #044e0b;
     border: none;
     border-radius: 50px;
 }
 
 .button-inf:hover {
     transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
+    box-shadow: 2px 5px 0 0 rgb(145, 145, 145);
 }
 
 .button-inf:active {
@@ -543,20 +319,19 @@ label {
     box-shadow: 0 0 0 0 black;
 }
 
+
+/* ................................................................................... */
+
 .get-combo {
-    height: 45px;
-    width: 120px;
-    padding: 5px 10px;
-    transition: all 0.3s ease-in-out;
-    background-color: #044e0b;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
+    background-color: #717070;
+    color: rgb(255, 255, 255);
 }
 
 .get-combo:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
+    box-shadow: 2px 5px 0 0 rgb(134, 134, 134);
 }
 
 .get-combo:active {
@@ -564,24 +339,10 @@ label {
     box-shadow: 0 0 0 0 black;
 }
 
-.css-main {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    display: flex;
-}
 
-@media (max-width: 968px) {
-    .css-main {
-        flex-direction: column;
-        flex: auto;
-    }
-    .css-contain-item {
-        width: 100%;
-    }
-}
+/* ................................................................................... */
 
 .footer {
-    /* display: flex; */
     padding-top: 5%;
     background-color: #00121b;
     width: 100%;
@@ -592,8 +353,13 @@ label {
     line-height: 2;
 }
 
+.footer-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
 .footer-text>* {
-    font-size: 15px;
+    font-size: 15px!important;
 }
 
 .ul-contact {
@@ -626,30 +392,31 @@ iframe {
     margin-left: 3%;
 }
 
-@media (max-width: 768px) {
-    .footer {
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+.footer-text a:hover {
+    color: white;
+}
+
+
+/* ................................................................................... */
+
+@media (max-width: 800px) {
+    .footer .row {
         flex-direction: column;
+        position: relative;
     }
-    .css-main .css-contain-item {
-        flex-direction: column;
-    }
-    .css-main .css-item {
-        flex: auto;
-    }
-    .header-top {
-        height: 90px;
+    .css-main {
+        margin-top: 150px;
     }
     .logo {
         height: 90px;
         width: 90px;
     }
-    .navbar-nav .nav-item {
-        margin: 5px 0px 5px 10px;
-    }
-    .css-distance {
-        flex-direction: column;
-    }
-    .card-2 {
-        width: 100%;
+    .css-main h1 {
+        font-size: 40px;
     }
 }

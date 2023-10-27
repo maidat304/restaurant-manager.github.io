@@ -1,96 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
+    <link rel="icon" href="../image-logo/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
+    <link rel="stylesheet " type="text/css " href="cart.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body style="background-color: #EEEEEE;font-family: Arial, Helvetica, sans-serif;">
-  <div class="container">
-    <header>
-      <h1>Giỏ hàng</h1>
-    </header>
-    <main>
-      <div class="row">
-        <div class="col-md-8">
-          <ul class="list-group">
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="image.jpg" alt="Kỹ năng quản lý thời gian">
-                </div>
-                <div class="col-md-9">
-                  <h4>Kỹ năng quản lý thời gian</h4>
-                  <p>Tác giả: Nguyễn Văn A</p>
-                  <p>Giá: 115.000đ</p>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <button type="button" class="btn btn-danger btn-sm">Xóa</button>
-                    </div>
-                    <div class="col-md-6">
-                      <button type="button" class="btn btn-success btn-sm">Cập nhật</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="image2.jpg" alt="Lưỡi lược thép lưỡi bướm tập quay">
-                </div>
-                <div class="col-md-9">
-                  <h4>Lưỡi lược thép lưỡi bướm tập quay</h4>
-                  <p>Màu sắc: Đen</p>
-                  <p>Giá: 58.999đ</p>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <button type="button" class="btn btn-danger btn-sm">Xóa</button>
-                    </div>
-                    <div class="col-md-6">
-                      <button type="button" class="btn btn-success btn-sm">Cập nhật</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+
+<body>
+    <!-- ....................................................................... -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; z-index: 10; width: 100%; top: 0;">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="anhlogo" src="../image-logo/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../home/home.html"><span class="bi bi-house-door"></span>&nbsp;&nbsp; TRANG CHỦ&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../food/food.html"><span class="bi bi-card-list"></span> THỰC ĐƠN&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datban/booking-table.html"><span class="bi bi-pencil-square"></span> ĐẶT BÀN&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text"></span> PHẢN HỒI&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../magiamgia/magiamgia.html"><span class="bi bi-gift"></span> MÃ GIẢM GIÁ&nbsp;</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person-circle"></span> VAI TRÒ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="showAlert()"><span class="bi bi-person"></span> KHÁCH HÀNG</a></li>
+                            <li><a class="dropdown-item" href="../dangnhap/dangnhap.html"><span class="bi bi-person-fill-gear"></span> QUẢN LÝ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link span-hover" onclick="darkmode_function()"><i id="mode-icon" class="bi bi-moon"></i></span>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link present" href="../cart/cart.html">
+                            <span class="bi bi-bag-fill"></span>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-4">
-          <div class="row mb-3">
-            <div class="card card-body">
-              <form>
-                <div class="mb-3">
-                  <label for="name" class="form-label">Họ tên</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên">
+    </nav>
+    <!-- ....................................................................... -->
+    <section class="about-container">
+        <h1 class="about-title">THANH TOÁN GIỎ HÀNG</h1>
+    </section>
+    <div class="container">
+        <main class=" css-distance2">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card shadow">
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="image" src="../food/image/b.jpg" alt="food">
+                                    </div>
+                                    <div class="col-md-9" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                        <span class="css">
+                                            <h4 style="padding-top:30px">Cơm thập cẩm Paella
+
+                                            </h4>
+                                            <p style="padding-top:30px;">Giá: 135.000 Đ</p>
+</span>
+                                        <button type="button" class="btn btn-danger btn-sm bi bi-x" style="align-self: flex-start;"></button>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="image" src="../food/image/d.jpg" alt="food">
+                                    </div>
+                                    <div class="col-md-9" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                        <span class="css">
+                                            <h4 style="padding-top:30px;">Cơm gà Prarii
+
+                                            </h4>
+                                            <p style="padding-top:30px;margin-left:60px;">Giá: 140.000 Đ</p>
+</span>
+                                        <button type="button" class="btn btn-danger btn-sm bi bi-x" style="align-self: flex-start;"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img class="image" src="../food/image/f.jpg" alt="food">
+                                    </div>
+                                    <div class="col-md-9" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                        <span class="css">
+                                            <h4 style="padding-top:30px;">Taco
+
+                                            </h4>
+                                            <p style="padding-top:30px;padding-left:60px;">Giá: 280.000 Đ</p>
+</span>
+                                        <button type="button" class="btn btn-danger btn-sm bi bi-x" style="align-self: flex-start;"></button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="address" class="form-label">Địa chỉ</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
+                <div class="col-md-4  ">
+                    <div class="row mb-3 css-distance2">
+                        <div class="card shadow">
+
+                            <div class=" card-body">
+                                <form action="#" onsubmit="return validate(this);" name="form">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Họ tên*</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ tên">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Số điện thoại*</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Địa chỉ*</label>
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="sale" class="form-label">Mã giảm giá (nếu có)</label>
+                                        <input type="text" class="form-control" id="sale" name="sale" placeholder="Nhập mã giảm giá">
+                                    </div>
+                                    <div class="row css-distance2">
+                                        <div class="card checkout">
+                                            <p class="title" style="font-weight:600;">THÔNG TIN THANH TOÁN</p>
+                                            <div class="details">
+                                                <span>TỔNG TIỀN SẢN PHẨM:</span>
+                                                <span>555.000 Đ</span>
+                                                <span>PHÍ SHIP:</span>
+                                                <span>15.000 Đ</span>
+                                                <span>PHÍ DỊCH VỤ:</span>
+                                                <span>3.000 Đ</span>
+                                            </div>
+                                            <div class="checkout--footer">
+                                                <label class="price">573.000 Đ</label>
+                                                <button class="checkout-btn">THANH TOÁN</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Thông tin thanh toán</h4>
-              <p class="card-text">
-                <strong>Tổng tiền:</strong> 174.999đ
-                <br>
-                <strong>Phí vận chuyển:</strong> 15.000đ
-                <br>
-                <strong>Tổng cộng:</strong> 189.999đ
-              </p>
-              <button type="button" class="btn btn-primary">Thanh toán</button>
+        </main>
+
+    </div>
+
+    <footer class="footer footer-text css-distance">
+        <div class=" row align-items-start">
+            <div class="logo-footer col">
+                <a href="../home/home.html">
+                    <img class="logo" src="../image-logo/logo.png" alt="logo">
+                </a>
             </div>
-          </div>
-          </div>
+            <div class="col">
+                <ul class="ul-contact ">
+                    <li class="footer-text">
+                        <h4>DANH MỤC CHÍNH</h4>
+                    </li>
+                    <li class="footer-text"><a class="nav-link " href="../home/home.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../food/food.html">THỰC ĐƠN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/datban.html">ĐẶT BÀN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/phanhoi.html">PHẢN HỒI</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col footer-text">
+                <h4>NHÀ HÀNG SỐ 1 VIỆT NAM</h4>
+                <p>Giải thưởng được trao dựa trên trải nghiệm thực tế và các tiêu chí bình chọn khắt khe của hơn 300 nhà phê bình ẩm thực, đầu bếp, chủ nhà hàng và chuyên gia ẩm thực khắp thế giới.</p>
+            </div>
+            <div class="col ">
+                <ul class="ul-contact footer-text">
+                    <h4>LIÊN HỆ</h4>
+                    <li>Hotline: 03xx.xxx.xxx</li>
+                    <li>Gmail: ...@gmail.com</li>
+                    <li>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội.</li>
+                </ul>
+            </div>
+            <div class="col footer-text">
+                <h4>BẢN ĐỒ</h4>
+                <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1228608575834!2d105.80064111432421!3d21.02776948599887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBHaWFvIHRow7RuZyBW4bqtbiB04bqjaQ!5e0!3m2!1svi!2s!4v1539544397383"></iframe>
+                </iframe>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <!-- dien footer -->
+
+        <p class="footer-last-st footer-last">
+            <a href="#"><i class="bi bi-facebook" id="icon0"></i></a>
+            <a href="#"><i class="bi bi-messenger" id="icon1"></i></a>
+            <a href="#"><i class="bi bi-instagram" id="icon2"></i></a>
+            <a href="#"><i class="bi bi-twitter" id="icon3"></i></a>
+        </p>
+
+        <p class="footer-last-nd footer-last footer-text">
+            © 2023 Ngon Bá Cháy, Thanks.
+        </p>
+
     </footer>
-  </div>
+    <!-- ....................................................................... -->
+
+    <script src="cart.js ">
+    </script>
+    <!-- ....................................................................... -->
 </body>

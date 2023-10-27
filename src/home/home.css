@@ -2,278 +2,99 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
 }
 
 body {
     font-family: "Inter", sans-serif;
+    background: #fab0052f !important;
+    overflow-x: hidden;
 }
 
-
-/* css logo */
-
-.logo {
-    height: 150px;
-    width: 150px;
+.anhlogo {
+    width: 80px;
+    height: 80px;
 }
-
-
-/* thanh hiển thị */
-
-.navbar-collapse {
-    background-color: #044e0b;
-    border-radius: 7px;
-}
-
-
-/* .show trong bootstrap nó thường đi kèm .collapse, .d-block, và .d-none. */
-
-
-/* CSS để căn đều khoảng cách giữa các mục <li> trong phần nav */
-
-.underline-text {
-    text-decoration: underline;
-    text-underline-offset: 20px;
-}
-
-.underline-text:hover {
-    text-decoration-color: rgb(0, 208, 250);
-}
-
-
-/* CSS để căn đều logo và khoảng cách giữa các mục <li> trong phần nav */
-
-.navbar-nav {
-    display: flex;
-    justify-content: space-around;
-    /* Căn đều theo chiều ngang */
-    align-items: center;
-    /* Căn đều theo chiều dọc */
-}
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> */
-
-
-/* Điều chỉnh khoảng cách giữa các mục <li> bằng padding nếu cần */
-
-.navbar-nav .nav-item .css-a {
-    padding: 20px;
-    /* Điều chỉnh khoảng cách giữa các mục bằng padding */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* Điều chỉnh màu và hiệu ứng khi hover trên các mục <li> */
-
-.navbar-nav .nav-item a:hover {
-    color: #4eefec;
-    /* Màu khi hover */
-    transform: scale(1.05);
-    /* Hiệu ứng khi hover */
-}
-
-
-/* css thanh cố định */
-
-.header-top {
-    position: fixed;
-    /* Header cố định */
-    top: 0;
-    /* Header luôn ở trên cùng */
-    width: 100%;
-    z-index: 1;
-    transition: all 0.3s;
-    /* Thêm hiệu ứng chuyển động */
-}
-
-
-/* css các list của thanh hiển thị */
-
-.css-tab {
-    width: 100%;
-    background-color: #044e0b;
-    height: 140px;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
-}
-
-.css-a {
-    text-decoration: none;
-    color: #21af58;
-    font-weight: 600;
-}
-
-.css-a:hover {
-    cursor: pointer;
-    color: #4eefec;
-    transform: scale(1.05);
-}
-
-.css-a:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
-
-
-/* CSS cho các mục trong danh sách thả xuống */
-
-.css-ul-order .css-order {
-    margin-bottom: 10px;
-}
-
-
-/* Điều chỉnh độ cao của header khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .header-top {
-        height: 100px;
-        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
-    }
-}
-
-
-/* Điều chỉnh kích thước của logo khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .logo {
-        height: 100px;
-        /* Điều chỉnh kích thước của logo */
-        width: 100px;
-    }
-}
-
-
-/* Điều chỉnh khoảng cách giữa các mục trong menu khi màn hình nhỏ hơn 768px */
-
-@media (max-width: 768px) {
-    .navbar-nav .nav-item {
-        margin: 5px 0px 5px 10px;
-        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
-    }
-}
-
-
-/* add */
-
-
-/* CSS cho chế độ tối */
 
 .dark-mode {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .css-tab {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .css-ul-order {
-    background: #333;
-}
-
-.dark-mode .navbar-collapse {
-    background: #333;
-}
-
-.dark-mode .myInput {
-    background: #333;
-    color: white;
-}
-
-.dark-mode .custom-button {
-    background: #333;
-    color: white;
+    background: black !important;
+    color: white !important;
 }
 
 .dark-mode .button-inf {
-    background: #333;
-    color: white;
+    background: black !important;
+    color: white !important;
 }
 
-.dark-mode .card-food-img {
-    background: #333;
-    color: white;
+.dark-mode .nav-link {
+    color: white !important;
 }
 
-
-/* css distance */
-
-.css-distance {
-    padding-top: 150px;
+.present {
+    color: rgb(102, 189, 239)!important;
+    font-weight: 600;
 }
 
-
-/* css button nav */
-
-.css-nav-button {
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #2d2626;
+.dark-mode .present {
+    color: rgb(141, 232, 255)!important;
+    font-weight: 600;
 }
 
-.css-nav-button:hover {
-    border: 1px solid #009087;
+.dark-mode .rectangle {
+    background-image: linear-gradient( to right bottom, rgba(31, 29, 29, 0.6), rgba(20, 20, 20, 0.6)), url("../home/image/blackfriday.png");
+    color: #fff;
 }
 
+.container {
+    text-align: center;
+}
 
-/*  */
-
-.carousel {
-    z-index: 0;
+.span-hover {
+    cursor: pointer;
 }
 
 
-/* section */
+/* ................................................................................... */
 
-section {
-    display: inline-block;
-    vertical-align: top;
+.dbtd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
-section article {
-    border-radius: 8px;
-    display: inline-block;
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    transition: 0.5s;
+.chao {
+    margin-top: 20px;
+}
+
+.gachngang {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .dbtd {
+        padding: 10px;
+    }
 }
 
 
-/* css danh mục food */
+/* ............................................................. */
 
 .card2 {
     width: 300px;
     height: 200px;
     border-radius: 8px;
     color: white;
-    overflow: hidden;
     position: relative;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
     cursor: pointer;
 }
 
 .card2 p {
     position: absolute;
     bottom: 10px;
-    /* Adjust the position as needed */
     left: 10px;
-    /* Adjust the position as needed */
     color: white;
-    /* Text color */
     font-size: 16px;
-    /* Adjust the font size as needed */
 }
 
 .card2:hover {
@@ -281,57 +102,13 @@ section article {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card2:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
-.card2:hover:before {
-    transform: translateX(-100%);
-}
-
-.card2:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
-    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-    z-index: 1;
-}
-
-.card2:hover:after {
-    transform: translateX(100%);
-}
-
-
-/*  */
-
-
-/* main  */
-
-
-/* css text giá */
-
-.css-text {
-    text-decoration: none;
-    color: #21af58;
-    font-weight: 600;
-}
-
 .css-main {
-    margin-top: 5%;
+    margin-top: 500px !important;
     width: 90%;
     margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
 }
 
 .css-main .css-contain-item {
@@ -347,11 +124,6 @@ section article {
     flex: 1 1 0;
     width: 0;
 }
-
-
-/* .css-main .css-item:hover {
-    flex: 1 1 10px;
-} */
 
 .css-main .css-item {
     color: inherit;
@@ -382,7 +154,29 @@ section article {
 }
 
 
-/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
+/* ............................................................. */
+
+@media(max-width: 1200px) {
+    .center-button {
+        margin-bottom: 50px;
+    }
+    .button-inf {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .button-inf1 {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .introduce-main-content {
+        font-size: 30px !important;
+    }
+}
+
+.introduce-main-content {
+    font-weight: 600;
+    font-size: 30px;
+}
 
 .center-button {
     display: flex;
@@ -390,21 +184,23 @@ section article {
     padding-top: 50px;
 }
 
-
-/*  */
-
 .button-inf {
+    color: #00121b;
     height: 50px;
-    width: 15%;
+    width: 25%;
     align-items: center;
-    padding: 5px 10px;
+    padding: 5px 0px !important;
     transition: all 0.3s ease-in-out;
-    background-color: #044e0b;
-    color: #fff;
     border: none;
-    border-radius: 50px;
+    border-radius: 20px;
     text-align: center;
-    /* Center text within the button */
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.kc {
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .button-inf:hover {
@@ -417,28 +213,158 @@ section article {
     box-shadow: 0 0 0 0 black;
 }
 
+.span-click {
+    text-decoration: underline;
+}
 
-/* main */
-
-.css-main {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    display: flex;
+.span-click:hover {
+    cursor: pointer;
 }
 
 
-/* Bổ sung CSS để điều chỉnh bố cục phù hợp với nội dung */
+/* ............................................................. */
 
-@media (max-width: 768px) {
-    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
-    .css-main {
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.rectangle {
+    border-radius: 15px;
+    height: 50vh;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2%;
+}
+
+.rectangle {
+    background-image: url('../home/image/blackfriday.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+#content {
+    position: relative;
+    z-index: 3;
+    top: 30%;
+    padding: 0px 50px;
+    z-index: 0;
+}
+
+.countdown-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #5a5a5a, -5px -5px 5px #ffffff;
+}
+
+
+/* ............................................................. */
+
+@media screen and (max-width: 1223px) {
+    .introduce {
         flex-direction: column;
+    }
+    .introduce-sub-content {
+        font-size: 20px !important;
+        margin-bottom: 0px;
+    }
+    .carousel {
+        margin-top: 105px;
+    }
+}
+
+.introduce {
+    padding: 50px;
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.introduce-img-section {
+    margin-right: 200px;
+}
+
+.introduce-img {
+    width: 100%;
+    height: 80%;
+    box-shadow: 10px 10px 5px rgb(211, 209, 209);
+}
+
+.introduce-content {
+    width: 600px;
+}
+
+.introduce-sub-content {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 15px;
+    text-align: justify;
+}
+
+.center-button {
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.button-inf {
+    height: 50px;
+    width: 20%;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 50px;
+}
+
+.button-inf:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(145, 145, 145);
+}
+
+.button-inf:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* ............................................................. */
+
+
+/* ............................................................. */
+
+@media (max-width: 1180px) {
+    .css-main .css-contain-item {
+        flex-direction: column;
+    }
+    .css-main .css-item {
         flex: auto;
     }
 }
 
+
+/* ............................................................. */
+
 .footer {
-    /* display: flex; */
     padding-top: 5%;
     background-color: #00121b;
     width: 100%;
@@ -447,6 +373,15 @@ section article {
     padding-right: 50px;
     color: #868e96;
     line-height: 2;
+}
+
+.footer-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.footer-text a:hover {
+    color: white;
 }
 
 .footer-text>* {
@@ -483,180 +418,81 @@ iframe {
     margin-left: 3%;
 }
 
-@media (max-width: 768px) {
-    .footer {
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+
+/* ....................................................................... */
+
+@media (max-width: 800px) {
+    .footer .row {
         flex-direction: column;
-    }
-    /* Điều chỉnh CSS cho màn hình nhỏ hơn 768px */
-    .css-main .css-contain-item {
-        flex-direction: column;
-    }
-    .css-main .css-item {
-        flex: auto;
-    }
-    .header-top {
-        height: 90px;
-        /* Điều chỉnh độ cao cho màn hình nhỏ hơn 768px */
+        position: relative;
     }
     .logo {
         height: 90px;
-        /* Điều chỉnh kích thước của logo */
         width: 90px;
     }
-    .navbar-nav .nav-item {
-        margin: 5px 0px 5px 10px;
-        /* Điều chỉnh khoảng cách trái và phải giữa các mục */
+    .intro-container p {
+        width: 50%;
+    }
+    .intro-container {
+        flex-direction: column;
+        flex: auto;
+    }
+}
+
+@media (max-width:950px) {
+    .introduce-content {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:1550px) {
+    .intro-container {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:1250px) {
+    .introduce-img {
+        width: 300px;
+    }
+    .introduce-content {
+        margin-top: 70px;
+    }
+    .button-inf .btn {
+        font-size: 15px;
+    }
+    .button-inf {
+        border-radius: 15px;
     }
 }
 
 
-/*  */
+/* ....................................................................... */
 
-
-/* CSS để căn giữa hình chữ nhật */
-
-.rectangle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Đảm bảo hình chữ nhật chiếm toàn bộ chiều cao của trình duyệt */
+.ghimicon {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 999;
 }
 
-.rectangle {
-    border-radius: 15px;
-    height: 50vh;
-    width: 100%;
-    margin-left: 5%;
-    /* Cách lề mặt trái 5% */
-    margin-right: 5%;
-    /* Cách lề mặt phải 5% */
-    /* Độ rộng của hình chữ nhật (cách lề mỗi bên 5%) */
-    padding: 2%;
-    /* Khoảng cách 2% từ lề mỗi bên */
-    background-color: green;
-    /* Màu nền là xanh lá cây */
-}
-
-
-/*  */
-
-#content {
-    position: relative;
-    z-index: 3;
-    top: 40%;
-    padding: 0px 50px;
-    z-index: 0;
-}
-
-h1 {
-    font-weight: lighter;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    border-bottom: solid 1px #fff;
-    padding-bottom: 30px;
-}
-
-.countdown-container {
-    position: absolute;
-    top: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.countdown-item {
-    font-size: 1rem;
-    text-align: center;
-    margin: 10px;
+.ghimicon svg {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 10px;
-    background-color: rgb(66, 220, 66);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
-/*  */
-
-.datship-content {
-    position: absolute;
-    top: 900px;
-    left: 900px;
-    background-color: green;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.additional-content:hover {
-    background-color: red;
-}
-
-.datship-content:hover {
-    background-color: red;
-}
-
-.ban1 {
-    position: absolute;
-    top: 1000px;
-    left: 515px;
-    font-size: 20px;
-}
-
-.ban2 {
-    position: absolute;
-    top: 1000px;
-    left: 915px;
-    font-size: 20px;
-}
-
-.chao {
-    position: absolute;
-    top: 1030px;
-    left: 620px;
-    color: black;
-}
-
-.gachngang {
-    font-size: 14px;
-    font-family: Roboto;
-    color: #333;
-    font-weight: 300;
-    position: absolute;
-    top: 1120px;
-    left: 420px;
-}
-
-.p2 {
-    position: absolute;
-    font-size: 14px;
-    top: 1080px;
-    left: 350px;
-}
-
-.additional-content {
-    position: absolute;
-    top: 900px;
-    left: 500px;
-    background-color: green;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rectangle {
-    background-image: url('../home/image/3.png');
-    background-size: 100% 100%;
-    /* Tăng kích thước background lên 150% */
-    background-repeat: no-repeat;
-    text-align: center;
-    color: #fff;
+.btghim {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    z-index: 999;
 }

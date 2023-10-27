@@ -1,86 +1,65 @@
-// Hàm chuyển đổi chế độ sáng/tối
-function toggleMode() {
-    const modeIcon = document.getElementById('mode-icon');
-    if (modeIcon.classList.contains('bi-moon')) {
-        // Chuyển sang chế độ tối
-        modeIcon.classList.remove('bi-moon');
-        modeIcon.classList.add('bi-sun');
-        // Thêm lớp dark cho body hoặc container chứa nội dung
+function darkmode_function() {
+    const darkmode = document.getElementById('mode-icon');
+    if (darkmode.classList.contains('bi-moon')) {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
         document.body.classList.add('dark-mode');
-        // Lưu trạng thái chế độ tối vào localStorage
-        localStorage.setItem('darkMode', 'true');
+        localStorage.setItem('darkMode', '0');
     } else {
-        // Chuyển sang chế độ sáng
-        modeIcon.classList.remove('bi-sun');
-        modeIcon.classList.add('bi-moon');
-        // Loại bỏ lớp dark
+        darkmode.classList.remove('bi-sun');
+        darkmode.classList.add('bi-moon');
         document.body.classList.remove('dark-mode');
-        // Lưu trạng thái chế độ sáng vào localStorage
-        localStorage.setItem('darkMode', 'false');
+        localStorage.setItem('darkMode', '1');
     }
 }
 
-// Kiểm tra và thiết lập trạng thái chế độ tối khi trang được tải
 document.addEventListener('DOMContentLoaded', function() {
-    const modeIcon = document.getElementById('mode-icon');
-    const storedDarkMode = localStorage.getItem('darkMode');
+    const darkmode = document.getElementById('mode-icon');
+    const save = localStorage.getItem('darkMode');
 
-    if (storedDarkMode === 'true') {
-        modeIcon.classList.remove('bi-moon');
-        modeIcon.classList.add('bi-sun');
+    if (save === '0') {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
         document.body.classList.add('dark-mode');
     }
 });
 
 
-//
+// ......................................................................................
 
-const buttons = document.querySelectorAll(".custom-button");
-const cartCountElement = document.querySelector("#cart-count"); // Đảm bảo rằng bạn đang chọn đúng phần tử có ID là "cart-count"
-let itemCount = 0;
+const card_count_button = document.querySelectorAll(".custom-button");
+const card_count_save = document.querySelector("#cart-count");
+let count = 0;
 
-buttons.forEach(function(button) {
+card_count_button.forEach(function(button) {
     button.addEventListener("click", function() {
-        itemCount++;
-        cartCountElement.textContent = itemCount;
+        count++;
+        card_count_save.textContent = count;
     });
 });
 
 
 
-
-
-// jquery search https://www.w3schools.com/jquery/jquery_filters.asp
+// ......................................................................................
 
 $(document).ready(function() {
-    // Bắt sự kiện thay đổi ở cả hai dropdown
-    $(".myInput, .myInput2").on("change", function() {
-        var selectedCategory = $(".myInput").val().toLowerCase();
-        if (selectedCategory == "") {
-            // Hiển thị tất cả sản phẩm và text-food elements
-            $(".myTable .css-item").show();
-            $(".myTable .text-food").show();
+    $(".select-food").change(function() {
+        var selected = $(this).val().toLowerCase();
+        var select_food = $(".select-food-card");
+        var call = select_food.find(".css-item, .text-food");
+        if (selected === "") {
+            call.show();
+        } else {
+            call.hide();
+            call.filter("[data-food ='" + selected + "']").show();
         }
-        // Lọc sản phẩm dựa trên lựa chọn danh mục
-        else {
-            $(".myTable .css-item").hide();
-            $(".myTable .text-food").hide();
-            $(".myTable .css-item[data-category='" + selectedCategory + "']").show();
-            $(".myTable .text-food[data-category='" + selectedCategory + "']").show();
-        }
-
     });
 });
 
 
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
-// Get the modal
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+// ......................................................................................
+function showAlert() {
+    alert('Cảm ơn bạn đã đến với nhà hàng.');
+    window.location.href = '../home/home.html';
 }

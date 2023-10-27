@@ -1,132 +1,109 @@
 <!DOCTYPE html>
 <html>
-<!-- code chung {-->
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- tiêu đề trên thanh web -->
-    <link rel="icon" href="../food/image/logo.png" type="image/png">
-    <!-- food css -->
+    <link rel="icon" href="../image-logo/logo.png" type="image/png">
     <link rel="stylesheet " type="text/css " href="dangnhap.css ">
-    <!-- bootstrap icon -->
     <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
-    <!-- boostrap css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
-    <!-- boostrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
 
-    <title>TRANG CHỦ</title>
+    <title>ĐĂNG NHẬP</title>
 </head>
 
 <body>
-    <!-- &nbsp;      cái này là tạo khoảng cách chữ với nhau  -->
-    <!-- thanh hiển thị -->
-    <header class="header-top">
-        <nav class="css-tab header-top navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="" href="../home/home.html"><img class="logo" src="../home/image/logo.png"></a>
-                <button class="navbar-toggler css-nav-button css-a" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="bi bi-list css-a"></span>
-              </button>
-                <div class="collapse navbar-collapse " id="collapsibleNavbar">
-                    <ul class=" navbar-nav ms-auto">
 
-                        <li class=" nav-item">
+    <!-- ....................................................................... -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; z-index: 10; width: 100%; top: 0;">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="anhlogo" src="../image-logo/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../home/home.html"><span class="bi bi-house-door"></span>&nbsp;&nbsp; TRANG CHỦ&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../food/food.html"><span class="bi bi-card-list"></span> THỰC ĐƠN&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datban/booking-table.html"><span class="bi bi-pencil-square"></span> ĐẶT BÀN&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text"></span> PHẢN HỒI&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " href="../magiamgia/magiamgia.html"><span class="bi bi-gift"></span> MÃ GIẢM GIÁ&nbsp;</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle present" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person-circle"></span> VAI TRÒ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="showAlert()"><span class="bi bi-person"></span> KHÁCH HÀNG</a></li>
+                            <li><a class="dropdown-item" href="../dangnhap/dangnhap.html"><span class="bi bi-person-fill-gear"></span> QUẢN LÝ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link span-hover" onclick="darkmode_function()"><i id="mode-icon" class="bi bi-moon"></i></span>
 
-                            <a class="css-a" href="../home/home.html "><span  class="bi bi-house-door">&nbsp;&nbsp;TRANG CHỦ</span></a>
-                        </li>
-                        <li class="nav-item  ">
-                            <a class=" css-a" href="../food/food.html "><span class="bi bi-card-list">&nbsp;&nbsp;THỰC ĐƠN</span></a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class=" css-a" href="../food/food.html "><span class="bi bi-pencil-square">&nbsp;&nbsp;ĐẶT BÀN</span></a>
-                        </li>
-                        <li class="nav-item  ">
-                            <menu class="dropdown">
-                                <a class="css-a dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="bi bi-chat-left-text">&nbsp;&nbsp;THÔNG TIN</span>
-                                </a>
-                                <ul class="dropdown-menu css-ul-order" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="css-a css-order bi bi-telephone" href="#">&nbsp;&nbsp;LIÊN HỆ</a></li>
-                                    <li><a class="css-a css-order bi bi-chat-left-text" href="#">&nbsp;&nbsp;PHẢN HỒI</a></li>
-                                    <li><a class="css-a css-order bi bi-file-earmark-post" href="#">&nbsp;&nbsp;TUYỂN DỤNG</a></li>
-                                </ul>
-                            </menu>
-                        </li>
-                        <!-- add -->
-                        <li class="nav-item  ">
-                            <a class=" css-a" href="../food/food.html "><span class="bi bi-person-circle">&nbsp;&nbsp;ĐĂNG NHẬP</span></a>
-                        </li>
-                        <li class="nav-item  " onclick="toggleMode()">
-                            <i id="mode-icon" class="bi bi-moon css-a "></i>
+                    </li>
 
-
-                        </li>
-                        <li class="nav-item  ">
-                            <a class="css-a" href="#">
-                                <span class="bi bi-bag-fill"></span>
-                                <span id="cart-count">0</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-    </header>
-    <main class="css-main ">
-        <div class="css-distance form-container">
-            <div class="wrapper">
-                <div class="card-switch">
-                    <label class="switch">
-                       <input class="toggle" type="checkbox">
-                       <span class="slider"></span>
-                       <span class="card-side"></span>
-                       <div class="flip-card__inner">
-                          <div class="flip-card__front">
-                             <div class="title">Log in</div>
-                             <form action="" class="flip-card__form">
-                                <input type="email" placeholder="Email" name="email" class="flip-card__input">
-                                <input type="password" placeholder="Password" name="password" class="flip-card__input">
-                                <button class="flip-card__btn">Let`s go!</button>
-                             </form>
-                          </div>
-                          <div class="flip-card__back">
-                             <div class="title">Sign up</div>
-                             <form action="" class="flip-card__form">
-                                <input type="name" placeholder="Name" class="flip-card__input">
-                                <input type="email" placeholder="Email" name="email" class="flip-card__input">
-                                <input type="password" placeholder="Password" name="password" class="flip-card__input">
-                                <button class="flip-card__btn">Confirm!</button>
-                             </form>
-                          </div>
-                       </div>
-                    </label>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cart/cart.html">
+                            <span class="bi bi-bag-fill"></span>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </main>
+    </nav>
+    <!-- ....................................................................... -->
+
+    <!-- form -->
+    <div class="css-distance form-container">
+        <form class="form">
+            <h1 id="heading">ĐĂNG NHẬP</h1>
+            <div class="field">
+                <span class="input-icon"><i class="bi bi-at"></i></span>
+                <input autocomplete="off" placeholder="TÀI KHOẢN" class="input-field" type="text">
+            </div>
+            <div class="field">
+                <span class="input-icon"><i class="bi bi-key"></i></span>
+                <input placeholder="MẬT KHẨU" class="input-field" type="password" id="passwordField">
+                <span onclick="toggleEYE()"><i id="mode-EYE" class="bi bi-eye"></i></span>
+            </div>
+            <button class="button3">ĐĂNG NHẬP</button>
+        </form>
+    </div>
+    <!-- ....................................................................... -->
     <footer class="footer footer-text">
-        <div class=" row align-items-start ">
+        <div class=" row align-items-start">
             <div class="logo-footer col">
                 <a href="../home/home.html">
-                    <img class="logo" src="../image-logo/Team 16 - 2023 (2).png">
+                    <img class="logo" src="../image-logo/logo.png" alt="logo">
                 </a>
             </div>
-            <div class="col ">
+            <div class="col">
                 <ul class="ul-contact ">
                     <li class="footer-text">
                         <h4>DANH MỤC CHÍNH</h4>
                     </li>
-
-                    <li class="footer-text"><a class="css-a " href="../home/home.html">TRANG CHỦ</a>
+                    <li class="footer-text"><a class="nav-link " href="../home/home.html">TRANG CHỦ</a>
                     </li>
-                    <li class="footer-text"><a class="css-a" href="../food/food.html">THỰC ĐƠN</a>
+                    <li class="footer-text"><a class="nav-link" href="../food/food.html">THỰC ĐƠN</a>
                     </li>
-                    <li class="footer-text"><a class="css-a" href="../datban/datban.html">ĐẶT BÀN</a>
+                    <li class="footer-text"><a class="nav-link" href="../datban/datban.html">ĐẶT BÀN</a>
                     </li>
-                    <li class="footer-text"><a class="css-a" href="../dangnhap/dangnhap.html">THÔNG TIN</a></li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/phanhoi.html">PHẢN HỒI</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
+                    </li>
                 </ul>
 
             </div>
@@ -149,7 +126,7 @@
             </div>
         </div>
 
-        <p class="footer-last-st footer-last ">
+        <p class="footer-last-st footer-last">
             <a href="#"><i class="bi bi-facebook" id="icon0"></i></a>
             <a href="#"><i class="bi bi-messenger" id="icon1"></i></a>
             <a href="#"><i class="bi bi-instagram" id="icon2"></i></a>
@@ -157,14 +134,13 @@
         </p>
 
         <p class="footer-last-nd footer-last footer-text">
-            © 2023 1 Từ Thôi - Ngon, Thanks.
+            © 2023 Ngon Bá Cháy, Thanks.
         </p>
 
     </footer>
-    <!-- add -->
+    <!-- ....................................................................... -->
     <script src="dangnhap.js ">
     </script>
-    <!-- /add -->
 </body>
 
 </html>

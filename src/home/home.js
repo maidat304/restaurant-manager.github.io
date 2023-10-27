@@ -1,43 +1,37 @@
-// Hàm chuyển đổi chế độ sáng/tối
-function toggleMode() {
-    const modeIcon = document.getElementById('mode-icon');
-    if (modeIcon.classList.contains('bi-moon')) {
-        // Chuyển sang chế độ tối
-        modeIcon.classList.remove('bi-moon');
-        modeIcon.classList.add('bi-sun');
-        // Thêm lớp dark cho body hoặc container chứa nội dung
+function darkmode_function() {
+    const darkmode = document.getElementById('mode-icon');
+    if (darkmode.classList.contains('bi-moon')) {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
         document.body.classList.add('dark-mode');
-        // Lưu trạng thái chế độ tối vào localStorage
-        localStorage.setItem('darkMode', 'true');
+        localStorage.setItem('darkMode', '0');
     } else {
-        // Chuyển sang chế độ sáng
-        modeIcon.classList.remove('bi-sun');
-        modeIcon.classList.add('bi-moon');
-        // Loại bỏ lớp dark
+        darkmode.classList.remove('bi-sun');
+        darkmode.classList.add('bi-moon');
         document.body.classList.remove('dark-mode');
-        // Lưu trạng thái chế độ sáng vào localStorage
-        localStorage.setItem('darkMode', 'false');
+        localStorage.setItem('darkMode', '1');
     }
 }
 
-// Kiểm tra và thiết lập trạng thái chế độ tối khi trang được tải
 document.addEventListener('DOMContentLoaded', function() {
-    const modeIcon = document.getElementById('mode-icon');
-    const storedDarkMode = localStorage.getItem('darkMode');
+    const darkmode = document.getElementById('mode-icon');
+    const save = localStorage.getItem('darkMode');
 
-    if (storedDarkMode === 'true') {
-        modeIcon.classList.remove('bi-moon');
-        modeIcon.classList.add('bi-sun');
+    if (save === '0') {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
         document.body.classList.add('dark-mode');
     }
 });
 
-// 
+
+// ......................................................................................
+
 const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 1); // Thêm 1 ngày
-targetDate.setHours(targetDate.getHours() + 20); // Thêm 20 giờ
-targetDate.setMinutes(targetDate.getMinutes() + 30); // Thêm 30 phút
-targetDate.setSeconds(targetDate.getSeconds() + 30); // Thêm 30 giây
+targetDate.setDate(targetDate.getDate() + 1);
+targetDate.setHours(targetDate.getHours() + 20);
+targetDate.setMinutes(targetDate.getMinutes() + 30);
+targetDate.setSeconds(targetDate.getSeconds() + 30);
 
 function updateCountdown() {
     const currentDate = new Date().getTime();
@@ -63,5 +57,27 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+"use strict";
 
-//
+
+// ......................................................................................
+
+
+function showAlert() {
+    alert('Cảm ơn bạn đã đến với nhà hàng.');
+    window.location.href = '../home/home.html';
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const xemthem = document.getElementById("xemthem");
+    const thugon = document.getElementById("thugon");
+    const click_button = document.getElementById("click_button");
+
+    xemthem.addEventListener("click", toggleElements);
+    thugon.addEventListener("click", toggleElements);
+
+    function toggleElements() {
+        xemthem.style.display = xemthem.style.display === "none" ? "block" : "none";
+        thugon.style.display = thugon.style.display === "none" ? "block" : "none";
+        click_button.style.display = click_button.style.display === "none" ? "block" : "none";
+    }
+});
