@@ -1,3 +1,4 @@
+
 function darkmode_function() {
     const darkmode = document.getElementById('mode-icon');
     if (darkmode.classList.contains('bi-moon')) {
@@ -63,3 +64,4 @@ function showAlert() {
     alert('Cảm ơn bạn đã đến với nhà hàng.');
     window.location.href = '../home/home.html';
 }
+

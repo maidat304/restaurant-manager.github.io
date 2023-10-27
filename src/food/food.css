@@ -14,6 +14,7 @@ body {
     height: 80px;
 }
 
+
 .dark-mode {
     background: black !important;
     color: white !important;
@@ -30,6 +31,7 @@ body {
 .present {
     color: rgb(102, 189, 239)!important;
     font-weight: 600;
+
 }
 
 .dark-mode .present {
@@ -117,6 +119,7 @@ body {
     font-weight: 700;
 }
 
+
 .css-main .css-contain-item {
     display: flex;
     height: 100%;
@@ -136,6 +139,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     font-size: 18px;
+
 }
 
 .card2-footer2-2 {
@@ -144,6 +148,7 @@ body {
     padding-top: 10px;
     border-top: 2px solid #bdbdbd;
 }
+
 
 .card2-footer2-2 {
     display: flex;
@@ -156,6 +161,7 @@ body {
     align-items: center;
     justify-content: center;
     flex: 1;
+
 }
 
 .button-container2 button {
@@ -167,15 +173,19 @@ body {
     margin-left: 20px;
 }
 
+
 .button-container2 .buy {
     margin-left: 10px;
+
 }
 
 
 /* ................................................................................... */
 
+
 .text-food {
     padding-top: 50px;
+
 }
 
 h3::after {
@@ -186,6 +196,7 @@ h3::after {
     height: 4px;
     background: #149ddd;
 }
+
 
 
 /* ................................................................................... */
@@ -235,6 +246,7 @@ h3::after {
     border: 2px solid rgb(115, 115, 115);
     border-radius: 15px;
 }
+
 
 .card2-img2 {
     height: 40%;
@@ -329,6 +341,11 @@ h3::after {
 .css-style {
     width: 40px;
     height: 31px;
+
+}
+
+.input1:hover {
+    cursor: auto;
 }
 
 
@@ -572,4 +589,5 @@ iframe {
     .css-main {
         margin-top: 150px;
     }
+
 }

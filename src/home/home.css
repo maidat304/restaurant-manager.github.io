@@ -15,6 +15,7 @@ body {
     height: 80px;
 }
 
+
 .dark-mode {
     background: black !important;
     color: white !important;
@@ -32,6 +33,7 @@ body {
 .present {
     color: rgb(102, 189, 239)!important;
     font-weight: 600;
+
 }
 
 .dark-mode .present {
@@ -66,6 +68,7 @@ body {
 .chao {
     margin-top: 20px;
 }
+
 
 .gachngang {
     margin-top: 20px;
@@ -109,6 +112,7 @@ body {
     margin-top: 5%;
     margin-bottom: 5%;
     display: flex;
+
 }
 
 .css-main .css-contain-item {
@@ -125,6 +129,7 @@ body {
     width: 0;
 }
 
+
 .css-main .css-item {
     color: inherit;
     width: 100%;
@@ -132,6 +137,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+
 }
 
 .css-main .css-item .css-contain-poster {
@@ -142,8 +148,10 @@ body {
     width: 100%;
 }
 
+
 .css-main .css-item {
     max-width: 100%;
+
 }
 
 .css-main .css-item {
@@ -152,6 +160,7 @@ body {
     white-space: nowrap;
     font-size: 18px;
 }
+
 
 
 /* ............................................................. */
@@ -201,6 +210,7 @@ body {
 .kc {
     margin-top: 150px;
     margin-bottom: 150px;
+
 }
 
 .button-inf:hover {
@@ -216,6 +226,7 @@ body {
 .span-click {
     text-decoration: underline;
 }
+
 
 .span-click:hover {
     cursor: pointer;
@@ -378,6 +389,7 @@ body {
 .footer-text h4 {
     font-size: 17px;
     font-weight: 700;
+
 }
 
 .footer-text a:hover {

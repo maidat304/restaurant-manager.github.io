@@ -1,3 +1,4 @@
+
 function darkmode_function() {
     const darkmode = document.getElementById('mode-icon');
     if (darkmode.classList.contains('bi-moon')) {
@@ -66,11 +67,13 @@ updateCountdown();
 function showAlert() {
     alert('Cảm ơn bạn đã đến với nhà hàng.');
     window.location.href = '../home/home.html';
+
 }
 document.addEventListener("DOMContentLoaded", function() {
     const xemthem = document.getElementById("xemthem");
     const thugon = document.getElementById("thugon");
     const click_button = document.getElementById("click_button");
+
 
     xemthem.addEventListener("click", toggleElements);
     thugon.addEventListener("click", toggleElements);
@@ -81,3 +84,4 @@ document.addEventListener("DOMContentLoaded", function() {
         click_button.style.display = click_button.style.display === "none" ? "block" : "none";
     }
 });
+
