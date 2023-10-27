@@ -1,51 +1,87 @@
-const toggleButton = document.querySelector('.btn-toggle');
-const icon = toggleButton.querySelector('.bi');
-const toggleSidebarButton = document.querySelector('.btn-toggle-sidebar');
-const sidebar = document.querySelector('.sidebar');
 
-// Hàm để thay đổi trạng thái và biểu tượng
-function toggleTheme() {
-    const isDarkMode = document.body.classList.toggle('dark-theme');
-    icon.classList.toggle('bi-brightness-high-fill', isDarkMode);
-    icon.classList.toggle('bi-moon-stars-fill', !isDarkMode);
-    toggleButton.querySelector('.spn2').textContent = isDarkMode ? 'LIGHT' : 'DARK';
-    localStorage.setItem('darkMode', isDarkMode);
-}
-
-// Lấy trạng thái từ Local Storage hoặc mặc định là sáng
-const darkMode = localStorage.getItem('darkMode') === 'true';
-toggleButton.querySelector('.spn2').textContent = darkMode ? 'LIGHT' : 'DARK';
-toggleButton.addEventListener('click', toggleTheme);
-icon.classList.toggle('bi-brightness-high-fill', darkMode);
-icon.classList.toggle('bi-moon-stars-fill', !darkMode);
-
-// Hàm để ẩn thanh sidebar
-function hideSidebar() {
-    sidebar.classList.add('sidebar-hidden');
-}
-
-// Hàm để hiện thanh sidebar
-function showSidebar() {
-    sidebar.classList.remove('sidebar-hidden');
-}
-
-// Bắt sự kiện khi nút được nhấp
-toggleSidebarButton.addEventListener('click', () => {
-    sidebar.classList.toggle('sidebar-hidden');
-});
-
-// Bắt sự kiện khi kích thước màn hình thay đổi
-function handleResize() {
-    if (window.innerWidth <= 768) {
-        hideSidebar();
+function darkmode_function() {
+    const darkmode = document.getElementById('mode-icon');
+    if (darkmode.classList.contains('bi-moon')) {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', '0');
     } else {
-        showSidebar();
+        darkmode.classList.remove('bi-sun');
+        darkmode.classList.add('bi-moon');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', '1');
     }
 }
 
-window.addEventListener('scroll', () => {
-    sidebar.style.top = window.scrollY + 'px';
+document.addEventListener('DOMContentLoaded', function() {
+    const darkmode = document.getElementById('mode-icon');
+    const save = localStorage.getItem('darkMode');
+
+    if (save === '0') {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+    }
 });
 
-window.addEventListener('resize', handleResize);
-handleResize(); // Gọi nó một lần để cài đặt ban đầu
+
+// ......................................................................................
+
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 1);
+targetDate.setHours(targetDate.getHours() + 20);
+targetDate.setMinutes(targetDate.getMinutes() + 30);
+targetDate.setSeconds(targetDate.getSeconds() + 30);
+
+function updateCountdown() {
+    const currentDate = new Date().getTime();
+    const timeRemaining = targetDate - currentDate;
+
+    if (timeRemaining <= 0) {
+        document.getElementById('days').textContent = '0 ngày';
+        document.getElementById('hours').textContent = '0 giờ';
+        document.getElementById('minutes').textContent = '0 phút';
+        document.getElementById('seconds').textContent = '0 giây';
+    } else {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = `${days} ngày`;
+        document.getElementById('hours').textContent = `${hours} giờ`;
+        document.getElementById('minutes').textContent = `${minutes} phút`;
+        document.getElementById('seconds').textContent = `${seconds} giây`;
+    }
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+"use strict";
+
+
+// ......................................................................................
+
+
+function showAlert() {
+    alert('Cảm ơn bạn đã đến với nhà hàng.');
+    window.location.href = '../home/home.html';
+
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const xemthem = document.getElementById("xemthem");
+    const thugon = document.getElementById("thugon");
+    const click_button = document.getElementById("click_button");
+
+
+    xemthem.addEventListener("click", toggleElements);
+    thugon.addEventListener("click", toggleElements);
+
+    function toggleElements() {
+        xemthem.style.display = xemthem.style.display === "none" ? "block" : "none";
+        thugon.style.display = thugon.style.display === "none" ? "block" : "none";
+        click_button.style.display = click_button.style.display === "none" ? "block" : "none";
+    }
+});
+

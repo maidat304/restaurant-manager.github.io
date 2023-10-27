@@ -2,182 +2,509 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 20px;
 }
 
 body {
     font-family: "Inter", sans-serif;
-    color: #212529;
-    background: #121212;
-    height: 100vh;
-    line-height: 1.7;
+    background: #fab0052f !important;
+    overflow-x: hidden;
+}
+
+.anhlogo {
+    width: 80px;
+    height: 80px;
 }
 
 
-/* icon food */
-
-.icon-food {
-    width: 30px;
-    height: 25px;
+.dark-mode {
+    background: black !important;
+    color: white !important;
 }
 
+.dark-mode .button-inf {
+    background: black !important;
+    color: white !important;
+}
 
-/* CSS cho văn bản căn đều 2 bên */
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.present {
+    color: rgb(102, 189, 239)!important;
+    font-weight: 600;
+
+}
+
+.dark-mode .present {
+    color: rgb(141, 232, 255)!important;
+    font-weight: 600;
+}
+
+.dark-mode .rectangle {
+    background-image: linear-gradient( to right bottom, rgba(31, 29, 29, 0.6), rgba(20, 20, 20, 0.6)), url("../home/image/blackfriday.png");
+    color: #fff;
+}
 
 .container {
-    text-align: justify;
-    /* Đặt kiểu căn đều */
+    text-align: center;
+}
+
+.span-hover {
+    cursor: pointer;
 }
 
 
-/* CSS cho nội dung trang */
+/* ................................................................................... */
 
-.content {
-    margin-left: 10px;
-    /* Khoảng cách từ nội dung trang đến thanh sidebar */
-    padding: 20px;
-    /* Thêm padding để tạo khoảng cách */
-    flex-grow: 1;
-    overflow-y: auto;
-    text-align: left;
-    /* Đặt kiểu căn trái để tránh việc căn đều các phần tử nhỏ hơn trong văn bản */
-    max-width: 100%;
-    /* Đảm bảo văn bản không vượt quá chiều rộng tối đa */
-}
-
-
-/* CSS cho thanh sidebar */
-
-.sidebar {
-    width: 60px;
-    height: 100vh;
-    padding: 20px;
-    overflow: hidden;
-    overflow-y: auto;
-    transition: width 0.75s ease;
-    border-radius: 7px;
-    box-shadow: 6px 6px 12px #707070, -6px -6px 12px #242121;
-    float: left;
-}
-
-
-/* Ẩn thanh sidebar khi có lớp sidebar-hidden */
-
-.sidebar.sidebar-hidden {
-    width: 0;
-    overflow: hidden;
-}
-
-
-/* Ẩn thanh cuộn dọc của sidebar */
-
-
-/* Ẩn thanh cuộn dọc của sidebar */
-
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* Ẩn chữ và biểu tượng mặc định */
-
-.sidebar a,
-.sidebar .card {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    /* Thêm hiệu ứng transition */
-}
-
-
-/* Hiển thị chữ và biểu tượng từ từ khi hover vào sidebar */
-
-.sidebar:hover a,
-.sidebar:hover .card {
-    opacity: 1;
-}
-
-.sidebar:hover {
-    width: 200px;
-}
-
-.nav-list {
-    padding: 30px 0;
-    list-style: none;
+.dbtd {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    text-align: center;
+    padding: 20px;
 }
 
-.nav-link.nav-link-brand {
-    text-decoration: none;
-    font-weight: 600;
-    margin-bottom: auto;
-}
-
-
-/* Dark Mode styles */
-
-body.dark-theme {
-    color: #eee;
-    background: #121212;
+.chao {
+    margin-top: 20px;
 }
 
 
-/* Thay đổi màu viền của nút bấm và màu nền của nút bấm khi giao diện tối */
-
-.dark-theme .btn {
-    border: 2px solid #fff;
-    /* Đường viền màu trắng và đậm */
-    background-color: #000;
-    /* Màu nền đen */
-    color: #fff;
-    /* Màu chữ trắng */
+.gachngang {
+    margin-top: 20px;
 }
 
-.card {
-    width: 150px;
-    left: 25px;
-    border-radius: 67px;
-    background: #e0e0e0;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+@media (max-width: 768px) {
+    .dbtd {
+        padding: 10px;
+    }
 }
 
-.card:hover {
-    transform: scale(1.05);
-}
 
-.card:active {
-    transform: scale(0.95) rotateZ(1.7deg);
-}
+/* ............................................................. */
 
 .card2 {
-    position: fixed;
-    /* Header cố định */
-    width: 50px;
-    top: 0;
-    /* Header luôn ở trên cùng */
-    left: 5px;
-    border-radius: 67px;
-    background: #e0e0e0;
-    box-shadow: 5px 5px 10px #5a5a5a, -5px -5px 10px #ffffff;
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.card2 p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 16px;
 }
 
 .card2:hover {
-    transform: scale(1.05);
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card2:active {
-    transform: scale(0.95) rotateZ(1.7deg);
+.css-main {
+    margin-top: 500px !important;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+
+}
+
+.css-main .css-contain-item {
+    display: flex;
+    align-items: flex-start;
+    flex: 1 1 0px;
+}
+
+.css-main .css-item {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    margin: 5px;
+    flex: 1 1 0;
+    width: 0;
 }
 
 
-/* Giao diện tối */
+.css-main .css-item {
+    color: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 
-body.dark-theme .card2 {
-    background-color: rgba(0, 0, 0, 0);
-    /* Màu nền có độ trong suốt trong chế độ tối */
+}
+
+.css-main .css-item .css-contain-poster {
+    width: 100%;
+}
+
+.css-main .css-item .css-contain-poster img {
+    width: 100%;
 }
 
 
-/* toàn bộ code css này mọi người không sửa nhé, giữ nguyên, css giao diện html của mn thì viết tiếp vào  */
+.css-main .css-item {
+    max-width: 100%;
+
+}
+
+.css-main .css-item {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 18px;
+}
+
+
+
+/* ............................................................. */
+
+@media(max-width: 1200px) {
+    .center-button {
+        margin-bottom: 50px;
+    }
+    .button-inf {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .button-inf1 {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .introduce-main-content {
+        font-size: 30px !important;
+    }
+}
+
+.introduce-main-content {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.button-inf {
+    color: #00121b;
+    height: 50px;
+    width: 25%;
+    align-items: center;
+    padding: 5px 0px !important;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.kc {
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+}
+
+.button-inf:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+.button-inf:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+.span-click {
+    text-decoration: underline;
+}
+
+
+.span-click:hover {
+    cursor: pointer;
+}
+
+
+/* ............................................................. */
+
+.rectangle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.rectangle {
+    border-radius: 15px;
+    height: 50vh;
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2%;
+}
+
+.rectangle {
+    background-image: url('../home/image/blackfriday.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+}
+
+#content {
+    position: relative;
+    z-index: 3;
+    top: 30%;
+    padding: 0px 50px;
+    z-index: 0;
+}
+
+.countdown-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    font-size: 1rem;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #5a5a5a, -5px -5px 5px #ffffff;
+}
+
+
+/* ............................................................. */
+
+@media screen and (max-width: 1223px) {
+    .introduce {
+        flex-direction: column;
+    }
+    .introduce-sub-content {
+        font-size: 20px !important;
+        margin-bottom: 0px;
+    }
+    .carousel {
+        margin-top: 105px;
+    }
+}
+
+.introduce {
+    padding: 50px;
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.introduce-img-section {
+    margin-right: 200px;
+}
+
+.introduce-img {
+    width: 100%;
+    height: 80%;
+    box-shadow: 10px 10px 5px rgb(211, 209, 209);
+}
+
+.introduce-content {
+    width: 600px;
+}
+
+.introduce-sub-content {
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 15px;
+    text-align: justify;
+}
+
+.center-button {
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.button-inf {
+    height: 50px;
+    width: 20%;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 50px;
+}
+
+.button-inf:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(145, 145, 145);
+}
+
+.button-inf:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* ............................................................. */
+
+
+/* ............................................................. */
+
+@media (max-width: 1180px) {
+    .css-main .css-contain-item {
+        flex-direction: column;
+    }
+    .css-main .css-item {
+        flex: auto;
+    }
+}
+
+
+/* ............................................................. */
+
+.footer {
+    padding-top: 5%;
+    background-color: #00121b;
+    width: 100%;
+    padding-bottom: 0.5%;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #868e96;
+    line-height: 2;
+}
+
+.footer-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+
+}
+
+.footer-text a:hover {
+    color: white;
+}
+
+.footer-text>* {
+    font-size: 15px;
+}
+
+.ul-contact {
+    list-style: none;
+}
+
+.footer-last {
+    text-align: center;
+    color: white;
+}
+
+.footer-last-st,
+.footer-last-nd {
+    margin-top: 20px;
+}
+
+#icon1,
+#icon2,
+#icon3 {
+    padding-left: 20px;
+}
+
+iframe {
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.logo-footer {
+    margin-left: 3%;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+
+/* ....................................................................... */
+
+@media (max-width: 800px) {
+    .footer .row {
+        flex-direction: column;
+        position: relative;
+    }
+    .logo {
+        height: 90px;
+        width: 90px;
+    }
+    .intro-container p {
+        width: 50%;
+    }
+    .intro-container {
+        flex-direction: column;
+        flex: auto;
+    }
+}
+
+@media (max-width:950px) {
+    .introduce-content {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:1550px) {
+    .intro-container {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:1250px) {
+    .introduce-img {
+        width: 300px;
+    }
+    .introduce-content {
+        margin-top: 70px;
+    }
+    .button-inf .btn {
+        font-size: 15px;
+    }
+    .button-inf {
+        border-radius: 15px;
+    }
+}
+
+
+/* ....................................................................... */
+
+.ghimicon {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 999;
+}
+
+.ghimicon svg {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.btghim {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    z-index: 999;
+}

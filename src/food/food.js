@@ -1,51 +1,67 @@
-const toggleButton = document.querySelector('.btn-toggle');
-const icon = toggleButton.querySelector('.bi');
-const toggleSidebarButton = document.querySelector('.btn-toggle-sidebar');
-const sidebar = document.querySelector('.sidebar');
 
-// Hàm để thay đổi trạng thái và biểu tượng
-function toggleTheme() {
-    const isDarkMode = document.body.classList.toggle('dark-theme');
-    icon.classList.toggle('bi-brightness-high-fill', isDarkMode);
-    icon.classList.toggle('bi-moon-stars-fill', !isDarkMode);
-    toggleButton.querySelector('.spn2').textContent = isDarkMode ? 'LIGHT' : 'DARK';
-    localStorage.setItem('darkMode', isDarkMode);
-}
-
-// Lấy trạng thái từ Local Storage hoặc mặc định là sáng
-const darkMode = localStorage.getItem('darkMode') === 'true';
-toggleButton.querySelector('.spn2').textContent = darkMode ? 'LIGHT' : 'DARK';
-toggleButton.addEventListener('click', toggleTheme);
-icon.classList.toggle('bi-brightness-high-fill', darkMode);
-icon.classList.toggle('bi-moon-stars-fill', !darkMode);
-
-// Hàm để ẩn thanh sidebar
-function hideSidebar() {
-    sidebar.classList.add('sidebar-hidden');
-}
-
-// Hàm để hiện thanh sidebar
-function showSidebar() {
-    sidebar.classList.remove('sidebar-hidden');
-}
-
-// Bắt sự kiện khi nút được nhấp
-toggleSidebarButton.addEventListener('click', () => {
-    sidebar.classList.toggle('sidebar-hidden');
-});
-
-// Bắt sự kiện khi kích thước màn hình thay đổi
-function handleResize() {
-    if (window.innerWidth <= 768) {
-        hideSidebar();
+function darkmode_function() {
+    const darkmode = document.getElementById('mode-icon');
+    if (darkmode.classList.contains('bi-moon')) {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', '0');
     } else {
-        showSidebar();
+        darkmode.classList.remove('bi-sun');
+        darkmode.classList.add('bi-moon');
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', '1');
     }
 }
 
-window.addEventListener('scroll', () => {
-    sidebar.style.top = window.scrollY + 'px';
+document.addEventListener('DOMContentLoaded', function() {
+    const darkmode = document.getElementById('mode-icon');
+    const save = localStorage.getItem('darkMode');
+
+    if (save === '0') {
+        darkmode.classList.remove('bi-moon');
+        darkmode.classList.add('bi-sun');
+        document.body.classList.add('dark-mode');
+    }
 });
 
-window.addEventListener('resize', handleResize);
-handleResize(); // Gọi nó một lần để cài đặt ban đầu
+
+// ......................................................................................
+
+const card_count_button = document.querySelectorAll(".custom-button");
+const card_count_save = document.querySelector("#cart-count");
+let count = 0;
+
+card_count_button.forEach(function(button) {
+    button.addEventListener("click", function() {
+        count++;
+        card_count_save.textContent = count;
+    });
+});
+
+
+
+// ......................................................................................
+
+$(document).ready(function() {
+    $(".select-food").change(function() {
+        var selected = $(this).val().toLowerCase();
+        var select_food = $(".select-food-card");
+        var call = select_food.find(".css-item, .text-food");
+        if (selected === "") {
+            call.show();
+        } else {
+            call.hide();
+            call.filter("[data-food ='" + selected + "']").show();
+        }
+    });
+});
+
+
+
+// ......................................................................................
+function showAlert() {
+    alert('Cảm ơn bạn đã đến với nhà hàng.');
+    window.location.href = '../home/home.html';
+}
+

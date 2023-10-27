@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #fab0052f !important;
+}
+
+.anhlogo {
+    width: 80px;
+    height: 80px;
+}
+
+.dark-mode {
+    background: black !important;
+    color: white !important;
+}
+
+.dark-mode .nav-link {
+    color: white !important;
+}
+
+.present {
+    color: rgb(102, 189, 239)!important;
+    font-weight: 600;
+}
+
+.dark-mode .present {
+    color: rgb(141, 232, 255)!important;
+    font-weight: 600;
+}
+
+.dark-mode .about-container {
+    background-image: linear-gradient( to right bottom, rgba(31, 29, 29, 0.6), rgba(20, 20, 20, 0.6)), url("../img-head/a3.png");
+}
+
+.dark-mode .css-form-mess,
+.dark-mode .card-food-img,
+.dark-mode .input,
+.dark-mode .button-close,
+.dark-mode .button-form {
+    background: black !important;
+    color: white !important;
+}
+
+.dark-mode .css-item {
+    background: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.container {
+    text-align: center;
+}
+
+.span-hover {
+    cursor: pointer;
+}
+
+
+/* ................................................................................... */
+
+
+/* about section */
+
+.about-container {
+    font-family: "raleway";
+    margin-top: 105px;
+    background-image: linear-gradient( to right bottom, rgba(68, 68, 68, 0.6), rgba(48, 48, 48, 0.6)), url("../img-head/a3.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-title {
+    font-size: 4em;
+    font-weight: 700;
+    color: #149ddd;
+}
+
+.modal {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 100px;
+}
+
+.card-food-img {
+    background-color: rgb(255, 255, 255);
+    margin: 5% auto 15% auto;
+    max-width: 320px;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.css-form-mess,
+p {
+    line-height: 1.5;
+    border-radius: 15px;
+}
+
+.css-form-mess {
+    height: 50%;
+    padding: 50px;
+    background-color: rgb(198, 198, 198);
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.input {
+    height: 30px;
+    width: 150px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+form label,
+form input {
+    margin-left: 10%;
+}
+
+label {
+    height: 5px;
+    width: 55%;
+}
+
+.button-form {
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 100px;
+    height: 50px;
+    border-radius: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 0 black;
+}
+
+.button-form:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(58, 58, 58);
+}
+
+.button-form:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+.name {
+    font-size: 35px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.my-h3 {
+    margin-top: 10px;
+    margin-left: 3%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* ................................................................................... */
+
+.css-main {
+    padding-top: 150px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+h2::after {
+    margin-top: 10px;
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #149ddd;
+}
+
+.css-main .css-item {
+    height: fit-content;
+    transition: 0.5s;
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+}
+
+.css-main .css-item:hover {
+    background-color: #000000;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+.css-item {
+    background-color: whitesmoke;
+}
+
+.css-main .css-item .content {
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
+.css-main .css-item .content .title {
+    margin-top: 10px;
+    margin: 10px;
+    font-size: 27px;
+}
+
+.css-main .css-item .content .info {
+    padding-left: 20px;
+}
+
+.css-main .css-item .get-combo {
+    border: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    transition: 0.5s;
+    border-radius: 5px;
+    height: 45px;
+    width: 120px;
+}
+
+.css-main .css-item .get-combo:hover {
+    cursor: pointer;
+}
+
+
+/* ................................................................................... */
+
+.center-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.center-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.bi-x {
+    font-size: 30px;
+}
+
+.button-close {
+    height: 50px;
+    width: 50px;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 50px;
+}
+
+.button-close:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(98, 98, 98);
+}
+
+.button-close:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* ................................................................................... */
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.button-inf {
+    height: 50px;
+    width: 200px;
+    padding: 5px 10px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    border-radius: 50px;
+}
+
+.button-inf:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(145, 145, 145);
+}
+
+.button-inf:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* ................................................................................... */
+
+.get-combo {
+    background-color: #717070;
+    color: rgb(255, 255, 255);
+}
+
+.get-combo:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 rgb(134, 134, 134);
+}
+
+.get-combo:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+
+/* ................................................................................... */
+
+.footer {
+    padding-top: 5%;
+    background-color: #00121b;
+    width: 100%;
+    padding-bottom: 0.5%;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: #868e96;
+    line-height: 2;
+}
+
+.footer-text h4 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.footer-text>* {
+    font-size: 15px!important;
+}
+
+.ul-contact {
+    list-style: none;
+}
+
+.footer-last {
+    text-align: center;
+    color: white;
+}
+
+.footer-last-st,
+.footer-last-nd {
+    margin-top: 20px;
+}
+
+#icon1,
+#icon2,
+#icon3 {
+    padding-left: 20px;
+}
+
+iframe {
+    border-radius: 25px;
+    width: 300px;
+    height: 250px;
+}
+
+.logo-footer {
+    margin-left: 3%;
+}
+
+.logo {
+    height: 150px;
+    width: 150px;
+}
+
+.footer-text a:hover {
+    color: white;
+}
+
+
+/* ................................................................................... */
+
+@media (max-width: 800px) {
+    .footer .row {
+        flex-direction: column;
+        position: relative;
+    }
+    .css-main {
+        margin-top: 150px;
+    }
+    .logo {
+        height: 90px;
+        width: 90px;
+    }
+    .css-main h1 {
+        font-size: 40px;
+    }
+}

@@ -4,83 +4,291 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../image/icon.png" type="image/png">
+    <link rel="icon" href="../image-logo/logo.png" type="image/png">
     <link rel="stylesheet " type="text/css " href="home.css ">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
     <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css ">
-    <!-- Latest compiled JavaScript -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
-    <title>Quản lý nhà hàng</title>
+
+    <title>TRANG CHỦ</title>
 </head>
 
 <body>
-    <!-- &nbsp;      cái này là tạo khoảng cách chữ với nhau  -->
-    <!-- Navbar -->
 
-    <nav class="navbar sidebar ">
-        <!-- nav items -->
-        <ul class="nav-list">
-            <li class="nav-item nav-brand ">
-                <!-- brand -->
-                <button class="btn card" type="button">
-                <a class="nav-link nav-link-brand " href="../home/home.html " id="First "><span class="spn2" >FOODIES</span></a>
-                </button>
-            </li>
-            <li class="nav-item ">
-                <button class="btn card" type="button">
-                <a class="nav-link nav-link-home " href="../home/home.html "><span  class="spn2 bi bi-house-door">&nbsp;&nbsp;HOME</span></a>
-                </button>
-            </li>
-            <li class="nav-item ">
-                <button class="btn card" type="button">
-                <a class="nav-link " href="../food/food.html "><span  class="spn2"><img class="icon-food" src="../image/icon-food.png">&nbsp;&nbsp;FOOD</span></a>
-                </button>
-            </li>
-            <!-- mọi người chỉ cần copy đoạn đó r sửa mục food food.html thành trang của mn thôi là được -->
-            <li class="nav-item ">
-                <button class="btn card" type="button">
-                <a class="nav-link " href="../login/login.html "><span class="spn2 bi bi-person-circle">&nbsp;&nbsp;LOGIN</span></a>
-                </button>
-            </li>
-            <li>
-                <button class="btn btn-toggle card" type="button">
-                    <span  class="spn2 bi bi-brightness-high-fill">&nbsp;&nbsp;LIGHT</span>
-                </button>
+    <!-- ....................................................................... -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed; z-index: 10; width: 100%; top: 0;">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="anhlogo" src="../image-logo/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link present" href="../home/home.html"><span class="bi bi-house-door"></span>&nbsp;&nbsp; TRANG CHỦ&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../food/food.html"><span class="bi bi-card-list"></span> THỰC ĐƠN&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datban/booking-table.html"><span class="bi bi-pencil-square"></span> ĐẶT BÀN&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text"></span> PHẢN HỒI&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../magiamgia/magiamgia.html"><span class="bi bi-gift"></span> MÃ GIẢM GIÁ&nbsp;</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person-circle"></span> VAI TRÒ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="showAlert()"><span class="bi bi-person"></span> KHÁCH HÀNG</a></li>
+                            <li><a class="dropdown-item" href="../dangnhap/dangnhap.html"><span class="bi bi-person-fill-gear"></span> QUẢN LÝ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link span-hover" onclick="darkmode_function()"><i id="mode-icon" class="bi bi-moon"></i></span>
 
-            </li>
-        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cart/cart.html">
+                            <span class="bi bi-bag-fill"></span>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <button class="btn-toggle-sidebar btn card2 ">
-            <i class="bi bi-list "></i>
-    </button>
-    <!-- toàn bộ nav là giữ nguyên, khi mọi người tạo liên kết với trang html mn làm thì làm như sau -->
-    <!-- từ đoạn div class container thì là giao diện mn tự chỉnh sửa theo nhiệm vụ đã được phân công -->
+    <!-- ....................................................................... -->
 
-    <main>
-        <div class="container ">
-            <p class="content "> </p>
-            <div class="content ">
-                <h1>HOME</h1>
-                <p>TPO - Sáng 4/10, công nhân Công ty TNHH Viet Glory vẫn chưa trở lại làm việc. Lãnh đạo Liên đoàn lao động tỉnh Nghệ An và Sở Lao động - Thương binh và Xã hội đã tới gặp, trực tiếp đối thoại với công nhân. Vụ ngừng việc của hơn 5.000 công
-                    nhân Công ty TNHH Viet Glory (Nghệ An) đã bước sang ngày thứ 3. Sáng 4/10, công nhân có mặt trước cổng nhà máy nhưng vẫn không vào làm việc. Trong sáng nay, đoàn công tác liên ngành tỉnh Nghệ An gồm đại diện Liên đoàn lao động tỉnh,
-                    Sở Lao động - Thương binh và Xã hội, huyện Diễn Châu cùng lãnh đạo công ty TNHH Viet Glory đã trực tiếp trao đổi, đối thoại với công nhân. Công nhân tập trung trước cổng công ty sáng 4/10. Tại buổi làm việc, ông Nguyễn Chí Công - Phó
-                    Chủ tịch Liên đoàn lao động tỉnh Nghệ An - đã lắng nghe ý kiến, đề xuất của người lao động, đồng thời phân tích các quy định của pháp luật liên quan đến nội dung kiến nghị của người lao động cũng như giải pháp xử lý của công ty. "Mỗi
-                    người lao động cần phải tự phân định cái nào đúng, cái nào sai để quyết định lựa chọn. Những gì công ty sai, chúng tôi sẽ yêu cầu công ty thực hiện đúng quy định", ông Công cho hay. Phó Chủ tịch Liên đoàn lao động tỉnh Nghệ An kêu
-                    gọi các công nhân sớm trở lại làm việc để đảm bảo tiền lương và thu nhập cho người lao động, cũng như duy trì hoạt động sản xuất của công ty. Ông Nguyễn Chí Công - Phó Chủ tịch Thường trực LĐLĐ tỉnh Nghệ An - trực tiếp trao đổi, đối
-                    thoại với 5.000 công nhân. Tiếp tục đọc Với vai trò là tổ chức công đoàn, ông Công mong muốn giữa người lao động và người sử dụng lao động tìm được tiếng nói chung, trên cơ sở hài hòa lợi ích và phù hợp với các quy định của pháp luật
-                    cũng như khả năng của công ty trong thời điểm nhiều khó khăn về đơn hàng như hiện tại. Trước đó, sau giờ cơm trưa ngày 2/10, hàng nghìn công nhân Công ty TNHH Viet Glory đồng loạt ra về, không làm việc ca chiều. Khi sự việc xảy ra,
-                    Liên đoàn lao động huyện Diễn Châu cùng các cơ quan chức năng của huyện đã có mặt, nắm bắt tâm tư, thu thập ý kiến của người lao động. Có 8 nhóm kiến nghị của người lao động đã được tổ chức công đoàn chuyển tới lãnh đạo công ty, trong
-                    đó tập trung vào hai vấn đề chính là tăng lương cơ bản và xem xét lại mức khoán sản phẩm. Trong thông báo gửi người lao động sau đó, lãnh đạo công ty cho biết, trong tình hình hiện tại, không thể điều chỉnh tăng mức lương cơ bản. Phía
-                    công ty mong cán bộ công nhân viên thông cảm và chia sẻ. Hàng nghìn công nhân dự buổi đối thoại với đoàn liên ngành và lãnh đạo công ty. Một số kiến nghị liên quan đến thái độ làm việc của cán bộ quản lý, máy chấm công, chế độ họp...
-                    đã được công ty tiếp thu và điều chỉnh. Công ty cũng quyết định tăng mức thưởng sản lượng cho toàn bộ cán bộ, công nhân viên nhà máy để đảm bảo thu nhập cho người lao động và phù hợp với tình hình hiện tại. Có 2 kiến nghị liên quan
-                    đến việc tăng số lượng người được tính độc hại, tăng phụ cấp độc hại và thưởng tháng 13 được lãnh đạo công ty hứa sẽ xem xét, giải quyết trong thời gian tới. Công ty TNHH Viet Glory chuyên sản xuất giày da xuất khẩu, hiện có khoảng
-                    6.000 công nhân lao động. Hiện tại, mức lương cơ bản của công ty là 4.130.000 đồng, được khẳng định cao hơn mức lương tối thiểu vùng được áp dụng tại huyện Diễn Châu (3.640.000 đồng). Đọc bài gốc tại đây.</p>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators ">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../home/image/1.png" alt="img-slide" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="../home/image/2.png" alt="img-slide" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="../home/image/3.png" alt="img-slide" class="d-block" style="width:100%">
             </div>
         </div>
 
-    </main>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon "></span>
+    </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+    </div>
 
-    <!-- script này thì js của mn để là gì thì sửa thành đó -->
+    <!-- ....................................................................... -->
+
+    <div class="dbtd">
+
+        <div class="chao">
+            <h4 class="introduce-main-content">Bạn muốn ăn gì?</h4>
+        </div>
+        <span class="gachngang"><img src="image/title_border.webp" alt="title border"></span>
+        <p class="container p2">Với thực đơn gần 100 món ăn, đậm chất miền Nam Bộ, nhà hàng Đào Hải chắc chắn sẽ chinh phục được vị giác của bạn chỉ sau 1 lần thử!</p>
+    </div>
+
+
+
+
+
+
+    <!-- ....................................................................... -->
+
+    <main class="css-main " style="margin-top: 0px !important;">
+
+        <section class=" navbar ">
+
+            <article class="myTable ">
+
+                <div class="css-contain-item ">
+
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/a.jpg" alt="food">
+                        <p>Masala Dosa </p>
+                    </div>
+
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/b.jpg" alt="food">
+                        <p>Cơm thập cẩm Paella </p>
+                    </div>
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/d.jpg" alt="food">
+                        <p>Cơm gà Prarii</p>
+                    </div>
+
+                </div>
+                <div class="css-contain-item">
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/j.jpg" alt="food">
+                        <p>Gỏi cuốn</p>
+                    </div>
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/k.jpg" alt="food">
+                        <p>Bò bít tết</p>
+                    </div>
+                    <div class="card2 css-item ">
+                        <img class=" css-contain-poster" src="../food/image/e.jpg" alt="food">
+                        <p>Poutine </p>
+                    </div>
+                </div>
+
+
+                </div>
+                <div class="center-button">
+                    <button type="button" class="button-inf"><a class="nav-link btn" href="../food/food.html">THỰC ĐƠN</a></button>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+    <!-- ....................................................................... -->
+    <div class="rectangle-container">
+
+        <div class="rectangle">
+            <h1>SỰ KIỆN GIẢM GIÁ SIÊU HOT NGÀY ...</h1>
+
+            <div class="countdown-container" id="content">
+
+                <div class="countdown-item" id="days">0 ngày</div>
+                <div class="countdown-item" id="hours">0 giờ</div>
+                <div class="countdown-item" id="minutes">0 phút</div>
+                <div class="countdown-item" id="seconds">0 giây</div>
+
+            </div>
+            <button type="button" class="button-inf kc"><a class="nav-link btn" href="../magiamgia/magiamgia.html">MÃ GIẢM GIÁ</a></button>
+        </div>
+    </div>
+
+    <!-- ....................................................................... -->
+    <button class=" btghim btn btn-secondary" style="border-radius: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+        </svg>18002028</button>
+    <a href="#" class="ghimicon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-messenger" viewBox="0 0 16 16">
+            <path d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.3202l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.9800a1.2 1.2 0 0 0-1.735.32z"/>
+        </svg>
+    </a>
+
+
+
+
+    <!-- ....................................................................... -->
+    <div class="intro-container">
+        <!-- ....................................................................... -->
+        <div class="introduce">
+            <div class="introduce-img-section">
+                <img class="introduce-img" src="image/cookingMan.jpg" alt="introduce-img">
+            </div>
+            <div class="introduce-content">
+                <h4 class="introduce-main-content"> Nấu ăn bằng cả trái tim</h4>
+                <br>
+                <p class="introduce-sub-content">
+                    Mỗi loại gia vị đã được đo lường và pha trộn đến mức hoàn hảo; các món ăn được chuẩn bị cẩn thận để không có thành phần nào bị mất cân bằng. Hương vị và bầu không khí được xây dựng sao cho không có hạt gạo hay phiến gạch nào có cảm giác lạc lõng.
+
+                </p>
+                <br />
+
+                <div class="center-button1">
+                    <span class="span-click" id="xemthem">XEM THÊM</span>
+                </div>
+                <div id="click_button" style="display: none;">
+                    <p class="introduce-sub-content">
+                        Chúng tôi hoan nghênh bạn khám phá hương vị của chúng tôi trên thế giới, trong các món ăn ngon của Lục địa và Trung Quốc và điều đó thậm chí còn trước khi bạn biết đến sự đa dạng và xuất sắc của món nướng thịt nướng của chúng tôi. Với sự phục vụ nồng
+                        hậu hiếm có, đây là nơi hoàn hảo để vui vẻ cùng gia đình, đắm mình trong phong cách trang trí thư giãn và với mong muốn sâu sắc được quay lại một lần, không bao giờ là đủ.
+                    </p>
+                    <br>
+                    <span class="span-click" id="thugon" style="display: none;">THU GỌN</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- ....................................................................... -->
+
+
+    <!-- ....................................................................... -->
+
+    <footer class="footer footer-text">
+        <div class=" row align-items-start">
+            <div class="logo-footer col">
+                <a href="../home/home.html">
+                    <img class="logo" src="../image-logo/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="col">
+                <ul class="ul-contact ">
+                    <li class="footer-text">
+                        <h4>DANH MỤC CHÍNH</h4>
+                    </li>
+                    <li class="footer-text"><a class="nav-link " href="../home/home.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../food/food.html">THỰC ĐƠN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/datban.html">ĐẶT BÀN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/phanhoi.html">PHẢN HỒI</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col footer-text">
+                <h4>NHÀ HÀNG SỐ 1 VIỆT NAM</h4>
+                <p>Giải thưởng được trao dựa trên trải nghiệm thực tế và các tiêu chí bình chọn khắt khe của hơn 300 nhà phê bình ẩm thực, đầu bếp, chủ nhà hàng và chuyên gia ẩm thực khắp thế giới.</p>
+            </div>
+            <div class="col ">
+                <ul class="ul-contact footer-text">
+                    <h4>LIÊN HỆ</h4>
+                    <li>Hotline: 03xx.xxx.xxx</li>
+                    <li>Gmail: ...@gmail.com</li>
+                    <li>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội.</li>
+                </ul>
+            </div>
+            <div class="col footer-text">
+                <h4>BẢN ĐỒ</h4>
+                <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1228608575834!2d105.80064111432421!3d21.02776948599887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBHaWFvIHRow7RuZyBW4bqtbiB04bqjaQ!5e0!3m2!1svi!2s!4v1539544397383"></iframe>
+                </iframe>
+            </div>
+        </div>
+
+        <p class="footer-last-st footer-last">
+            <a href="#"><i class="bi bi-facebook" id="icon0"></i></a>
+            <a href="#"><i class="bi bi-messenger" id="icon1"></i></a>
+            <a href="#"><i class="bi bi-instagram" id="icon2"></i></a>
+            <a href="#"><i class="bi bi-twitter" id="icon3"></i></a>
+        </p>
+
+        <p class="footer-last-nd footer-last footer-text">
+            © 2023 Ngon Bá Cháy, Thanks.
+        </p>
+
+    </footer>
+    <!-- ....................................................................... -->
+
     <script src="home.js ">
     </script>
 </body>

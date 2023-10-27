@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../image-logo/logo.png" type="image/png">
+
+    <link rel="stylesheet " type="text/css " href="phanhoi.css ">
+    <link rel="stylesheet " href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css " rel="stylesheet ">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js "></script>
+    <title>PHẢN HỒI</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img class="anhlogo" src="image-phanhoi/logo.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../home/home.html"><span class="bi bi-house-door"></span>&nbsp;&nbsp; TRANG CHỦ&nbsp; </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../food/food.html"><span class="bi bi-card-list"></span> THỰC ĐƠN&nbsp;&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../datban/booking-table.html"><span class="bi bi-pencil-square"></span> ĐẶT BÀN&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link present" href="../phanhoi/phanhoi.html"><span class="bi bi-chat-left-text"></span> PHẢN HỒI&nbsp;</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../magiamgia/magiamgia.html"><span class="bi bi-gift"></span> MÃ GIẢM GIÁ&nbsp;</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="bi bi-person-circle"></span> VAI TRÒ
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="javascript:void(0);" onclick="showAlert()"><span class="bi bi-person"></span> KHÁCH HÀNG</a></li>
+                            <li><a class="dropdown-item" href="../dangnhap/dangnhap.html"><span class="bi bi-person-fill-gear"></span> QUẢN LÝ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link span-hover" onclick="darkmode_function()"><i id="mode-icon" class="bi bi-moon"></i></span>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cart/cart.html">
+                            <span class="bi bi-bag-fill"></span>
+                            <span id="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="css-main">
+        <section class="about-container">
+            <div id="selector"><br>
+                <h1 class="about-title">
+                    PHẢN HỒI
+                </h1>
+                <span class="menu-box">
+                <a href="#goto_giaychungnhan" class="type">Giấy chứng nhận</a>
+                <a href="#goto_topbinhluan" class="type">Top bình luận</a>
+                <a href="#goto_phanhoi" class="type">Gửi phản hồi</a>
+                </span>
+            </div>
+        </section>
+
+        <div id="goto_giaychungnhan" class="css-distance">
+            <h3>Giấy chứng nhận</h3>
+            <div class="d-flex distance">
+                <div class="frame">
+                    <img class="svg" src="image-phanhoi/chungnhan.png" alt="cmt">
+                </div>
+                <div class="frame">
+                    <img class="svg" src="image-phanhoi/MCL.png" alt="cmt">
+                </div>
+                <div class="frame">
+                    <img class="svg" src="image-phanhoi/phongchay.jpeg" alt="cmt">
+                </div>
+            </div>
+            <div id="carouselExampleInterval" class="carousel slide css-distance2" data-bs-ride="carousel">
+                <h3 id="goto_topbinhluan">Top bình luận của nhà hàng</h3>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3500!important">
+                        <div class="d-flex justify-content-between ">
+                            <div class="cards css-item ">
+                                <div class="card3 red">
+                                    <img src="image-phanhoi/Elon - Musk.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip">Elon - Musk <br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>
+                                    <p class="second-text">The dishes are a perfect blend of creativity and tradition, and the service is both warm and professional.</p>
+                                </div>
+                                <div class="card3 white">
+                                    <img src="image-phanhoi/Gordon Ramsey.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip">Gordon Ramsey <br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9734;</span></p>
+                                    <p class="second-text">I felt like I was in a gastronomic paradise, which epitomized the rich and diverse flavors of Vietnam.</p>
+                                </div>
+                                <div class="card3 blue">
+                                    <img src="image-phanhoi/Tim Berners-Lee.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip">Tim Berners-Lee<br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>
+                                    <p class="second-text">Every course was a delightful journey through taste and texture, and the atmosphere was cozy and inviting.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3500!important">
+                        <div class="d-flex justify-content-between ">
+                            <div class="cards css-item ">
+                                <div class="card3 red1">
+                                    <img src="image-phanhoi/MinhQuan.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip ">Minh Quân <br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>
+                                    <p class="second-text">Vị ngon của mỗi món ăn 🍛 là một bản hòa nhạc cho vị giác và cách trình bày không thua kém phần vị ngon.</p>
+                                </div>
+                                <div class="card3 white1">
+                                    <img src="image-phanhoi/Håkon Wium Lie.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip ">Håkon Wium Lie<br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>
+                                    <p class="second-text">I had the pleasure of dining at this restaurant, and it was a culinary adventure I won't soon forget.</p>
+                                </div>
+                                <div class="card3 blue1">
+                                    <img src="image-phanhoi/SonTung.jpg" class="d-block w-100" alt="phanhoi">
+                                    <p class="tip">Sơn Tùng <br><span class="yellow-star">&#9733; &#9733; &#9733; &#9733; &#9733;</span></p>
+                                    <p class="second-text">Nếu bạn đang tìm kiếm một trải nghiệm ẩm thực vượt ra ngoài mức bình thường, thì đừng bỏ lỡ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <i class="bi bi-chevron-double-left"></i>
+            </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <i class="bi bi-chevron-double-right"></i>
+            </button>
+            </div>
+        </div>
+        <div class="css-distance">
+            <div class="container1 from">
+                <div class="left">
+                    <h3><br>LIÊN HỆ</h3>
+                    <h5>Đừng ngần ngại liên hệ với chúng tôi</h5>
+                    <p>Chúng tôi rất mong nhận được phản hồi từ phía khách hàng, du khách và những người đã trải nghiệm cửa hàng. Chúng tôi thực sự đánh giá cao việc bạn dành thời gian để liên lạc. Hãy điền vào mẫu bên phải.</p>
+                    <p>
+                        <a target="_blank" href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+H%E1%BB%8Dc+Giao+Th%C3%B4ng+V%E1%BA%ADn+T%E1%BA%A3i/@21.028155,105.803421,15z/data=!4m6!3m5!1s0x3135ab424a50fff9:0xbe3a7f3670c0a45f!8m2!3d21.0281545!4d105.8034205!16s%2Fm%2F0vb3l_2?hl=vi&entry=ttu"><i class="bi bi-geo-alt"></i></a><b> Địa chỉ: </b> No 3 Đ. Cầu Giấy, Láng Thượng, Đống Đa, Hà Nội.</p>
+                    <p><a href="tel:+84973xxxxxxx"><i class="bi bi-telephone"></i></a><b> LH: </b> +84 973 xxx xxx</p>
+                    <p><a href="mailto:daoxxx@gmail.com"><i class="bi bi-envelope"></i></a><b> Email: </b> daoxxx@gmail.com</p>
+                    <a href="https://www.facebook.com/"><img src="image-phanhoi/facebook-icon.png" alt="Facebook"></a>
+                    <a href="https://www.messenger.com/"><img src="image-phanhoi/mes.png" alt="Messenger"></a>
+                    <a href="https://id.zalo.me/account?continue=https://chat.zalo.me"><img src="image-phanhoi/zalo.png" alt="Zalo"></a>
+                </div>
+                <div id="goto_phanhoi" class="testbox right">
+                    <form class="css-form-mess" action="#" onsubmit="return validate(this);" name="form">
+                        <h2 id="h1">PHIẾU PHẢN HỒI</h2>
+                        <label for="text" id="h4">Họ và tên<span>*</span></label>
+                        <input placeholder="Họ và tên" type="text" class="input" id="name" name="name">
+                        <label>
+                        <p id="h4">Email<span>*</span></p>
+                    <input placeholder="Email" type="text" class="input" id="email" name="email">
+                    </label>
+                        <label style="float: right">
+                        <p id="h4">SĐT<span>*</span></p>
+                    <input placeholder="Số điện thoại" type="text" class="input"name="phone" id="phone">
+                    </label>
+                        <p id="h4">Đánh giá sao cho chúng tôi:</p>
+                        <span class="rating">
+                        <input class="ip" value="5" name="rate" id="star1" type="radio">
+                        <label class="lab" title="text" for="star1"></label>
+                        <input class="ip" value="4" name="rate" id="star2" type="radio">
+                        <label class="lab" title="text" for="star2"></label>
+                        <input class="ip" value="3" name="rate" id="star3" type="radio">
+                        <label class="lab" title="text" for="star3"></label>
+                        <input class="ip" value="2" name="rate" id="star4" type="radio">
+                        <label class="lab" title="text" for="star4"></label>
+                        <input class="ip" value="1" name="rate" id="star5" type="radio">
+                        <label class="lab" title="text" for="star5"></label>
+                    </span>
+                        <p class="feedback-text" id="feedbackText"></p>
+                        <p id="h4">Cảm nhận của bạn về chúng tôi:</p>
+                        <textarea rows="5"></textarea>
+                        <button class="button-form " type="submit" name="submit" id="submit">GỬI</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer footer-text">
+        <div class=" row align-items-start">
+            <div class="logo-footer col">
+                <a href="../home/home.html">
+                    <img class="logo" src="image-phanhoi/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="col">
+                <ul class="ul-contact ">
+                    <li class="footer-text">
+                        <h4>DANH MỤC CHÍNH</h4>
+                    </li>
+                    <li class="footer-text"><a class="nav-link " href="../home/home.html">TRANG CHỦ</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../food/food.html">THỰC ĐƠN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/datban.html">ĐẶT BÀN</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/phanhoi.html">PHẢN HỒI</a>
+                    </li>
+                    <li class="footer-text"><a class="nav-link" href="../datban/magiamgia.html">MÃ GIẢM GIÁ</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col footer-text">
+                <h4>NHÀ HÀNG SỐ 1 VIỆT NAM</h4>
+                <p>Giải thưởng được trao dựa trên trải nghiệm thực tế và các tiêu chí bình chọn khắt khe của hơn 300 nhà phê bình ẩm thực, đầu bếp, chủ nhà hàng và chuyên gia ẩm thực khắp thế giới.</p>
+            </div>
+            <div class="col ">
+                <ul class="ul-contact footer-text">
+                    <h4>LIÊN HỆ</h4>
+                    <li>Hotline: 03xx.xxx.xxx</li>
+                    <li>Gmail: ...@gmail.com</li>
+                    <li>Địa chỉ: Số 3 phố Cầu Giấy, P.Láng Thượng, Q.Đống Đa, Hà Nội.</li>
+                </ul>
+            </div>
+            <div class="col footer-text">
+                <h4>BẢN ĐỒ</h4>
+                <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1228608575834!2d105.80064111432421!3d21.02776948599887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab424a50fff9%3A0xbe3a7f3670c0a45f!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBHaWFvIHRow7RuZyBW4bqtbiB04bqjaQ!5e0!3m2!1svi!2s!4v1539544397383"></iframe>
+                </iframe>
+            </div>
+        </div>
+
+        <p class="footer-last-st footer-last">
+            <a href="#"><i class="bi bi-facebook" id="icon0"></i></a>
+            <a href="#"><i class="bi bi-messenger" id="icon1"></i></a>
+            <a href="#"><i class="bi bi-instagram" id="icon2"></i></a>
+            <a href="#"><i class="bi bi-twitter" id="icon3"></i></a>
+        </p>
+
+        <p class="footer-last-nd footer-last footer-text">
+            © 2023 Ngon Bá Cháy, Thanks.
+        </p>
+
+    </footer>
+    <script src="phanhoi.js ">
+    </script>
+</body>
+
+</html>
